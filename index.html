@@ -13,11 +13,32 @@ Greg Blodgett
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <style>
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 767px) {
         nav li {
           display: block;
-          float: none;
+          float:none;
+          width: 100%;
         }
+        
+        .hambar {
+          width: 35px;
+          height: 5px;
+          background-color: #333;
+          margin: 6px 0;
+          transition: 0.4s;
+        }
+        #expand {
+          display:none;
+        }
+    }
+    @media only screen and (min-width: 768px) {
+      #expand {
+        display:block;
+      }
+      nav li a:hover {
+        background-color: #555;
+        color: white;
+      }
     }
     #plane{
       width:100%;
@@ -41,10 +62,7 @@ Greg Blodgett
       padding: 14px 16px;
       text-decoration: none;
     }
-    nav li a:hover {
-      background-color: #555;
-      color: white;
-    }
+    
     main {
       padding: 5px;
     }
@@ -63,16 +81,37 @@ Greg Blodgett
 </head>
 <body class="bg-white">
   <header class="my-0 h1 text-center">
-     Buffalo Wild Wings Airport
+     <a href="index.html" style="text-decoration: none; color: black;"><p style="font-family: Simplifica; margin: 0;">Buffalo Wild Wings Airport</p></a>
 
   </header>
   <nav class="bg-light">
+      <div class="container" onclick="expand(this)">
+          <div class="hambar"></div>
+          <div class="hambar"></div>
+          <div class="hambar"></div>
+        </div>
+        <script>
+          function expand() {
+            
+            if($('#expand:visible').length == 0) {       
+                document.getElementById("expand").style.display="block";
+            } else {
+                document.getElementById("expand").style.display="none";
+            }
+            
+          }
+        
+        
+        </script>
+      <div id="expand">
       <ul>
           <li><a href="">Home</a></li>
-          <li><a href="">Before Flight</a></li>
-          <li><a href="">Flight</a></li>
-          <li><a href="">About</a></li>
+          <li><a href="">Flight and Booking</a></li>
+          <li><a href="">Airport Guide</a></li>
+          <li><a href="">Parking and Trasportation </a></li>
+          <li><a href="">About Buffalo Wings</a></li>
       </ul>
+      </div>
       <div class="bar"></div>
       <img src="images/planePhoto2.jpg" id="plane" alt="plane Photo" />
   </nav>
