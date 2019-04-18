@@ -22,7 +22,7 @@ Greg Blodgett
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: rgb(194, 193, 193);
+      /*background-color: rgb(255, 255, 255);*/
     }
     nav li {
       float: left;
@@ -34,29 +34,44 @@ Greg Blodgett
       padding: 14px 16px;
       text-decoration: none;
     }
+    nav li a:hover {
+      background-color: #555;
+      color: white;
+    }
 
     header{
-      background-color: rgb(194, 193, 193);
-      margin: 0%;
+      background-color: #DDDDDD;
+      margin-bottom: 0em;
+    }
+    footer {
+      background-color: #DDDDDD;
     }
   </style>
 </head>
-<body class="bg-light">
-  <header>
-    <h1>Buffalo Wild Wings Airport</h1>
-  </header class="my-0">
-  <nav>
+<body class="bg-white">
+  <header class="my-0 h1 text-center">
+     Buffalo Wild Wings Airport
+  </header>
+  <nav class="bg-light">
       <ul>
           <li><a href="">Home</a></li>
-          <li><a href="">News</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="">Before Flight</a></li>
+          <li><a href="">Flight</a></li>
           <li><a href="">About</a></li>
-        </ul>
+      </ul>
   </nav>
   <main>
       <img src="images/planePhoto2.jpg" id="plane" alt="plane Photo" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat congue nisl, 
+        eu venenatis risus vulputate dignissim. Etiam laoreet eget ante eget consectetur.
+         Aenean pharetra faucibus purus, id scelerisque mi fringilla sed. Fusce ullamcorper 
+         acus ut sem laoreet vestibulum. Suspendisse fermentum condimentum tellus ut rutrum. 
+         Sed viverra lacus eget volutpat viverra. Fusce ut quam sollicitudin, maximus leo a, pretium quam. 
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, </p>
+      <p>Nam sed congue velit, ut pulvinar arcu. Mauris ipsum eros, mattis id lectus eu, ultricies tempus orci. </p>
   </main>
-  <footer>
+  <footer class="static-bottom">
+      &copy; Buffalo Wings
   </footer>
   <script src="jquery.min.js"></script>
   <script src="bootstrap.bundle.js"></script>
