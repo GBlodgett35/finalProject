@@ -59,15 +59,20 @@ Greg Blodgett
           </div>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script>
-            var button = ['.first-button', '.second-button', '.third-button'];
-            var icons = ['.animated-icon1', '.animated-icon2', '.animated-icon3'];
             $(document).ready(function () {
-              for(var i =0; i < button.length; i++) {
-                $(button[i]).on('click', function () {
-                    $(icons[i]).toggleClass('open');
+
+                $('.first-button').on('click', function () {
+                    $('.animated-icon1').toggleClass('open');
                 });
-              }
-            });         
+                $('.second-button').on('click', function () {
+
+                  $('.animated-icon2').toggleClass('open');
+                });
+                $('.third-button').on('click', function () {
+
+                  $('.animated-icon3').toggleClass('open');
+                });
+                });           
           </script>
          </div>
          <div class="desktop">
