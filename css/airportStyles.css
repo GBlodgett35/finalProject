@@ -64,7 +64,9 @@ footer {
 
 /*************************************************************************/
 
-
+nav {
+  border-bottom: none;
+}
 
 
 .animated-icon1, .animated-icon2, .animated-icon3 {
@@ -136,6 +138,7 @@ footer {
   .animated-icon1.open span:nth-child(2) {
   opacity: 0;
   left: -60px;
+  background-color: aqua;
   }
   
   .animated-icon1.open span:nth-child(3) {
