@@ -10,14 +10,12 @@ HyeJin Moon
 
 /*Defines the styles for every page in the website*/
 
-
-
 @media only screen and (max-width: 767px) {
     .desktop {
       display: none;
     }
-    
 }
+
 @media only screen and (min-width: 768px) {
   .mobile {
     display: none;
@@ -46,7 +44,6 @@ nav li a {
   padding: 14px 16px;
   text-decoration: none;
 }
-
 main {
   padding: 5px;
 }
