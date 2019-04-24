@@ -8,49 +8,77 @@ Greg Blodgett
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
-  <link rel="stylesheet" href="bootstrap.css">
+ <!-- <link rel="stylesheet" href="bootstrap.css">-->
   <link rel="icon" href="">
   <title></title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <style>
     /*Styling for just this page goes here*/
+    .bg-light {
+  background-color: #f8f9fa !important;
+}
+body, h1 {
+  margin-top:0;
+  margin-bottom: 0;
+}
+header {
+  font-family: Verdana, Geneva, sans-serif; 
+  margin: 0;
+  padding-left: 0%;
+  padding-right:0%;
+  margin-left: 0%;
+}
+header h1 {
+  font-weight: normal;
+}
+nav button {
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+.full-width {
+  width:100%;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+}
 
   </style>
 </head>
 <body class="bg-white">
-  <header class="my-0 h1 text-center">
-     <a href="index.html" style="text-decoration: none; color: black;"><p style="font-family: Simplifica; margin: 0;">Buffalo Wild Wings Airport</p></a>
-
+  <header>
+    <div class="center">
+     <a href="index.html" style="text-decoration: none; color: black;"><h1>Buffalo Wild Wings Airport</h1></a>
+    </div>
   </header>
   <nav class="bg-light">  
       <div class="mobile">
-          <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
-            aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation" style="outline:none;">
+          <button class="navbar-toggler first-button" type="button" data-toggle="collapse" onclick=toggleNav()>
             <div class="animated-icon1">
               <span></span>
               <span></span>
               <span></span>
+              <div style="padding:38px;"></div>
             </div>
           </button>
-      
-          <div class="collapse navbar-collapse" id="navbarSupportedContent20">
-        
+          <div id="collapse" style="display:none;">
             
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+            <ul>
+              <li class="full-width">
                 <a class="nav-link" href="index.html">Home</a>
               </li>
-              <li class="nav-item">
+              <li class="full-width">
                 <a class="nav-link" href="flightBooking.html">Flight and Booking</a>
               </li>
-              <li class="nav-item">
+              <li class="full-width">
                 <a class="nav-link" href="airportGuide.html">Airport Guide</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="parking.html">Parking and Trasportation<span class="sr-only">(current)</span></a>
+              <li class="full-width">
+                  <a class="nav-link" href="parking.html">Parking and Trasportation</a>
               </li>
-              <li class="nav-item">
+              <li class="full-width">
                  <a class="nav-link" href="about.html">About Buffalo Wings</a>
                </li>
             </ul>
@@ -73,6 +101,13 @@ Greg Blodgett
                   $('.animated-icon3').toggleClass('open');
                 });
                 });        
+                function toggleNav() {
+                  if(document.getElementById("collapse").style.display === "none") {
+                    document.getElementById("collapse").style.display = "block";
+                  } else {
+                    document.getElementById("collapse").style.display = "none";
+                  }
+                }
           </script>
          </div>
          <div class="desktop">
@@ -98,10 +133,10 @@ Greg Blodgett
          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, </p>
       <p>Nam sed congue velit, ut pulvinar arcu. Mauris ipsum eros, mattis id lectus eu, ultricies tempus orci. </p>
   </main>
-  <footer class="static-bottom">
+  <footer>
       &copy; Buffalo Wild Wings Airport
   </footer>
   <script src="jquery.min.js"></script>
-  <script src="bootstrap.bundle.js"></script>
+  <!--<script src="bootstrap.bundle.js"></script>-->
 </body>
 </html>

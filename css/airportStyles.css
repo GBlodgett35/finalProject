@@ -30,7 +30,6 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  box-shadow: 10px 10px #555;
   /*background-color: rgb(255, 255, 255);*/
 }
 nav li {
@@ -50,6 +49,7 @@ main {
 header{
   background-color: #DDDDDD;
   margin-bottom: 0em;
+  width: 100%;
 }
 footer {
   background-color: #DDDDDD;
@@ -62,11 +62,9 @@ footer {
   text-align: center;
 }
 
+
 /*************************************************************************/
 
-nav {
-  border-bottom: none;
-}
 
 
 .animated-icon1, .animated-icon2, .animated-icon3 {
@@ -116,15 +114,15 @@ nav {
 }
   
 .animated-icon1 span:nth-child(1) {
-  top: 0px;
+  top: 2px;
 }
   
 .animated-icon1 span:nth-child(2) {
-  top: 10px;
+  top: 9px;
 }
   
 .animated-icon1 span:nth-child(3) {
-  top: 20px;
+  top: 16px;
 }
   
 .animated-icon1.open span:nth-child(1) {
