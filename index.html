@@ -3,11 +3,12 @@
 Final Project
 IS270
 Greg Blodgett
-...Add your name here
+Joe Faith
 -->
 <html lang="en">
 <head>
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
+  <link rel="stylesheet" type="text/css" href="css/animateHamburger.css">
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="icon" href="images/logo.png">
   <title></title>
@@ -26,8 +27,9 @@ Greg Blodgett
      <a href="index.html" style="text-decoration: none; color: black;"><p style="font-family: Simplifica; margin: 0;">Buffalo Wild Wings Airport</p></a>
 
   </header>
-  <nav class="bg-light">  
-      <div class="mobile">
+  <nav class="bg-light">
+  <div class="navbar-inner">
+          <div class="mobile">
           <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
             aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation" style="outline:none;">
             <div class="animated-icon1">
@@ -36,10 +38,10 @@ Greg Blodgett
               <span></span>
             </div>
           </button>
-      
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent20">
-        
-            
+
+
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
@@ -57,8 +59,8 @@ Greg Blodgett
                  <a class="nav-link" href="about.html">About Buffalo Wings</a>
                </li>
             </ul>
-           
-        
+
+
           </div>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script>
@@ -75,7 +77,7 @@ Greg Blodgett
 
                   $('.animated-icon3').toggleClass('open');
                 });
-            });         
+            });
           </script>
          </div>
          <div class="desktop">
@@ -85,19 +87,43 @@ Greg Blodgett
                 <li><a href="airportGuide.html">Airport Guide</a></li>
                 <li><a href="parking.html">Parking and Trasportation </a></li>
                 <li><a href="about.html">About Buffalo Wings</a></li>
-            </ul> 
+            </ul>
 
+         </div>
          </div>
       </div>
       <div class="bar"></div>
       <img src="images/planePhoto2.jpg" id="plane" alt="plane Photo" />
   </nav>
   <main>
-      <!--<div class="booking">
+      <div class="booking">
         <h2>Book Your Flight</h2>
-        <div class="center"><input type="text" id="indexFlight" placeholder="City" /></div>
+        City :<br />
+        <select name="City">
+          <option value="LA">Los Angeles, CA</option>
+          <option value="DA">Dallas, TX</option>
+          <option value="London">London, England</option>
+          <option value="Paris">Paris, France</option>
+          <option value="Amsterdam">Amsterdam, Netherlands</option>
+          <option value="Barcelona">Barcelona, Spain</option>
+          <option value="Dublin">Dublin, Ireland</option>
+          <option value="Frankfurt">Frankfurt, Germany</option>
+          <option value="Edinburgh">Edinburgh, Scotland</option>
+          <option value="Atlanta">Atlanta, Georgia</option>
+        </select>
+        <br />
+        # of Passengers : <br />
+        <div class="center"><input type="text" id="indexFlightPassenger" placeholder="# of Passengers" /></div>
+        Departure Date : <br />
+        <div class="center"><input type="date" id="indexFlightDateDepart" /></div>
+        Return Date : <br />
+        <div class="center"><input type="date" id="indexFlightDateReturn" /></div>
+        <br />
+        <input type="submit" id="indexFlightsubmit" value="Submit">
+        <input type="reset" id="indexFlightReset" value="Reset">
 
-      </div>-->
+
+      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat congue nisl,
         eu venenatis risus vulputate dignissim. Etiam laoreet eget ante eget consectetur.
          Aenean pharetra faucibus purus, id scelerisque mi fringilla sed. Fusce ullamcorper
