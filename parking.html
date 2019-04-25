@@ -10,8 +10,8 @@ Greg Blodgett
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
   <link rel="stylesheet" type="text/css" href="css/animateHamburger.css">
  <!-- <link rel="stylesheet" href="bootstrap.css">-->
-  <link rel="icon" href="">
-  <title></title>
+  <link rel="icon" href="images/logo.png">
+  <title>Parking and Transportation</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <style>
@@ -45,7 +45,25 @@ html, body {
     margin: 0;
     height: 100%;
 }
+    .progress {
+      text-align: center;
+ width: 90%;   
+ border: 1px solid black;
+ border-radius: 25px;
+ position: relative;
+ padding: 3px;
+}
 
+#percent1, #percent2, #percent3 {
+ position: absolute;   
+ left: 50%;
+}
+
+#short-term, #long-term, #economy {
+ height: 20px;
+ border-radius: 25px;
+ background-color: rgb(0, 132, 194);
+}  
   </style>
 </head>
 <body>
@@ -88,6 +106,17 @@ html, body {
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script>
             $(document).ready(function () {
+              var random = Math.random() * 90;
+              $("#short-term").css("width", (random+ "%"))
+              document.getElementById("percent1").innerHTML = Number(random).toFixed(0) + "%";
+              var random1 = Math.random() * 90;
+              $("#long-term").css("width", (random1+ "%"))
+              document.getElementById("percent2").innerHTML = Number(random1).toFixed(0)+"%";
+              var random2 = Math.random() * 90;
+              $("#economy").css("width",(random2+ "%"))
+              document.getElementById("percent3").innerHTML = Number(random2).toFixed(0)+"%";
+            });
+            $(document).ready(function () {
 
                 $('.first-button').on('click', function () {
                     $('.animated-icon1').toggleClass('open');
@@ -120,34 +149,29 @@ html, body {
             </ul> 
 
          </div>
-      </div>
       <div class="bar"></div>
   </nav>
   <main>
       <div class="center"><h2>Parking</h2></div>
       <div>
       <h4>Short term parking:</h4>
-      <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70"
-          aria-valuemin="0" aria-valuemax="100" style="width:70%">
-            70%
-          </div>
+      <!--<progress max="100" value="80"></progress>-->
+      <div class="center"><div class="progress">
+        <span id="percent1"></span>
+        <div id="short-term"></div>
+        </div>
+      </div>
       </div>
       <h4>Long term parking:</h4>
       <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70"
-          aria-valuemin="0" aria-valuemax="100" style="width:40%">
-            40%
-          </div>
-      </div>
+        <span id="percent2"></span>
+        <div id="long-term"></div>
+        </div>
       <h4>Economy parking:</h4>
       <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="70"
-          aria-valuemin="0" aria-valuemax="100" style="width:65%">
-            65%
-          </div>
-      </div>
-      </div>
+        <span id="percent3"></span>
+        <div id="economy"></div>
+        </div>
       <br />
     <h3><b>Short Term Parking</b></h3>
     <p>Ideal for travelers requiring parking less than 24 hours. The most convenient for dropping off and picking up passengers. Direct access to Transit Level.</p>
