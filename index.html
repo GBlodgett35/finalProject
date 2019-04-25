@@ -11,7 +11,7 @@ Joe Faith
   <link rel="stylesheet" type="text/css" href="css/animateHamburger.css">
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="icon" href="images/logo.png">
-  <title></title>
+  <title>Buffalo Wings Airport</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <style>
@@ -97,7 +97,9 @@ Joe Faith
   </nav>
   <main>
       <div class="booking">
+        <!-- Begin ticket purchasing form -->
         <h2>Book Your Flight</h2>
+        <form>
         City :<br />
         <select name="City">
           <option value="LA">Los Angeles, CA</option>
@@ -119,23 +121,38 @@ Joe Faith
         Return Date : <br />
         <div class="center"><input type="date" id="indexFlightDateReturn" /></div>
         <br />
-        <input type="submit" id="indexFlightsubmit" value="Submit">
+        <button  type="button" Onclick="document.getElementById('ticket_cost').innerHTML = RndInteger(150,8000)">Calculate Price</button>
         <input type="reset" id="indexFlightReset" value="Reset">
-
-
+        </form>
+        <br />
+        <h3>Ticket Price</h3>
+        <p>Your ticket price is:</p>
+        <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
+        <p id="ticket_cost"></p>
+        <button type="button" id="payment">Pay with us using PayPal!</button>
+        <!-- Script to take user to paypal to collect payment -->
+        <script type="text/javascript">
+        document.getElementById("payment").onclick = function () {
+        location.href = "https://www.paypal.com/us/home";
+        };
+        </script>
+        <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+        <!-- Script created to generate random number -->
+        <script>
+        function RndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+        }
+        </script>
+        <br />
+        <br />
+        <br />
+        <!-- Local weather widget -->
+        <h2>Local Weather</h2>
+        <script type='text/javascript' src='https://darksky.net/widget/small/30.3322,-81.6557/us12/en.js?width=100%&height=200&title=Jacksonville, Florida&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Verdana&customFont=&units=us'></script>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat congue nisl,
-        eu venenatis risus vulputate dignissim. Etiam laoreet eget ante eget consectetur.
-         Aenean pharetra faucibus purus, id scelerisque mi fringilla sed. Fusce ullamcorper
-         acus ut sem laoreet vestibulum. Suspendisse fermentum condimentum tellus ut rutrum.
-         Sed viverra lacus eget volutpat viverra. Fusce ut quam sollicitudin, maximus leo a, pretium quam.
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, </p>
-      <p>Nam sed congue velit, ut pulvinar arcu. Mauris ipsum eros, mattis id lectus eu, ultricies tempus orci. </p>
-  </main>
-  <footer class="static-bottom">
-      &copy; Buffalo Wild Wings Airport
-  </footer>
-  <script src="jquery.min.js"></script>
-  <script src="bootstrap.bundle.js"></script>
-</body>
-</html>
+      </main>
+      <footer class="static-bottom">
+        &copy; Buffalo Wild Wings Airport
+      </footer>
+      </body>
+      </html>
