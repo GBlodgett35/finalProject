@@ -27,11 +27,11 @@ Greg Blodgett
  background-color: rgba(0, 0, 0, 0.658);
  
 }
-main {
-  background-image: url("images/foo1.jfif");
+/*main {
+  background-image: url("images/gray.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 #percent1, #percent2, #percent3 {
  position: absolute;   
  left: 50%;
@@ -54,15 +54,61 @@ main {
 .float-box{
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   padding:5px;
-  background-color: white;
+  background-color: #dddddd;
+}
+header {
+  background: transparent;
+  position: relative;
+  text-align: center;
+}
+#text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  top: 10px;
+  font-weight: normal;
+}
+#parking {
+  z-index:0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.animated-icon1 {
+  z-index:5;
+}
+#collapse {
+  position: absolute;
+  z-index:2;
+  background-color: black;
+
+}
+#collapse li a{
+  color: white;
+}
+.padding {
+  padding-top: 15em;
 }
   </style>
 </head>
 <body>
   <header>
-    <div class="center">
-     <a href="index.html" style="text-decoration: none; color: black;"><h1>Buffalo Wild Wings Airport</h1></a>
-    </div>
+      <div class="mobile">
+        <img src="images/parking.jpg" alt="cars" id="parking" />
+        <div id="text">
+            <a href="index.html" style="text-decoration: none; color:white;"><h1>Buffalo Wild Wings Airport</h1></a>
+            <h2>Parking and Transportation</h2>
+        </div>
+      </div>
+      <div class="desktop">
+          <div class="center">
+              <a href="index.html" style="text-decoration: none; color: black;"><h1>Buffalo Wild Wings Airport</h1></a>
+             </div>
+      </div>
   </header>
   <nav class="bg-light">  
       <div class="mobile">
@@ -73,7 +119,7 @@ main {
               <span></span>
             </div>
           </button>
-          <div id="collapse" style="display:none;">
+          <span id="collapse" style="display:none;">
             
             <ul>
               <li class="full-width">
@@ -94,7 +140,7 @@ main {
             </ul>
            
         
-          </div>
+          </span>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script>
             $(document).ready(function () {
@@ -125,8 +171,10 @@ main {
                 function toggleNav() {
                   if(document.getElementById("collapse").style.display === "none") {
                     document.getElementById("collapse").style.display = "block";
+                    document.getElementById("text").style.opacity = "0";
                   } else {
                     document.getElementById("collapse").style.display = "none";
+                    document.getElementById("text").style.opacity = "1";
                   }
                 }
           </script>
@@ -141,10 +189,11 @@ main {
             </ul> 
 
          </div>
-      <div class="bar"></div>
   </nav>
   <main>
-      <div class="center"><h2>Parking</h2></div>
+    <div class="padding mobile"></div>
+    </div>
+      <!--<div class="center"><h2>Parking</h2></div>-->
       <div>
       <h4>Short term parking:</h4>
       <!--<progress max="100" value="80"></progress>-->
