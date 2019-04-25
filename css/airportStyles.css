@@ -98,3 +98,8 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.title {
+  color: #ffffff;
+  background-color: rgba(0,0,0,0)
+}
