@@ -27,7 +27,11 @@ Greg Blodgett
  background-color: rgba(0, 0, 0, 0.658);
  
 }
-
+main {
+  background-image: url("images/foo1.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 #percent1, #percent2, #percent3 {
  position: absolute;   
  left: 50%;
@@ -47,6 +51,11 @@ Greg Blodgett
 	                           rgba(0, 0, 0, .25)),
 	   -webkit-linear-gradient(left, rgb(0, 153, 255), #f44);
 }  
+.float-box{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  padding:5px;
+  background-color: white;
+}
   </style>
 </head>
 <body>
@@ -156,15 +165,16 @@ Greg Blodgett
         <div id="economy"></div>
         </div>
       <br />
-    <h3><b>Short Term Parking</b></h3>
-    <p>Ideal for travelers requiring parking less than 24 hours. The most convenient for dropping off and picking up passengers. Direct access to Transit Level.</p>
-    <br />
-    <p><b>RATES:</b></p>
-    <p>$2.00 for 1st hour</p>
-    <p>$4.00 each additional hour</p>
-    <p>$26.00 dail max</p>
-    <p>Daily max is calculated on a 24-hour basis. All hours exceeding a 24-hour period will be charged at the hourly rate up to the daily max.</p>
-    
+    <div class="float-box">
+      <h3><b>Short Term Parking</b></h3>
+      <p>Ideal for travelers requiring parking less than 24 hours. The most convenient for dropping off and picking up passengers. Direct access to Transit Level.</p>
+      <br />
+      <p><b>RATES:</b></p>
+      <p>$2.00 for 1st hour</p>
+      <p>$4.00 each additional hour</p>
+      <p>$26.00 dail max</p>
+      <p>Daily max is calculated on a 24-hour basis. All hours exceeding a 24-hour period will be charged at the hourly rate up to the daily max.</p>
+    </div>
     <h3><b>Long Term Parking</b></h3>
     <p>Ideal for travelers requiring parking less thn 24 hours. The most convenient for dropping off and picking up passengers. Direct access to Transit Level.</p>
     <p><b>RATES:</b></p>
