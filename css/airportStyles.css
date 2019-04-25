@@ -50,6 +50,8 @@ main {
 header{
   background-color: #dddddd;
   margin-bottom: 0em;
+  position: fixed;
+  top: 0;
 }
 footer {
   background-color: #dddddd;
@@ -99,7 +101,10 @@ footer {
   background-size: cover;
 }
 
-.title {
-  color: #ffffff;
-  background-color: rgba(0,0,0,0)
+.parallax p {
+  position: absolute;
+  right: 2em;
+  top: 2em;
+  font-size: 3em;
+  z-index: inherit;
 }
