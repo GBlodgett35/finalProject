@@ -43,6 +43,7 @@ HyeJin Moon
   nav li a:hover {
     background-color: #555;
     color: white;
+    text-decoration: none;
   }
 }
 
@@ -51,16 +52,13 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-<<<<<<< HEAD
-  /*background-color: rgb(255, 255, 255);*/
-=======
->>>>>>> 9fad7f223867c3b6e51c0b2c49cbd72a158d58d5
 }
 nav li {
   float: left;
 }
 nav li a {
   display: block;
+  text-decoration: none;
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 14px 16px;
@@ -72,7 +70,8 @@ main {
 header{
   background-color: #dddddd;
   margin-bottom: 0em;
-  width: 100%;
+  position: fixed;
+  top: 0;
 }
 footer {
   background-color: #dddddd;
@@ -89,182 +88,43 @@ footer {
   text-align: center;
 }
 
-
 /*************************************************************************/
-<<<<<<< HEAD
-
-=======
 .progressBar {
   background-color: black;
   border-radius: 13px;
   /* (height of inner div) / 2 + padding */
-  padding: 10px;
-}
->>>>>>> 9fad7f223867c3b6e51c0b2c49cbd72a158d58d5
-
-
-.animated-icon1, .animated-icon2, .animated-icon3 {
-    width: 30px;
-    height: 20px;
-    position: relative;
-    margin: 0px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
-    cursor: pointer;
+  padding: 3px;
 }
 
-.animated-icon1 span, .animated-icon2 span, .animated-icon3 span {
-  display: block;
+.progressBar>div {
+  background-color: rgb(0, 153, 255);
+  width: 40%;
+  /* Adjust with JavaScript */
+  height: 20px;
+  border-radius: 10px;
+}
+
+  /* Styling for flight booking box */
+.booking{
+    text-align: center;
+    background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
+    background-color: rgb(56, 56, 56);
+  }
+
+  /* Styling for image parallax */
+.parallax {
+  background-image: url(../images/airportPhoto1.jpg);
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax p {
   position: absolute;
-  height: 3px;
-  width: 100%;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  right: 2em;
+  top: 2em;
+  font-size: 3em;
+  z-index: inherit;
 }
-
-.animated-icon1 span {
-  background: #575757;
-}
-
-.animated-icon2 span {
-  background: #e3f2fd;
-}
-
-.animated-icon3 span {
-  background: #f3e5f5;
-}
-
-.animated-icon1 span:nth-child(1) {
-  top: 2px;
-}
-
-.animated-icon1 span:nth-child(2) {
-  top: 9px;
-}
-
-.animated-icon1 span:nth-child(3) {
-  top: 16px;
-}
-
-.animated-icon1.open span:nth-child(1) {
-  top: 11px;
-  -webkit-transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
-
-  .animated-icon1.open span:nth-child(2) {
-  opacity: 0;
-  left: -60px;
-  background-color: aqua;
-  }
-
-  .animated-icon1.open span:nth-child(3) {
-  top: 11px;
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-  }
-  .animated-icon2 span:nth-child(1) {
-  top: 0px;
-  }
-
-  .animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
-  top: 10px;
-  }
-
-  .animated-icon2 span:nth-child(4) {
-  top: 20px;
-  }
-
-  .animated-icon2.open span:nth-child(1) {
-  top: 11px;
-  width: 0%;
-  left: 50%;
-  }
-
-  .animated-icon2.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  }
-
-  .animated-icon2.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  }
-
-  .animated-icon2.open span:nth-child(4) {
-  top: 11px;
-  width: 0%;
-  left: 50%;
-  }
-
-  /* Icon 4 */
-
-  .animated-icon3 span:nth-child(1) {
-  top: 0px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-  }
-
-  .animated-icon3 span:nth-child(2) {
-  top: 10px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-  }
-
-  .animated-icon3 span:nth-child(3) {
-  top: 20px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-  }
-
-  .animated-icon3.open span:nth-child(1) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: 0px;
-  left: 8px;
-  }
-
-  .animated-icon3.open span:nth-child(2) {
-  width: 0%;
-  opacity: 0;
-  }
-
-  .animated-icon3.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 21px;
-  left: 8px;
-  }

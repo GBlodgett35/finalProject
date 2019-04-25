@@ -174,13 +174,4 @@ HyeJin Moon
   top: 21px;
   left: 8px;
   }
-  .navbar-inner {
-    background:transparent;
-}
-.navbar-inner {
-  background-color: transparent;
-  background: transparent;
-  border-color: transparent;
-}
-
-.navbar-inner li { color: #000 } 
+  
