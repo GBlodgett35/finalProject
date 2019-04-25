@@ -23,6 +23,7 @@ HyeJin Moon
   nav li a:hover {
     background-color: #555;
     color: white;
+    text-decoration: none;
   }
 }
 
@@ -37,6 +38,7 @@ nav li {
 }
 nav li a {
   display: block;
+  text-decoration: none;
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 14px 16px;
@@ -86,3 +88,13 @@ footer {
     background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
     background-color: rgb(56, 56, 56);
   }
+
+  /* Styling for image parallax */
+.parallax {
+  background-image: url(../images/airportPhoto1.jpg);
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
