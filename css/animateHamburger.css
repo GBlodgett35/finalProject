@@ -31,7 +31,7 @@ HyeJin Moon
   position: absolute;
   height: 3px;
   width: 100%;
-  border-radius: 9px;
+  border-radius: 20px;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -174,13 +174,4 @@ HyeJin Moon
   top: 21px;
   left: 8px;
   }
-  .navbar-inner {
-    background:transparent;
-}
-.navbar-inner {
-  background-color: transparent;
-  background: transparent;
-  border-color: transparent;
-}
-
-.navbar-inner li { color: #000 } 
+  
