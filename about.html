@@ -3,15 +3,16 @@
 Final Project
 IS270
 Greg Blodgett
-...Add your name here
+HyeJin Moon
 -->
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="about.css">
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="css/animateHamburger.css">
   <link rel="icon" href="">
-  <title></title>
+  <title>Buffalo Wings Airport</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <style>
@@ -22,87 +23,41 @@ Greg Blodgett
 <body class="bg-white">
   <header class="my-0 h1 text-center">
      <a href="index.html" style="text-decoration: none; color: black;"><p style="font-family: Simplifica; margin: 0;">Buffalo Wild Wings Airport</p></a>
-
   </header>
-  <nav class="bg-light">  
-      <div class="mobile">
-          <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
-            aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation" style="outline:none;">
-            <div class="animated-icon1">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarSupportedContent20">
-        
-            
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="flightBooking.html">Flight and Booking</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="airportGuide.html">Airport Guide</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="parking.html">Parking and Trasportation</a>
-              </li>
-              <li class="nav-item">
-                 <a class="nav-link" href="about.html">About Buffalo Wings<span class="sr-only">(current)</span></a>
-               </li>
-            </ul>
-           
-        
-          </div>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-          <script>
-            $(document).ready(function () {
 
-              $('.first-button').on('click', function () {
-                  $('.animated-icon1').toggleClass('open');
-              });
-              $('.second-button').on('click', function () {
-
-                $('.animated-icon2').toggleClass('open');
-              });
-              $('.third-button').on('click', function () {
-
-                $('.animated-icon3').toggleClass('open');
-              });
-              });       
-          </script>
-         </div>
-         <div class="desktop">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="flightBooking.html">Flight and Booking</a></li>
-                <li><a href="airportGuide.html">Airport Guide</a></li>
-                <li><a href="parking.html">Parking and Trasportation </a></li>
-                <li><a href="about.html">About Buffalo Wings</a></li>
-            </ul> 
-
-         </div>
-      </div>
-      <div class="bar"></div>
-  </nav>
   <main>
-      <h2>About</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat congue nisl,
-        eu venenatis risus vulputate dignissim. Etiam laoreet eget ante eget consectetur.
-         Aenean pharetra faucibus purus, id scelerisque mi fringilla sed. Fusce ullamcorper
-         acus ut sem laoreet vestibulum. Suspendisse fermentum condimentum tellus ut rutrum.
-         Sed viverra lacus eget volutpat viverra. Fusce ut quam sollicitudin, maximus leo a, pretium quam.
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, </p>
-      <p>Nam sed congue velit, ut pulvinar arcu. Mauris ipsum eros, mattis id lectus eu, ultricies tempus orci. </p>
+	<div class="about">
+     <img src="images/airplane.jpg" alt="airplane" />
+	 <div class="text"><h2>About Us</h2>
+	 <p>Welcome to Buffalo Wings Airport!</p></div>
+     </div>
+	 
+	 <div class="main">
+	 <h2>Continuous Expansion-Exciting Times Ahead</h2>
+	 <br />
+	 <p>Buffalo Wings Airport was built by small group of students that were taking IS 270 class at Harding University and was opened on 25 April in 2019.
+	 Our Airport is committed to increasing air service, improving customer service and inspiring growth in the Jacksonville region. </p>
+	 </div>
+	 <br />
+	
+	<div class="boxes">
+	 <div class="vision">
+	<img src="images/vision.jpg" alt="vision">
+	<h3>Our Vision</h3>
+	<p>To reflect and serve the community, inspire the industry, and advance the region's role as a world leader.</p>
+	<p> </p>
+	</div>
+	
+	<div class="mission">
+	<img src="images/mission.jpg" alt="mission">
+	<h3>Our Mission</h3>
+	<p>To be the world's leading airport company, growing a safe, secure and vibrant air hub in Jacksonville, Florida and enhancing the communities we serve worldwide. </p>
+	</div>
+	</div>
+	 
+	 
+	 
   </main>
-  <footer class="static-bottom">
-      &copy; Buffalo Wild Wings Airport
-  </footer>
-  <script src="jquery.min.js"></script>
-  <script src="bootstrap.bundle.js"></script>
+
 </body>
 </html>
