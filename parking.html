@@ -52,17 +52,28 @@ html, body {
  border-radius: 25px;
  position: relative;
  padding: 3px;
+ background-color: rgba(0, 0, 0, 0.658);
+ 
 }
 
 #percent1, #percent2, #percent3 {
  position: absolute;   
  left: 50%;
+ color:#f8f9fa;
 }
 
 #short-term, #long-term, #economy {
  height: 20px;
  border-radius: 25px;
- background-color: rgb(0, 132, 194);
+ /*background-color: rgb(0, 132, 194);*/
+ background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, rgb(0, 153, 255), #f44);
 }  
   </style>
 </head>
