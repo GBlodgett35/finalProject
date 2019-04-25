@@ -20,7 +20,18 @@ HyeJin Moon
       background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
       background-color: rgb(56, 56, 56);
     }
-
+  #ticket_cost{
+    color: #000000;
+  }
+  #PP{
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    height: 50px;
+    width: 50px;
+    opacity: inherit;
+  }
 
 
 }
