@@ -12,6 +12,11 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
       text-align: center;
       background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
       background-color: rgb(56, 56, 56);
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      overflow-x: auto;
     }
   #ticket_cost{
     color: #000000;
@@ -21,9 +26,17 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     margin-left: auto;
     margin-right: auto;
     align-content: center;
-    height: 50px;
+    height: 30px;
     width: 50px;
     opacity: inherit;
+  }
+  body{
+    max-width: 100%;
+
+  }
+  a{
+    color: #000000;
+    font-size: 20px;
   }
 
 
@@ -62,7 +75,7 @@ header{
   background-color: #dddddd;
   margin-bottom: 0em;
   top: 0;
-  font-family: Verdana, Geneva, sans-serif; 
+  font-family: Verdana, Geneva, sans-serif;
   margin: 0;
   padding-left: 0%;
   padding-right:0%;
@@ -148,7 +161,7 @@ height: 100%;
 
 .progress {
   text-align: center;
-width: 90%;   
+width: 90%;
 border: 1px solid black;
 border-radius: 25px;
 position: relative;
@@ -162,7 +175,7 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 #percent1, #percent2, #percent3 {
-position: absolute;   
+position: absolute;
 left: 50%;
 color:#f8f9fa;
 }
@@ -172,14 +185,14 @@ height: 20px;
 border-radius: 25px;
 /*background-color: rgb(0, 132, 194);*/
 background-image:
- -webkit-linear-gradient(-45deg, 
-                         transparent 33%, rgba(0, 0, 0, .1) 33%, 
+ -webkit-linear-gradient(-45deg,
+                         transparent 33%, rgba(0, 0, 0, .1) 33%,
                          rgba(0,0, 0, .1) 66%, transparent 66%),
- -webkit-linear-gradient(top, 
-                         rgba(255, 255, 255, .25), 
+ -webkit-linear-gradient(top,
+                         rgba(255, 255, 255, .25),
                          rgba(0, 0, 0, .25)),
  -webkit-linear-gradient(left, rgb(0, 153, 255), #f44);
-}  
+}
 .float-box{
 box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 padding:5px;
