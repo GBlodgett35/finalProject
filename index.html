@@ -24,7 +24,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
      <a href="index.html" style="text-decoration: none; color: black;"><h1>Buffalo Wild Wings Airport</h1></a>
     </div>
   </header>
-  <nav class="bg-light">  
+  <nav class="bg-light">
       <div class="mobile">
           <button class="navbar-toggler first-button" type="button" data-toggle="collapse" onclick=toggleNav()>
             <div class="animated-icon1">
@@ -34,7 +34,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
             </div>
           </button>
           <div id="collapse" style="display:none;">
-            
+
             <ul>
               <li class="full-width">
                 <a class="nav-link" href="index.html">Home</a>
@@ -52,8 +52,8 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                  <a class="nav-link" href="about.html">About Buffalo Wings</a>
                </li>
             </ul>
-           
-        
+
+
           </div>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script>
@@ -70,7 +70,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
 
                   $('.animated-icon3').toggleClass('open');
                 });
-                });        
+                });
                 function toggleNav() {
                   if(document.getElementById("collapse").style.display === "none") {
                     document.getElementById("collapse").style.display = "block";
@@ -87,7 +87,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                 <li><a href="airportGuide.html">Airport Guide</a></li>
                 <li><a href="parking.html">Parking and Trasportation </a></li>
                 <li><a href="about.html">About Buffalo Wings</a></li>
-            </ul> 
+            </ul>
 
          </div>
       <div class="bar"></div>
@@ -118,12 +118,18 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         Return Date : <br />
         <div class="center"><input type="date" id="indexFlightDateReturn" /></div>
         <br />
+        Ticket(s) Class: <br />
+        <input type="radio" id="indexFlightEconomy" name="ticket" value="Economy" />Economy
+        <input type="radio" id="indexFlightBusiness" name="ticket" value="Business" />Business
+        <input type="radio" id="indexFlightFirstClass" name="ticket" value="First Class" />First Class
+        <br />
+        <br />
         <button  type="button" Onclick="document.getElementById('ticket_cost').innerHTML = RndInteger(150,8000)">Calculate Price</button>
         <input type="reset" id="indexFlightReset" value="Reset">
         </form>
         <br />
         <h3>Ticket Price</h3>
-        <p>Your ticket price is:</p>
+        <p>Your ticket price in USD($) is:</p>
         <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
         <p id="ticket_cost"></p>
         <button type="button" id="payment">Pay with us using PayPal!</button>
@@ -146,7 +152,25 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         <!-- Local weather widget -->
         <h2>Local Weather</h2>
         <script type='text/javascript' src='https://darksky.net/widget/small/30.3322,-81.6557/us12/en.js?width=100%&height=200&title=Jacksonville, Florida&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Verdana&customFont=&units=us'></script>
-      </div>
+        <h2>Why Fly Buffalo Wings?</h2>
+        <p>Here at Buffalo Wings Airport, we pride ourselves on being the best in several categories:</p>
+        <ul>
+          <li>World-Class Service</li>
+          <li>Entrancing International Locations</li>
+          <li>Industry-leading Emmissions Reducing Aircraft</li>
+        </ul>
+        <p>When you're wanting to travel the world in style and comfort without breaking the bank, be sure to
+          fly Buffalo Wings! We're you're portal to a whole new world!</p>
+          <h2>Locations we fly to</h2>
+          <a href="https://www.visitdallas.com/plan/index.html" target="_blank"<h3>Dallas, Texas</h3></a>
+          <p>Located in the heart of Texas, Dallas serves as a cultural and commercial hub for the region.
+          Jam-packed with wonderful eats any foodie could dream of, sports teams, like the Dallas Stars, to watch in the evenings, and
+        wonderful family attractions like Grapevine, there's something for everyone to enjoy in Dallas!</p>
+      <a href="https://www.discoverlosangeles.com/" target="_blank"<h3>Los Angeles, California</h3></a>
+      <p>There's nothing quite like sunny, sensational California! Make your ultimate beach dreams a reality this year, with a trip
+      to the Golden State with Buffalo Wings Airport! The City of Angels is host to the epicenter of the film and TV industries. Anybody who
+    is somebody has walked these streets! Come check out the sights and make some waves this summer with us!</p>
+    </div>
       </main>
       <footer class="static-bottom">
         &copy; Buffalo Wild Wings Airport
