@@ -67,13 +67,17 @@ header {
 }
 #parking {
   z-index:0;
-  position: absolute;
+ /* position: absolute;*/
   left: 0;
   top: 0;
   width: 100%;
 }
 .animated-icon1 {
-  z-index:5;
+  z-index:500;
+}
+.animated-icon1.open {
+  position: absolute;
+  z-index:500;
 }
 
 #collapse {
@@ -86,7 +90,7 @@ header {
   color: white;
 }
 .padding {
-  padding-top: 15em;
+  /*padding-top: 15em;*/
 }
 .float-box {
   /* Add shadows to create the "card" effect */
@@ -96,17 +100,15 @@ header {
   margin-top: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #dddddd;
-}
-.foo {
-  margin-right: auto;
-  margin-left: auto;
+  background-color: #ffffff;
 }
 /* On mouse-over, add a deeper shadow */
 .float-box:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
+.foo {
+  z-index: 100;
+}
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
@@ -116,11 +118,11 @@ header {
 <body>
   <header>
       <div class="mobile">
-        <img src="images/parking.jpg" alt="cars" id="parking" />
-        <div class="foo"><div id="text">
+        <img src="images/parking.jpg" alt="cars" id="parking" style="margin-top:0" />
+        <!--iv class="foo"><div id="text">
             <a href="index.html" style="text-decoration: none; color:white;"><h2 style="font-weight: normal;">Buffalo Wild Wings Airport</h2></a>
             <h2>Parking and Transportation</h2>
-        </div></div>
+        </div></div>-->
       </div>
       <div class="desktop">
           <div class="center">
@@ -130,35 +132,41 @@ header {
   </header>
   <nav class="bg-light">  
       <div class="mobile">
-          <button class="navbar-toggler first-button" type="button" data-toggle="collapse" onclick=toggleNav()>
+      <div id="text">
+          <button class="navbar-toggler first-button" type="button" data-toggle="collapse" onclick=toggleNav() style="float: left;">
             <div class="animated-icon1">
               <span></span>
               <span></span>
               <span></span>
             </div>
           </button>
-          <span id="collapse" style="display:none;">
+          <span id="collapse" style="display:none; position: relative;">
             
-            <ul>
-              <li class="full-width">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="full-width">
-                <a class="nav-link" href="flightBooking.html">Flight and Booking</a>
-              </li>
-              <li class="full-width">
-                <a class="nav-link" href="airportGuide.html">Airport Guide</a>
-              </li>
-              <li class="full-width">
-                  <a class="nav-link" href="parking.html">Parking and Trasportation</a>
-              </li>
-              <li class="full-width">
-                 <a class="nav-link" href="about.html">About Buffalo Wings</a>
-               </li>
-            </ul>
-           
+              <ul>
+                <li class="full-width">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="full-width">
+                  <a class="nav-link" href="flightBooking.html">Flight and Booking</a>
+                </li>
+                <li class="full-width">
+                  <a class="nav-link" href="airportGuide.html">Airport Guide</a>
+                </li>
+                <li class="full-width">
+                    <a class="nav-link" href="parking.html">Parking and Trasportation</a>
+                </li>
+                <li class="full-width">
+                   <a class="nav-link" href="about.html">About Buffalo Wings</a>
+                 </li>
+              </ul>
+             
+          
+            </span>
+          <a href="index.html" style="text-decoration: none; color:white; float: right; z-index: 100; font-size: 5vw;"><h2 class="hide" style="font-weight: normal; margin:0;">Buffalo Wild Wings Airport</h2></a>
+          <h2 class="hide" style="z-index: 1000; margin-top: 5em;">Parking and Transportation</h2>
+        </div>
         
-          </span>
+         
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script>
             $(document).ready(function () {
@@ -189,10 +197,12 @@ header {
                 function toggleNav() {
                   if(document.getElementById("collapse").style.display === "none") {
                     document.getElementById("collapse").style.display = "block";
-                    document.getElementById("text").style.opacity = "0";
+                    /*Hide Title*/
+                    $(".hide").css("opacity", "0")
                   } else {
                     document.getElementById("collapse").style.display = "none";
-                    document.getElementById("text").style.opacity = "1";
+                    /*Show title*/
+                    $(".hide").css("opacity", "1")
                   }
                 }
           </script>
@@ -251,6 +261,7 @@ header {
     <p>$26.00 daily max</p>
     <p>Daily max is calculated on a 24-hour basis. All hours exceeding a 24-hour period will be charged at the hourly rate up to the daily max.</p>
     </div></div>
+    <div class="float-box"><div class="container">
     <h3><b>Extended Economy Parking</b></h3>
     <p>The most economical lot for the traveler on long trips. Free shuttle service to/from the terminal via buses.</p>
     <br />
@@ -260,7 +271,7 @@ header {
     <p>After 2 hours, the normal rate of $8.00/day will go into effect</p>
     <p>$8.00 daily max</p>
     <p>Daily maximum is calculated on a 24-hour basis.</p>
-      
+      </div></div>
   </main>
   <footer>
       &copy; Buffalo Wild Wings Airport

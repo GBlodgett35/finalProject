@@ -10,11 +10,13 @@ HyeJin Moon
 
 /* Hamburger Menu Animation and Style */
 
-.animated-icon1, .animated-icon2, .animated-icon3 {
+.animated-icon1 {
     width: 30px;
     height: 20px;
     position: relative;
     margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -26,7 +28,7 @@ HyeJin Moon
     cursor: pointer;
 }
   
-.animated-icon1 span, .animated-icon2 span, .animated-icon3 span {
+.animated-icon1 span{
   display: block;
   position: absolute;
   height: 3px;
@@ -47,14 +49,7 @@ HyeJin Moon
 .animated-icon1 span {
   background: #575757;
 }
-  
-.animated-icon2 span {
-  background: #e3f2fd;
-}
-  
-.animated-icon3 span {
-  background: #f3e5f5;
-}
+
   
 .animated-icon1 span:nth-child(1) {
   top: 0px;
@@ -88,6 +83,7 @@ HyeJin Moon
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
   }
+  /*
   .animated-icon2 span:nth-child(1) {
   top: 0px;
   }
@@ -126,7 +122,7 @@ HyeJin Moon
   left: 50%;
   }
   
-  /* Icon 4 */
+  /* Icon 4 
   
   .animated-icon3 span:nth-child(1) {
   top: 0px;
@@ -174,4 +170,4 @@ HyeJin Moon
   top: 21px;
   left: 8px;
   }
-  
+  */
