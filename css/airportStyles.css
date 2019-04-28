@@ -17,10 +17,12 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
       padding: 0;
       border: 0;
       overflow-x: auto;
-    }
+  }
+    /* Styling for ticket_cost id paragraph */
   #ticket_cost{
     color: #000000;
   }
+  /* Styling for PayPal picture */
   #PP{
     vertical-align: middle;
     margin-left: auto;
@@ -30,17 +32,74 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     width: 50px;
     opacity: inherit;
   }
+  /* Styling for body tag */
   body{
     max-width: 100%;
+    background-image: url(../images/neutralBackground.jfif);
+    font-family: Verdana, Geneva, sans-serif;
   }
+/* Styling for html tag */
+html{
+    height: 100%;
+  }
+  /* Styling for anchor tags */
   a{
     color: #000000;
     font-size: 14px;
-}
-}
+  }
+/* Styling for why fly Buffalo Wild Wings div */
+.why{
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+  }
+/* Styling for locations tag */
+.locations{
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+  }
+/* Styling for booking class */
+.booking{
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+  }
+/* Styling for main_image class */
+.main_image{
+    min-width: 100%;
+    height: 10%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    overflow-x: auto;
+    background-size: contain;
+  }
+/* Styling for main_image class image */
+.main_image img{
+    max-width: 100%;
+    min-width: 300px;
+    height: auto;
+  }
+/* Styling for footer tag */
 footer{
-  text-align: center;
-  position: static;
+    text-align: center;
+    position: static;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width: 768px) {
