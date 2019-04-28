@@ -6,10 +6,105 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
 <head>
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
   <link rel="stylesheet" href="css/animateHamburger.css">
-  <link rel="icon" href="">
-  <title></title>
+  <link rel="icon" href="images/logo.png">
+  <title>Booking</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <style>
+  
+   /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container 
+.flip-card:hover */
+
+.flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  color: black;
+  transform: rotateY(180deg);
+}
+
+
+.scene {
+  width: 100%;
+  height: 100%;
+  margin: 40px 0;
+  perspective: 600px;
+
+  position: relative;
+  text-align: center;
+  color: white;
+
+}
+
+.card {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+  </style>
 </head>
 <body class="bg-white">
   <header>
@@ -86,19 +181,34 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       <div class="bar"></div>
   </nav>
   <main>
-      <h2>Flights and Booking</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat congue nisl,
-        eu venenatis risus vulputate dignissim. Etiam laoreet eget ante eget consectetur.
-         Aenean pharetra faucibus purus, id scelerisque mi fringilla sed. Fusce ullamcorper
-         acus ut sem laoreet vestibulum. Suspendisse fermentum condimentum tellus ut rutrum.
-         Sed viverra lacus eget volutpat viverra. Fusce ut quam sollicitudin, maximus leo a, pretium quam.
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, </p>
-      <p>Nam sed congue velit, ut pulvinar arcu. Mauris ipsum eros, mattis id lectus eu, ultricies tempus orci. </p>
+      
+       
+<div class="scene">
+    <div class="card">
+      <div class="card__face card__face--front">
+          <img src="images/dallas.jpg" alt="Avatar" style="width:300px;height:300px;">
+          <h2 class="centered" style="margin-top:auto">Dallas Texas</h2>
+      </div>
+      <div class="card__face card__face--back">
+          <p>Located in the heart of Texas, Dallas serves as a cultural and commercial hub for the region.
+              Jam-packed with wonderful eats any foodie could dream of, sports teams, like the Dallas Stars, to watch in the evenings, and
+              wonderful family attractions like Grapevine, there's something for everyone to enjoy in Dallas!</p>
+      </div>
+    </div>
+  </div>
+       
+  <script>
+      
+      var card = document.querySelector('.card');
+      card.addEventListener( 'click', function() {
+       card.classList.toggle('is-flipped');
+      });
+          
+  </script>
   </main>
-  <footer class="static-bottom">
+  <footer>
       &copy; Buffalo Wild Wings Airport
   </footer>
   <script src="jquery.min.js"></script>
-  <script src="bootstrap.bundle.js"></script>
 </body>
 </html>
