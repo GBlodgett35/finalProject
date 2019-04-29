@@ -301,3 +301,146 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 padding:5px;
 background-color: white;
 }
+/* Styling for flight booking box */
+.booking{
+  text-align: center;
+  background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
+  background-color: rgb(56, 56, 56);
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-x: auto;
+}
+/* Styling for ticket_cost id paragraph */
+#ticket_cost{
+color: #000000;
+}
+/* Styling for PayPal picture */
+#PP{
+vertical-align: middle;
+margin-left: auto;
+margin-right: auto;
+align-content: center;
+height: 30px;
+width: 50px;
+opacity: inherit;
+}
+/* Styling for body tag */
+body{
+max-width: 100%;
+background-image: url(../images/neutralBackground.jfif);
+font-family: Verdana, Geneva, sans-serif;
+}
+/* Styling for html tag */
+html{
+height: 100%;
+}
+/* Styling for anchor tags */
+a{
+color: #000000;
+font-size: 14px;
+}
+/* Styling for why fly Buffalo Wild Wings div */
+.why{
+text-align: center;
+margin: 3%;
+border-style: outset;
+box-shadow: 7px 7px grey;
+background-color: #ffffff;
+}
+/* Styling for locations tag */
+.locations{
+text-align: center;
+margin: 3%;
+border-style: outset;
+box-shadow: 7px 7px grey;
+background-color: #ffffff;
+}
+/* Styling for booking class */
+.booking{
+text-align: center;
+margin: 3%;
+border-style: outset;
+box-shadow: 7px 7px grey;
+background-color: #ffffff;
+font-size: 18px;
+}
+/* Styling for main_image class */
+.main_image{
+min-width: 100%;
+height: 10%;
+left: 0;
+right: 0;
+margin: 0;
+padding: 0;
+top: 0;
+bottom: 0;
+overflow-x: auto;
+background-size: contain;
+}
+/* Styling for main_image class image */
+.main_image img{
+max-width: 100%;
+min-width: 300px;
+height: auto;
+}
+/* Styling for footer tag */
+footer{
+text-align: center;
+position: static;
+left: 0;
+right: 0;
+bottom: 0;
+margin: 0;
+padding: 0;
+}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+background-color: transparent;
+width: 75%;
+height: 280px;
+border: 1px solid #f1f1f1;
+perspective: 1000px; /* Remove this if you don't want the 3D effect */
+margin: 3%;
+margin-left: 12%;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+background-color: #bbb;
+color: black;
+}
+
+/* Style the back side of the flip card */
+.flip-card-back {
+background-color: dodgerblue;
+color: white;
+transform: rotateY(180deg);
+overflow-y: scroll;
+font-size: 18px;
+}
+}
