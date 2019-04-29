@@ -222,9 +222,11 @@ background-color: inherit;
 .full-width {
 width:100%;
 }
+
+
 html, body {
 margin: 0;
-height: 100%;
+/*height: 100%;*/
 }
 .progressBar {
   background-color: black;
@@ -443,4 +445,4 @@ transform: rotateY(180deg);
 overflow-y: scroll;
 font-size: 18px;
 }
-}
+

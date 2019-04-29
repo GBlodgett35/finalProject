@@ -13,16 +13,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   <style>
     /*Styling for just this page goes here*/
 
-    .progress {
-      text-align: center;
- width: 90%;
- border: 1px solid black;
- border-radius: 25px;
- position: relative;
- padding: 3px;
- background-color: rgba(0, 0, 0, 0.658);
-
-}
+    
 /*main {
   background-image: url("images/gray.jpg");
   background-repeat: no-repeat;
@@ -106,7 +97,9 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .foo {
-  z-index: 100;
+  list-style: square;
+  columns: 1;
+  list-style-position: inside;
 }
 /* Add some padding inside the card container */
 .container {
@@ -116,8 +109,17 @@ main ul {
   list-style: none;
   padding-left: 5px;
 }
+
+body{
+    background: #ffffff;
+    max-width: auto;
+  }
+  html {
+    width:100%; /* take full browser width */
+     height:100%;
+  }
 @media only screen and (min-width: 768px) {
- main ul {
+ .box-list {
     columns: 3;
     display: list-item;
   }
@@ -125,6 +127,19 @@ main ul {
     margin-top: 0;
     margin-bottom: 5px;
   }
+  #short-term, #long-term, #economy {
+ height: 20px;
+ border-radius: 25px;
+ /*background-color: rgb(0, 132, 194);*/
+ background-image:
+	   -webkit-linear-gradient(-45deg,
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%,
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top,
+	                           rgba(255, 255, 255, .25),
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, rgb(255, 255, 255), rgb(0, 153, 255));
+}
   
 }
 
@@ -255,6 +270,7 @@ main ul {
         <div id="economy"></div>
         </div>
       <br />
+      <div class="desktop">
     <table>
     <tr><td><div class="float-box"><div class="container">
 
@@ -287,6 +303,52 @@ main ul {
     <p>Daily maximum is calculated on a 24-hour basis.</p>
       </div></div></td></tr>
     </table>
+    </div>
+    <div class="mobile">
+
+      <ul class="box-list">
+        <li><div class="float-box"><div class="container">
+    
+          <h3><b>Short Term Parking</b></h3>
+          <p>Ideal for travelers requiring parking less than 24 hours. The most convenient for dropping off and picking up passengers. Direct access to Transit Level.</p>
+    
+          <p><b>RATES:</b></p>
+          <p>$2.00 for 1st hour</p>
+          <p>$4.00 each additional hour</p>
+          <p>$26.00 daily max</p>
+          <p>Daily max is calculated on a 24-hour basis. All hours exceeding a 24-hour period will be charged at the hourly rate up to the daily max.</p>
+        </div></div></li>
+        <li><div class="float-box"><div class="container">
+        <h3><b>Long Term Parking</b></h3>
+        <p>This section is for those who are going to be gone for more than a day. We offer vallet services and will take your car to the long term parking garage.</p>
+        <p><b>RATES:</b></p>
+        <p>$20.00 for 1st day</p>
+        <p>$8.00 each additional hour</p>
+        <p>$200.00 daily max</p>
+        <p>The long term storage garage is protected from the weather and has ample secutriy to ensure your vehicle is safe at all times. The max time allowed to park is 30 days</p>
+        </div></div></li>
+        <li><div class="float-box"><div class="container">
+        <h3><b>Extended Economy Parking</b></h3>
+        <p>The most economical lot for the traveler on long trips. Free shuttle service to/from the terminal via buses.</p>
+        <p><b>RATES:</b></p>
+        <p>Free 1st hour</p>
+        <p>$2.00 for 2nd hour</p>
+        <p>After 2 hours, the normal rate of $8.00/day will go into effect</p>
+        <p>$8.00 daily max</p>
+        <p>Daily maximum is calculated on a 24-hour basis.</p>
+          </div></div></li>
+        </ul>
+      </div>
+      <h2>Helpful info:</h2>
+      <ul class="foo"> 
+        <li>Buffalo Wild Wings Airport parking is handicap accessible</li>
+        <li>We offer free parking for any members of the military</li>
+        <li>All parking is covered and safe from inclimate weather</li>
+        <li>We accept all major credit cards and US dollars, European Euro, British Pound, and Canadian dollar</li>
+
+      </ul>
+        
+
   </main>
   <footer>
       &copy; Buffalo Wild Wings Airport
