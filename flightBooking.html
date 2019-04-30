@@ -15,96 +15,24 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   body {
     background: #ffffff;
   }
-   /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+   .payment {
+     margin-left: auto;
+     margin-right: auto;
+     padding: 2px 16px;
+   }
+   .float-box {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding:5px;
+  margin-top: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #ffffff;
 }
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container 
-.flip-card:hover */
-
-.flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-/* Style the back side */
-.flip-card-back {
-  color: black;
-  transform: rotateY(180deg);
-}
-
-
-.scene {
-  width: 100%;
-  height: 100%;
-  margin: 40px 0;
-  perspective: 600px;
-
-  position: relative;
-  text-align: center;
-  color: white;
-
-}
-
-.card {
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  position: relative;
-}
-
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  backface-visibility: hidden;
-}
-
-.card__face--back {
-  transform: rotateY(180deg);
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* On mouse-over, add a deeper shadow */
+.float-box:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
   
   </style>
@@ -184,7 +112,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       <div class="bar"></div>
   </nav>
   <main>
-<<<<<<< HEAD
+
       
        
 <!--<div class="scene">
@@ -200,7 +128,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       </div>
     </div>
   </div>-->
-  <div class="payment" >
+  <div class="float-box"><div class="payment" style="overflow-x:auto;">
   <form action = "/cgi-bin/test.cgi" name = "payment" onsubmit = "return(validate());">
     <h2>Payment</h2>
     <table>
@@ -232,7 +160,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
     </table>
     </form>
     <input type = "submit" value = "Submit" onclick=validate() />
-      
+    </div>
 
 
   </div>
@@ -258,13 +186,13 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
             document.payment.EMail.focus() ;
             return false;
          }
-         if( !document.payment.phone.value.match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im")) {
-            
+         //if( !document.payment.phone.value.match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im")) {"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+           if(!document.payment.phone.value.match("^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"))  {
             alert( "Please provide your phone number in the format # ### ### ####." );
             document.payment.phone.focus() ;
             return false;
          }
-         if( document.payment.DOB.value == "" || document.payment.DOB.value.match("/d{2}////d{2}////d{2}") ) {
+         if( document.payment.DOB.value == "" || !document.payment.DOB.value.match("/d{2}////d{2}////d{2}") ) {
             alert( "Please provide your country!" );
             return false;
          }
@@ -273,9 +201,9 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       
           
   </script>
-=======
 
->>>>>>> f26f4b37fae5304cac4062a34de293f8ef0eb781
+
+  <br />
   </main>
   <footer>
       &copy; Buffalo Wild Wings Airport
