@@ -12,97 +12,27 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <style>
-  
-   /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  body {
+    background: #ffffff;
+  }
+   .payment {
+     margin-left: auto;
+     margin-right: auto;
+     padding: 2px 16px;
+   }
+   .float-box {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding:5px;
+  margin-top: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #ffffff;
 }
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container 
-.flip-card:hover */
-
-.flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-/* Style the back side */
-.flip-card-back {
-  color: black;
-  transform: rotateY(180deg);
-}
-
-
-.scene {
-  width: 100%;
-  height: 100%;
-  margin: 40px 0;
-  perspective: 600px;
-
-  position: relative;
-  text-align: center;
-  color: white;
-
-}
-
-.card {
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  position: relative;
-}
-
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  backface-visibility: hidden;
-}
-
-.card__face--back {
-  transform: rotateY(180deg);
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* On mouse-over, add a deeper shadow */
+.float-box:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
   
   </style>
@@ -182,9 +112,10 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       <div class="bar"></div>
   </nav>
   <main>
+
       
        
-<div class="scene">
+<!--<div class="scene">
     <div class="card">
       <div class="card__face card__face--front">
           <img src="images/dallas.jpg" alt="Avatar" style="width:300px;height:300px;">
@@ -196,16 +127,83 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               wonderful family attractions like Grapevine, there's something for everyone to enjoy in Dallas!</p>
       </div>
     </div>
-  </div>
-       
-  <script>
+  </div>-->
+  <div class="float-box"><div class="payment" style="overflow-x:auto;">
+  <form action = "/cgi-bin/test.cgi" name = "payment" onsubmit = "return(validate());">
+    <h2>Payment</h2>
+    <table>
+      <tr>
+        <td><input type="text" id="fName" placeholder="First Name" /></td>
       
-      var card = document.querySelector('.card');
-      card.addEventListener( 'click', function() {
-       card.classList.toggle('is-flipped');
-      });
+      <td>
+          <input type="text" id="lName" placeholder="Last Name" />
+      </td>
+      <td>
+          <input type="text" id="mName" placeholder="Middle Initial" />
+      </td>
+    </tr>
+      <tr>
+          <td><input type="text" id="phone" placeholder="Phone Number" /></td>
+      
+       
+         <td><input type="text" id="email" placeholder="Email Address" /></td>
+       
+      
+            <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
+        <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
+
+      </tr>
+      
+    </table>
+    </form>
+    <input type = "submit" value = "Submit" onclick=validate() />
+    </div>
+
+
+  </div>
+  <script>
+      function validate() {
+        if( document.payment.fName.value == "" ) {
+            alert( "Please provide your first name!" );
+            document.payment.fName.focus() ;
+            return false;
+         }
+         if( document.payment.lName.value == "" ) {
+            alert( "Please provide your last name!" );
+            document.paynment.fName.focus() ;
+            return false;
+         }
+         if( document.payment.mName.value == "" ) {
+            alert( "Please provide your middle initial!" );
+            document.payment.fName.focus() ;
+            return false;
+         }
+         if( document.payment.email.value == "" ) {
+            alert( "Please provide your Email!" );
+            document.payment.EMail.focus() ;
+            return false;
+         }
+         //if( !document.payment.phone.value.match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im")) {"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+           if(!document.payment.phone.value.match("^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"))  {
+            alert( "Please provide your phone number in the format # ### ### ####." );
+            document.payment.phone.focus() ;
+            return false;
+         }
+         if( document.payment.DOB.value == "" || !document.payment.DOB.value.match("/d{2}////d{2}////d{2}") ) {
+            alert( "Please provide your country!" );
+            return false;
+         }
+         return( true );
+      }
+      
           
   </script>
+
+
+  <br />
   </main>
   <footer>
       &copy; Buffalo Wild Wings Airport
