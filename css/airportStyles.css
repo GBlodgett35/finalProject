@@ -1,28 +1,25 @@
 /* IS 270 Final Project
 Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
 
-/*Defines the styles for every page in the website*/
+/* Defines the styles for every page in the website */
 
 @media only screen and (max-width: 767px) {
-    .desktop {
-      display: none;
-    }
-    /* Styling for flight booking box */
-    .booking{
-      text-align: center;
-      background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
-      background-color: rgb(56, 56, 56);
-      max-width: 100%;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      overflow-x: auto;
+  .desktop {
+    display: none;
   }
-    /* Styling for ticket_cost id paragraph */
+  .booking{
+    text-align: center;
+    background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
+    background-color: rgb(56, 56, 56);
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow-x: auto;
+  }
   #ticket_cost{
     color: #000000;
   }
-  /* Styling for PayPal picture */
   #PP{
     vertical-align: middle;
     margin-left: auto;
@@ -32,138 +29,53 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     width: 50px;
     opacity: inherit;
   }
-  /* Styling for body tag */
   body{
     max-width: 100%;
     background-image: url(../images/neutralBackground.jfif);
     font-family: Verdana, Geneva, sans-serif;
   }
-/* Styling for html tag */
-html{
-    height: 100%;
-  }
-  /* Styling for anchor tags */
   a{
     color: #000000;
     font-size: 14px;
   }
-/* Styling for why fly Buffalo Wild Wings div */
 .why{
     text-align: center;
     margin: 3%;
     border-style: outset;
     box-shadow: 7px 7px grey;
     background-color: #ffffff;
+    font-size: 24px;
   }
-/* Styling for locations tag */
-.locations{
+.locations {
     text-align: center;
     margin: 3%;
     border-style: outset;
     box-shadow: 7px 7px grey;
     background-color: #ffffff;
   }
-/* Styling for booking class */
 .booking{
-    text-align: center;
     margin: 3%;
     border-style: outset;
     box-shadow: 7px 7px grey;
     background-color: #ffffff;
   }
-/* Styling for main_image class */
 .main_image{
-    min-width: 100%;
-    height: 10%;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    bottom: 0;
-    overflow-x: auto;
-    background-size: contain;
-  }
-/* Styling for main_image class image */
+  min-width: 100%;
+  height: 10%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: auto;
+  background-size: contain;
+}
 .main_image img{
-    max-width: 100%;
-    min-width: 300px;
-    height: auto;
-  }
-
-/* Styling for footer tag */
-footer{
-    text-align: center;
-    position: static;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-  }
-  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 400px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  margin: 3%;
-  box-shadow: 7px 7px grey;
+  max-width: 100%;
+  min-width: 300px;
+  height: auto;
 }
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 400px;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-/* Style the back side of the flip card */
-.flip-card-back {
-  background-color: #42a1f4;
-  color: white;
-  transform: rotateY(180deg);
-  overflow-y: scroll;
-}
-.accordion {
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-.panel {
-  display: none;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
 }
 @media only screen and (min-width: 768px) {
   .mobile {
@@ -189,6 +101,44 @@ footer{
     font-size: 3em;
     z-index: inherit;
   }
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 55%;
+  height: 500px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin: 3%;
+  margin-left: 23%;
+}
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+.flip-card-back {
+  background-color: #42a1f4;
+  color: white;
+  transform: rotateY(180deg);
+  overflow-y: scroll;
+  font-size: 24px;
+}
 }
 nav ul {
   list-style-type: none;
@@ -225,16 +175,11 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
- /* position: fixed;*/
-}
-.bar{
-  background-color:rgb(0, 153, 255);
-  height: 5px;
+  position: fixed;
 }
 .center{
   text-align: center;
 }
-
 .bg-light {
   background-color: #f8f9fa !important;
 }
@@ -242,7 +187,6 @@ body, h1 {
 margin-top:0;
 margin-bottom: 0;
 }
-
 header h1 {
 font-weight: normal;
 }
@@ -254,8 +198,6 @@ background-color: inherit;
 .full-width {
 width:100%;
 }
-
-
 html, body {
 margin: 0;
 /*height: 100%;*/
@@ -267,30 +209,21 @@ margin: 0;
   padding: 3px;
 }
 
-.progressBar>div {
+.progressBar div {
   background-color: rgb(0, 153, 255);
   width: 40%;
   /* Adjust with JavaScript */
   height: 20px;
   border-radius: 10px;
 }
-
-  /* Styling for flight booking box */
-.booking{
-    text-align: center;
-    background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
-    background-color: rgb(56, 56, 56);
-  }
-
 .progress {
   text-align: center;
-width: 90%;
-border: 1px solid black;
-border-radius: 25px;
-position: relative;
-padding: 3px;
-background-color: rgba(0, 0, 0, 0.658);
-
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 25px;
+  position: relative;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0.658);
 }
 
 #percent1, #percent2, #percent3 {
@@ -317,72 +250,6 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 padding:5px;
 background-color: white;
 }
-/* Styling for flight booking box */
-.booking{
-  text-align: center;
-  background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
-  background-color: rgb(56, 56, 56);
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  overflow-x: auto;
-}
-/* Styling for ticket_cost id paragraph */
-#ticket_cost{
-color: #000000;
-}
-/* Styling for PayPal picture */
-#PP{
-vertical-align: middle;
-margin-left: auto;
-margin-right: auto;
-align-content: center;
-height: 30px;
-width: 50px;
-opacity: inherit;
-}
-/* Styling for body tag */
-body{
-max-width: 100%;
-background-image: url(../images/neutralBackground.jfif);
-font-family: Verdana, Geneva, sans-serif;
-}
-/* Styling for html tag */
-html{
-height: 100%;
-}
-/* Styling for anchor tags */
-a{
-color: #000000;
-font-size: 14px;
-}
-/* Styling for why fly Buffalo Wild Wings div */
-.why{
-text-align: center;
-margin: 3%;
-border-style: outset;
-box-shadow: 7px 7px grey;
-background-color: #ffffff;
-font-size: 24px;
-}
-/* Styling for locations tag */
-.locations{
-text-align: center;
-margin: 3%;
-border-style: outset;
-box-shadow: 7px 7px grey;
-background-color: #ffffff;
-}
-/* Styling for booking class */
-.booking{
-text-align: center;
-margin: 3%;
-border-style: outset;
-box-shadow: 7px 7px grey;
-background-color: #ffffff;
-font-size: 18px;
-}
 /* Styling for main_image class */
 .main_image{
   display: none;
@@ -398,71 +265,10 @@ font-size: 18px;
   background-size: cover;
   width: 100%;
 }
-/* Styling for main_image class image */
 .main_image img{
-width: 100%;
 height: auto;
 display: none;
 }
-/* Styling for footer tag */
-footer{
-text-align: center;
-position: static;
-left: 0;
-right: 0;
-bottom: 0;
-margin: 0;
-padding: 0;
-}
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-background-color: transparent;
-width: 55%;
-height: 500px;
-border: 1px solid #f1f1f1;
-perspective: 1000px; /* Remove this if you don't want the 3D effect */
-margin: 3%;
-margin-left: 23%;
-box-shadow: 7px 7px grey;
-}
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-position: relative;
-width: 100%;
-height: 100%;
-text-align: center;
-transition: transform 0.8s;
-transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-position: absolute;
-width: 100%;
-height: 100%;
-backface-visibility: hidden;
-}
-
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-background-color: #bbb;
-color: black;
-}
-
-/* Style the back side of the flip card */
-.flip-card-back {
-transform: rotateY(180deg);
-overflow-y: scroll;
-font-size: 24px;
-background-color: #42a1f4;
-}
 .guideMobileImg {
   width: 100%;
-}
 }
