@@ -7,7 +7,7 @@
 .about img{
 	width:95%;
 	height:10%;
-	margin:2.5%;
+	/*margin:2.5%;*/
 }
 
 .text{
@@ -30,7 +30,7 @@
 .main{
 	width:80%;
 	height:10%;
-	padding:2.5%;
+	/*padding:2.5%;*/
 }
 
 .main h2{
@@ -95,9 +95,9 @@
 	height:10%;
 }
 .about img{
-	width:95%;
+	/*width:95%;
 	height:10%;
-	margin:2.5%;
+	margin:2.5%;*/
 }
 
 .text{
