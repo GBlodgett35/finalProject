@@ -1,9 +1,8 @@
 /* IS 270 Final Project
 Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
 
-/* Defines the styles for every page in the website */
-
-@media only screen and (max-width: 767px) {
+    /* index */
+@media only screen and (max-width:767px) {
   .desktop {
     display: none;
   }
@@ -73,7 +72,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   height: auto;
 }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
   .mobile {
     display: none;
   }
@@ -82,22 +81,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     color: white;
     text-decoration: none;
   }
-  .guideParallax {
-    background-image: url(../images/terminal.jpg);
-    height: 300px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .guideParallax p {
-    position: absolute;
-    right: 2em;
-    top: 2em;
-    font-size: 3em;
-    z-index: inherit;
-  }
-      /* Flip Card Container*/
   .flip-card {
     background-color: transparent;
     width: 55%;
@@ -105,8 +88,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     perspective: 1000px;    /* Remove this if you don't want the 3D effect */
     margin: 3%;
     margin-left: 23%;
-  }
-      /* This container is needed to position the front and back side */
+  }  
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -136,8 +118,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     font-size: 24px;
   }
 }
-
-    /* index */
 html {
   width: 100%;
   height: 100%;
@@ -333,6 +313,26 @@ background-color: white;
 }
 
     /* guide */
+@media only screen and (max-width:767px) {
+
+}
+@media only screen and (min-width: 768px) {
+  .guideParallax {
+    background-image: url(../images/terminal.jpg);
+    height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .guideParallax p {
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    font-size: 3em;
+    z-index: inherit;
+  }
+}
 .guideMobileImg {
   width: 100%;
 }
