@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <link rel='stylesheet' type='text/css' href='css/airportStyles.css'>
+  <link rel='stylesheet' href='css/animateHamburger.css'>
+  <link rel='stylesheet' href='customer.css'>
+  <link rel='icon' href='images/logo.png'>
+  <title>BWA</title>
+  <meta charset='utf-8'>
+  <meta content='width=device-width, initial-scale=1' name='viewport' />
+</head>
+<body>
+  <header>
+    <div class='center'>
+      <a href='index.html'><h1>Buffalo Wings Airport</h1></a>
+    </div>
+  </header>
+  <nav class='bg-light'>  
+    <div class='mobile'>
+      <button class='navbar-toggler first-button' type='button' data-toggle='collapse' onclick=toggleNav()>
+        <div class='animated-icon1'>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div id='collapse' style='display: none;'>
+        <ul>
+          <li class='full-width'>
+            <a class='nav-link' href='index.html'>Home</a>
+          </li>
+          <li class='full-width'>
+            <a class='nav-link' href='flightBooking.html'>Flight and Booking</a>
+          </li>
+          <li class='full-width'>
+            <a class='nav-link' href='airportGuide.html'>Airport Guide</a>
+          </li>
+          <li class='full-width'>
+            <a class='nav-link' href='parking.html'>Parking and Trasportation</a>
+          </li>
+          <li class='full-width'>
+            <a class='nav-link' href='about.html'>About Buffalo Wings</a>
+          </li>
+        </ul>
+      </div>
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+      <script>
+        $(document).ready(function () {
+          $('.first-button').on('click', function () {
+              $('.animated-icon1').toggleClass('open');
+          });
+          $('.second-button').on('click', function () {
+            $('.animated-icon2').toggleClass('open');
+          });
+          $('.third-button').on('click', function () {
+            $('.animated-icon3').toggleClass('open');
+          });
+        });        
+        function toggleNav() {
+          if(document.getElementById('collapse').style.display === 'none') {
+            document.getElementById('collapse').style.display = 'block';
+          } else {
+            document.getElementById('collapse').style.display = 'none';
+          }
+        }
+      </script>
+    </div>
+    <div class='desktop'>
+      <ul>
+          <li><a href='index.html'>Home</a></li>
+          <li><a href='flightBooking.html'>Flight and Booking</a></li>
+          <li><a href='airportGuide.html'>Airport Guide</a></li>
+          <li><a href='parking.html'>Parking and Trasportation </a></li>
+          <li><a href='about.html'>About Buffalo Wings</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+  
+
+	<div class="customer" style="margin-left:auto; margin-right:auto; text-align: center">
+     <img src="images/customer.jpg" alt="customer" />
+	 <div class="maintext" style="text-align: left"><h2>Customer Service</h2>
+	 <p>We are ready to hear from you-</p></div>
+     </div>
+  
+  
+     <div class="main">
+	 <h2>Frequently Asked Questions</h2>
+	 <br />
+	 
+	<button class="collapsible">Left Baggage</button>
+	<div class="content">
+	<p>Did you lose your baggage at the airport? Don't worry. We have Lost & Found center just for that reason. Keep scrolling down to contact the Lost & Found center.</p> 
+	</div>
+	
+	<button class="collapsible">Baggage Restrictions</button>
+	<div class="content">
+	<p>To protect you and your loved ones when traveling, we ask you not to bring any items that might cause harm. Here is the list of prohibited items:
+	</p> 
+	<ul>
+		<li>Firearms of any kind, including replicas and toys</li>
+		<li>Pointed/edged weapons or sharp objects</li>
+		<li>Blunt objects(ex:bats, skateboards and paddles)</li>
+		<li>Chemical and toxic substances, as well as dangerous goods</li>
+		<li>Corrosive substances(ex: batteries, mercury or drain cleaners)</li>
+	</ul>
+	</div>
+	
+	<button class="collapsible">Connecting Flights</button>
+	<div class="content">
+	<p>This information is for international flights only</p>
+	<p>If you have connecting flights as part of your ticket, you do not need to clear the immigration again. 
+	However, if you have purchased your tickets separately and have flights from different airlines, you would need to clear the arrival immigration. After you have done this procedure, you can collect your checked-in baggages and proceed to check in for your next flight. </p> 
+	<p> For more questions, please check with your airline agent</p>
+	</div>
+	
+	</div>
+<script>var coll = document.getElementsByClassName("collapsible");
+	var i;
+
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if (content.style.display === "block") {
+		  content.style.display = "none";
+		} else {
+		  content.style.display = "block";
+		}
+	  });
+	}
+</script>
+	</div>
+  
+  
+  <br />
+  
+  
+	 <div class="blah">
+	<img src="images/storage.jpg" alt="storage">
+	<div class="text"><h3>Lost & Found</h3>
+	<p>Did you lose you item? Let us help you find it!</p>
+	<p>For Items Lost at the airport,not the plane:<a href="tel:1234567890">(123)456 7890</a></p>
+	<p>For the items lost in the plane, you would need to contact the airline you used.</p>
+	</div>  
+	</div>
+	
+	<div class="blah">
+	<img src="images/booking.jpg" alt="booking">
+	<div class="text"><h3>Flight Booking</h3>
+	<p>Yes, you can book your flights at our website!</p>
+	<p>Visit our website page, <a href="flightBooking.html">Flight Booking</a></p>
+	</div>
+	</div>
+	<div class="blah">
+	<img src="images/cars.jpg" alt="cars">
+	<div class="text"><h3>Parking</h3>
+	<p>We offer several options for parking. If you are interested with our parking options, click the link below.</p>
+	<p><a href="parking.html">Parking</a></p>
+	</div>
+	</div>
+	<div class="blah">
+	<img src="images/phone.jpg" alt="phone">
+	<div class="text"><h3>Customer Service</h3>
+	<p>We care about our customers. Every single opinion from you is very important for us. </p>
+	<p>If you have any complaints or questions, you can let us know by clicking one of the links below</p>
+	<p><a href="tel:1234567890">(123)456 7890</a></p>
+	<p><a href="mailto:bwa@harding.edu"> Send Mail</a></p>
+	</div>
+	</div>
+	<br />
+  
+  </main>
+	<footer>
+		&copy; Buffalo Wings Airport & Harding University
+	</footer>
+</body>
+</html>
