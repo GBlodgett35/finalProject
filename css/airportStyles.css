@@ -10,12 +10,14 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   .booking{
     text-align: center;
     background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
-    background-color: rgb(56, 56, 56);
     max-width: 100%;
-    margin: 0;
     padding: 0;
     border: 0;
     overflow-x: auto;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
   }
   #ticket_cost{
     color: #000000;
@@ -48,12 +50,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   }
 .locations {
     text-align: center;
-    margin: 3%;
-    border-style: outset;
-    box-shadow: 7px 7px grey;
-    background-color: #ffffff;
-  }
-.booking{
     margin: 3%;
     border-style: outset;
     box-shadow: 7px 7px grey;
@@ -101,45 +97,47 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     font-size: 3em;
     z-index: inherit;
   }
-    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
-  background-color: transparent;
-  width: 55%;
-  height: 500px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  margin: 3%;
-  margin-left: 23%;
+      /* Flip Card Container*/
+  .flip-card {
+    background-color: transparent;
+    width: 55%;
+    height: 500px;
+    perspective: 1000px;    /* Remove this if you don't want the 3D effect */
+    margin: 3%;
+    margin-left: 23%;
+  }
+      /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  .flip-card-back {
+    background-color: #42a1f4;
+    color: white;
+    transform: rotateY(180deg);
+    overflow-y: scroll;
+    font-size: 24px;
+  }
 }
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-.flip-card-back {
-  background-color: #42a1f4;
-  color: white;
-  transform: rotateY(180deg);
-  overflow-y: scroll;
-  font-size: 24px;
-}
-}
+
+    /* index */
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -184,35 +182,174 @@ footer {
   background-color: #f8f9fa !important;
 }
 body, h1 {
-margin-top:0;
-margin-bottom: 0;
+  margin-top:0;
+  margin-bottom: 0;
 }
 header h1 {
-font-weight: normal;
+  font-weight: normal;
 }
 nav button {
-outline: none;
-border: none;
-background-color: inherit;
+  outline: none;
+  border: none;
+  background-color: inherit;
 }
 .full-width {
-width:100%;
+  width:100%;
 }
 html, body {
-margin: 0;
-/*height: 100%;*/
+  margin: 0;
 }
+#short-term, #long-term, #economy {
+  height: 20px;
+  border-radius: 25px;
+  background-image:
+  -webkit-linear-gradient(-45deg,
+    transparent 33%, rgba(0, 0, 0, .1) 33%,
+    rgba(0,0, 0, .1) 66%, transparent 66%),
+  -webkit-linear-gradient(top,
+    rgba(255, 255, 255, .25),
+    rgba(0, 0, 0, .25)),
+  -webkit-linear-gradient(left, rgb(0, 153, 255), #f44);
+}
+.float-box{
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+padding:5px;
+background-color: white;
+}
+.main_image, .main_image img{
+  display: none;
+}
+.main_image2{
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  width: 100%;
+}
+
+    /* about */
+@media only screen and (max-width:767px){
+  .about {
+    width:100%;
+  }
+  .about img{
+    width:95%;
+    height:10%;
+  }
+  .text{
+    position:absolute;
+    top:25%;
+    left:10%;
+    color:#FFFFFF;
+  }
+  .text h2{
+    font-size:2em;
+  }
+  .text p{
+    font-size: 1.5em;
+  }
+  .main{
+    width:80%;
+    height:10%;
+  }
+  .main h2{
+    font-size:2.5em;
+  }
+  .main p{
+    font-size:1em;
+  }
+  .vision, .mission{
+    width:90%;
+    height:95%;
+    background-color:#e6f2ff;
+    padding:3%;
+    margin:2%;
+  }
+  .vision img, .mission img{
+    width:90%;
+    height:70%;
+    text-align:center;
+    padding:1em;
+  }
+}
+@media only screen and (min-width:768px){
+  .about {
+    width:100%;
+    height:10%;
+  }
+  .about img {
+    width: 100%;
+  }
+  .text{
+    position:absolute;
+    top:30%;
+    left:10%;
+    color:#FFFFFF;
+  }
+  .main{
+    width: 100%;
+  }
+  .text h2{
+    font-size:3em;
+
+  }
+  .text p{
+    font-size: 2em;
+
+  }
+  .boxes{
+    width:90%;
+    height:auto;
+    text-align:center;
+    background-color:#FFFFFF;
+    padding:5%;
+    bottom:50%;
+  }
+  .vision, .mission{
+    width:40%;
+    float:left;
+    height:18em;
+    background-color:#e6f2ff;
+    padding:2.5%;
+    margin:1em;
+  }
+  .vision img, .mission img{
+    width:50%;
+    height:40%;
+  }
+  .mission{
+    width:40%;
+    float:right;
+    height:18em;
+    background-color:#e6f2ff;
+    padding:2.5%;
+    margin:1em;
+  }
+  .mission img{
+    width:50%;
+    height:40%;
+  }
+}
+
+    /* guide */
+.guideMobileImg {
+  width: 100%;
+}
+
+    /* booking */
+
+    /* parking */
 .progressBar {
   background-color: black;
   border-radius: 13px;
-  /* (height of inner div) / 2 + padding */
   padding: 3px;
 }
-
 .progressBar div {
   background-color: rgb(0, 153, 255);
   width: 40%;
-  /* Adjust with JavaScript */
   height: 20px;
   border-radius: 10px;
 }
@@ -225,49 +362,8 @@ margin: 0;
   padding: 3px;
   background-color: rgba(0, 0, 0, 0.658);
 }
-
 #percent1, #percent2, #percent3 {
 position: absolute;
 left: 50%;
 color:#f8f9fa;
-}
-
-#short-term, #long-term, #economy {
-  height: 20px;
-  border-radius: 25px;
-  background-image:
-  -webkit-linear-gradient(-45deg,
-                          transparent 33%, rgba(0, 0, 0, .1) 33%,
-                          rgba(0,0, 0, .1) 66%, transparent 66%),
-  -webkit-linear-gradient(top,
-                          rgba(255, 255, 255, .25),
-                          rgba(0, 0, 0, .25)),
-  -webkit-linear-gradient(left, rgb(0, 153, 255), #f44);
-}
-.float-box{
-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-padding:5px;
-background-color: white;
-}
-/* Styling for main_image class */
-.main_image{
-  display: none;
-}
-/* Styling for main_image2 class */
-.main_image2{
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  bottom: 0;
-  background-size: cover;
-  width: 100%;
-}
-.main_image img{
-height: auto;
-display: none;
-}
-.guideMobileImg {
-  width: 100%;
 }
