@@ -90,9 +90,82 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         <audio controls src="sleepAway.mp3">
           <p>Your browser does not support the audio element.</p>
         </audio>
-      <form>
-
-      </form>
+   
+        <div class="float-box"><div class="payment" style="overflow-x:auto;">
+          <form action="pay.php" method="POST" name = "payment" onsubmit = "return(validate());">
+            <h2>Payment</h2>
+            <table>
+              <tr>
+                <td><input type="text" id="fName" placeholder="First Name" /></td>
+        
+              <td>
+                  <input type="text" id="lName" placeholder="Last Name" />
+              </td>
+              <td>
+                  <input type="text" id="mName" placeholder="Middle Initial" />
+              </td>
+            </tr>
+              <tr>
+                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
+        
+        
+                 <td><input type="text" id="email" placeholder="Email Address" /></td>
+        
+        
+                    <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
+                <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
+        
+              </tr>
+        
+            </table>
+            </form>
+            <input type = "submit" value = "Submit" onclick=validate() />
+            </div>
+        
+        
+          </div>
+          <script>
+              function validate() {
+                if( document.payment.fName.value == "" ) {
+                    alert( "Please provide your first name!" );
+                    document.payment.fName.focus() ;
+                    return false;
+                 }
+                 if( document.payment.lName.value == "" ) {
+                    alert( "Please provide your last name!" );
+                    document.paynment.fName.focus() ;
+                    return false;
+                 }
+                 if( document.payment.mName.value == "" ) {
+                    alert( "Please provide your middle initial!" );
+                    document.payment.fName.focus() ;
+                    return false;
+                 }
+                 if( document.payment.email.value == "" ) {
+                    alert( "Please provide your Email!" );
+                    document.payment.EMail.focus() ;
+                    return false;
+                 }
+                 //if( !document.payment.phone.value.match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im")) {"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+                   if(!document.payment.phone.value.match("/\d/g").length===10)  {
+                    alert( "Please provide your phone number in the format # ### ### ####." );
+                    document.payment.phone.focus() ;
+                    return false;
+                 }
+                 if( document.payment.DOB.value == "" || !document.payment.DOB.value.match("/d{2}////d{2}////d{2}") ) {
+                    alert( "Please provide your country!" );
+                    return false;
+                 }
+                 return( true );
+              }
+              
+                  
+          </script>
+        
+     
     </div>
   </main>
   <footer>
