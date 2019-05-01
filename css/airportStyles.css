@@ -164,6 +164,10 @@ footer {
 .center{
   text-align: center;
 }
+.center a {
+  text-decoration: none;
+  color: black;
+}
 .bg-light {
   background-color: #f8f9fa !important;
 }
