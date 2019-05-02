@@ -6,6 +6,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   .desktop {
     display: none;
   }
+  /* Styling for area where you can book a flight ticket */
   .booking{
     text-align: center;
     background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
@@ -18,9 +19,11 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     box-shadow: 7px 7px grey;
     background-color: #ffffff;
   }
+  /* Styling for text that displays ticket price */
   #ticket_cost{
     color: #000000;
   }
+  /* Styling for PayPal image */
   #PP{
     vertical-align: middle;
     margin-left: auto;
@@ -30,15 +33,22 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     width: 50px;
     opacity: inherit;
   }
+  /* Styling for body tag */
   body{
     max-width: 100%;
     background: #ffffff;
     font-family: Verdana, Geneva, sans-serif;
   }
+  /* Styling for body_main */
+  #body_main{
+    background-image: url('../images/neutralBackground.jfif');
+  }
+  /* Styling for anchor tags */
   a{
     color: #000000;
     font-size: 14px;
   }
+  /* Styling for why fly buffalo wild wings */
 .why{
     text-align: center;
     margin: 3%;
@@ -47,6 +57,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     background-color: #ffffff;
     font-size: 24px;
   }
+  /* Styling for Locations tag */
 .locations {
     text-align: center;
     margin: 3%;
@@ -54,6 +65,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     box-shadow: 7px 7px grey;
     background-color: #ffffff;
   }
+  /* Styling for main_image class */
 .main_image{
   min-width: 100%;
   height: 10%;
@@ -66,6 +78,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   overflow-x: auto;
   background-size: contain;
 }
+/* Styling for main_image class images */
 .main_image img{
   max-width: 100%;
   min-width: 300px;
@@ -76,11 +89,70 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   .mobile {
     display: none;
   }
+  /* Styling for area where you can book a flight ticket */
+  .booking{
+    text-align: center;
+    background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    overflow-x: auto;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+  }
+  /* Styling for text that displays ticket price */
+  #ticket_cost{
+    color: #000000;
+  }
+  /* Styling for PayPal image */
+  #PP{
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    height: 30px;
+    width: 50px;
+    opacity: inherit;
+  }
+  /* Styling for body_main */
+  #body_main{
+    background-image: url('../images/neutralBackground.jfif');
+  }
+  /* Styling for anchor tags */
+  a{
+    color: #000000;
+    font-size: 14px;
+  }
+  /* Styling for why fly buffalo wild wings */
+.why{
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+    font-size: 24px;
+  }
+  /* Styling for Locations tag */
+.locations {
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+    font-size: 24px;
+  }
   nav li a:hover {
     background-color: #555;
     color: white;
     text-decoration: none;
   }
+  /* Styling for h3 tags */
+  h3{
+    font-size: 28px;
+  }
+  /* Begin styling section for flip cards */
   .flip-card {
     background-color: transparent;
     width: 55%;
@@ -88,7 +160,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     perspective: 1000px;    /* Remove this if you don't want the 3D effect */
     margin: 3%;
     margin-left: 23%;
-  }  
+  }
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -115,7 +187,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     color: white;
     transform: rotateY(180deg);
     overflow-y: scroll;
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 html {
@@ -141,9 +213,11 @@ nav li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+/* Styling for main tag */
 main {
   padding: 5px;
 }
+/* Styling for header tag */
 header{
   background-color: #dddddd;
   margin-bottom: 0em;
@@ -187,6 +261,7 @@ nav button {
 .full-width {
   width:100%;
 }
+/* Styling for html and body tags */
 html, body {
   margin: 0;
 }
@@ -195,9 +270,11 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 padding:5px;
 background-color: white;
 }
+/* Hiding other images on main page */
 .main_image, .main_image img{
   display: none;
 }
+/* Styling for airplane image on home page */
 .main_image2{
   left: 0;
   right: 0;
@@ -348,12 +425,12 @@ background-color: white;
   padding: 2px 16px;
 }
     /* parking */
-    .parallax { 
+    .parallax {
       /* The image used */
-      
-    
+
+
       /* Set a specific height */
-      height: 500px; 
+      height: 500px;
           width:100%;
       /* Create the parallax scrolling effect */
       background-attachment: fixed;
@@ -363,7 +440,7 @@ background-color: white;
     }
     .inner-box{
       opacity: .8;
-      background-color: #f0f0f0; 
+      background-color: #f0f0f0;
     }
 @media only screen and (max-width: 767px) {
  nav {
@@ -393,8 +470,8 @@ background-color: white;
 }
 @media only screen and (min-width: 768px) {
   .inner-box {
-    width:50%; 
-      margin-left:25%; 
+    width:50%;
+      margin-left:25%;
       margin-right: 25%;
   }
   .box-list {
