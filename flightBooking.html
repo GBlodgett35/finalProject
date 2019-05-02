@@ -44,6 +44,9 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               <li class="full-width">
                  <a class="nav-link" href="about.html">About Buffalo Wings</a>
                </li>
+               <li class="full-width">
+                <a class="nav-link" href="Customer Service.html">Customer Service</a>
+              </li>
             </ul>
           </div>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -78,100 +81,156 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                 <li><a href="airportGuide.html">Airport Guide</a></li>
                 <li><a href="parking.html">Parking and Trasportation </a></li>
                 <li><a href="about.html">About Buffalo Wings</a></li>
+                <li><a href="Customer Service.html">Customer Service</a></li>
             </ul> 
 
          </div>
       <div class="bar"></div>
   </nav>
   <main>
+    <div class="AirlineLogo"> 
+      <a href="https://www.swiss.com/us/en#">
+          <img src="images/airswiss.png" alt="Swiss Airport Link">
+      </a>
+  </div>
     
-    <div class="flightbookingsearch">
-
-        <audio controls src="sleepAway.mp3">
-          <p>Your browser does not support the audio element.</p>
-        </audio>
-   
-        <div class="float-box"><div class="payment" style="overflow-x:auto;">
-          <form action="pay.php" method="POST" name = "payment" onsubmit = "return(validate());">
-            <h2>Payment</h2>
-            <table>
-              <tr>
-                <td><input type="text" id="fName" placeholder="First Name" /></td>
-        
-              <td>
-                  <input type="text" id="lName" placeholder="Last Name" />
-              </td>
-              <td>
-                  <input type="text" id="mName" placeholder="Middle Initial" />
-              </td>
-            </tr>
-              <tr>
-                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-        
-        
-                 <td><input type="text" id="email" placeholder="Email Address" /></td>
-        
-        
-                    <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
-              </tr>
-              <tr>
-                <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
-                <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
-        
-              </tr>
-        
-            </table>
-            </form>
-            <input type = "submit" value = "Submit" onclick=validate() />
-            </div>
-        
-        
-          </div>
+      <div class="booking">
+          <!-- Begin ticket purchasing form -->
+          <h2>Book Your Flight</h2>
+          <form>
+          City :<br />
+          <select name="City">
+            <option value="LA">Los Angeles, CA</option>
+            <option value="DA">Dallas, TX</option>
+            <option value="London">London, England</option>
+            <option value="Paris">Paris, France</option>
+            <option value="Amsterdam">Amsterdam, Netherlands</option>
+            <option value="Barcelona">Barcelona, Spain</option>
+            <option value="Dublin">Dublin, Ireland</option>
+            <option value="Frankfurt">Frankfurt, Germany</option>
+            <option value="Edinburgh">Edinburgh, Scotland</option>
+            <option value="Atlanta">Atlanta, Georgia</option>
+          </select>
+          <br />
+          # of Passengers : <br />
+          <div class="center"><input type="text" id="indexFlightPassenger" placeholder="# of Passengers" /></div>
+          Departure Date : <br />
+          <div class="center"><input type="date" id="indexFlightDateDepart" /></div>
+          Return Date : <br />
+          <div class="center"><input type="date" id="indexFlightDateReturn" /></div>
+          <br />
+          Ticket(s) Class: <br />
+          <input type="radio" id="indexFlightEconomy" name="ticket" value="Economy" />Economy
+          <input type="radio" id="indexFlightBusiness" name="ticket" value="Business" />Business
+          <input type="radio" id="indexFlightFirstClass" name="ticket" value="First Class" />First Class
+          <br />
+          <br />
+          <button  type="button" Onclick="document.getElementById('ticket_cost').innerHTML = RndInteger(150,8000)">Calculate Price</button>
+          <input type="reset" id="indexFlightReset" value="Reset">
+          </form>
+          <br />
+          <h3>Ticket Price</h3>
+          <p>Your ticket price in USD($) is:</p>
+          <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
+          <p id="ticket_cost"></p>
+          <button type="button" id="payment">Pay with us using PayPal!</button>
+          <!-- Script to take user to paypal to collect payment -->
           <script>
-              function validate() {
-                if( document.payment.fName.value == "" ) {
-                    alert( "Please provide your first name!" );
-                    document.payment.fName.focus() ;
-                    return false;
-                 }
-                 if( document.payment.lName.value == "" ) {
-                    alert( "Please provide your last name!" );
-                    document.paynment.fName.focus() ;
-                    return false;
-                 }
-                 if( document.payment.mName.value == "" ) {
-                    alert( "Please provide your middle initial!" );
-                    document.payment.fName.focus() ;
-                    return false;
-                 }
-                 if( document.payment.email.value == "" ) {
-                    alert( "Please provide your Email!" );
-                    document.payment.EMail.focus() ;
-                    return false;
-                 }
-                 //if( !document.payment.phone.value.match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im")) {"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
-                 var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
-                   if(!re.test(document.payment.phone.value))  {
-                    alert( "Please provide your phone number in the format # ### ### ####." );
-                    document.payment.phone.focus() ;
-                    return false;
-                 }
-                 var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
-                 if( document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value) ) {
-                    alert( "Please provide your DOB!" );
-                    return false;
-                 }
-                 return( true );
-              }
-              
+          document.getElementById("payment").onclick = function () {
+          location.href = "https://www.paypal.com/us/home";
+          };
           </script>
+          <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+          <!-- Script created to generate random number -->
+          <script>
+          function RndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+          }
+          </script>
+          <br />
+          <br />
+          <br />
+        <div class="AirlineLogo"> 
+            <a href="https://www.swiss.com/us/en#">
+                <img src="images/airswiss.png" alt="Swiss Airport Link">
+            </a>
         </div>
+
+
+
         <div class="booking">
             <h1>Have a long Layover? </h1>
-            <p>Place holder text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  </p>
+            <p> Visit our <a href="airportGuide.html">Airport Guide</a>page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
         </div>
+      </div>
+        <div class="flightbookingsearch">
+     
+          <div class="float-box"><div class="payment" style="overflow-x:auto;">
+            <!---->
+            <form action="pay.php" method="POST" name = "payment" onsubmit = "return(validate());">
+              <h2>Payment</h2>
+              <table>
+                <tr>
+                  <td><input type="text" id="fName" placeholder="First Name" /></td>
+          
+                <td>
+                    <input type="text" id="lName" placeholder="Last Name" />
+                </td>
+                <td>
+                    <input type="text" id="mName" placeholder="Middle Initial" />
+                </td>
+              </tr>
+                <tr>
+                    <td><input type="text" id="phone" placeholder="Phone Number" /></td>
+          
+          
+                   <td><input type="text" id="email" placeholder="Email Address" /></td>
+          
+          
+                      <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
+                  <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
+          
+                </tr>
+          
+              </table>
+              
+              <input type="submit" value="Submit" />
+              </form>
+              </div>
+
+      <div class="AirlineLogo"> 
+        <a href="https://www.aa.com/homePage.do">
+        <img src="images/american.png" alt="American Airline Link">
+        </a>
+      </div>
+      <div class="AirlineLogo"> 
+        <a href="https://www.airfrance.us/">
+        <img src="images/airfrance.svg" alt="Air France Airline Link">
+        </a>
+      </div>
+      <div class="AirlineLogo"> 
+          <a href="https://www.cathaypacific.com/cx/en_US.html">
+          <img src="images/cathy.svg" alt="Cathy Airline Link">
+          </a>
+      </div>
+      <div class="AirlineLogo"> 
+          <a href="https://www.delta.com/">
+          <img src="images/delta.svg" alt="Delta Airline Link">
+          </a>
+      </div>
+      <div class="AirlineLogo"> 
+        <a href="https://www.swiss.com/us/en#">
+        <img src="images/airswiss.png" alt="Swiss Airline Link">
+        </a>
+      </div>
+      <div class="booking">
+        <h1>Have a long Layover? </h1>
+        <p> Visit our <a href="airportGuide.html">Airport Guide</a>page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
+      </div>
+
   </main>
   <footer>
     &copy; Buffalo Wings Airport & Harding University

@@ -48,6 +48,12 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     color: #000000;
     font-size: 14px;
   }
+  /* Styling for flight booking page */
+  .AirlineLogo img
+  {
+    width: 100%;
+    height: 50px;
+  }
   /* Styling for why fly buffalo wild wings */
 .why{
     text-align: center;
@@ -101,6 +107,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     border-style: outset;
     box-shadow: 7px 7px grey;
     background-color: #ffffff;
+    font-size: 28px;
   }
   /* Styling for text that displays ticket price */
   #ticket_cost{
@@ -143,6 +150,21 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     background-color: #ffffff;
     font-size: 24px;
   }
+  /* Search bar in navigation menu */
+  #search_bar{
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-top: 11px;
+  }
+  /* Making search bar expand to become larger */
+  #search_bar:focus{
+    width: 50%;
+  }
+  /* Adding pointer cursor for search bar button */
+  #search_button{
+    cursor: pointer;
+  }
   nav li a:hover {
     background-color: #555;
     color: white;
@@ -160,6 +182,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     perspective: 1000px;    /* Remove this if you don't want the 3D effect */
     margin: 3%;
     margin-left: 23%;
+    box-shadow: 7px 7px grey;
   }
   .flip-card-inner {
     position: relative;
@@ -169,25 +192,29 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
+  /* Styling on-hover effect for flip-cards */
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
+  /* Styling both the front and the back of the flip-card */
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
   }
+  /* Styling the front of the flip-cards */
   .flip-card-front {
     background-color: #bbb;
     color: black;
   }
+  /* Styling the back of the flip-cards */
   .flip-card-back {
     background-color: #42a1f4;
     color: white;
     transform: rotateY(180deg);
-    overflow-y: scroll;
     font-size: 28px;
+    overflow-y: scroll;
   }
 }
 html {
@@ -266,7 +293,7 @@ html, body {
   margin: 0;
 }
 .float-box{
-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+box-shadow: 0 4px 8px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 padding:5px;
 background-color: white;
 }
@@ -426,11 +453,12 @@ background-color: white;
 }
     /* parking */
     .parallax {
-      /* The image used */
+ 
 
 
       /* Set a specific height */
-      height: 500px;
+      min-height: 500px;
+      height: auto;
           width:100%;
       /* Create the parallax scrolling effect */
       background-attachment: fixed;
@@ -446,15 +474,10 @@ background-color: white;
  nav {
    background-color: #DDDDDD;
  }
-  .parallax {
-    height: auto;
-  }
-  /*header {
-    background: transparent;
-    position: relative;
-    text-align: center;
-  }*/
-  #short-term, #long-term, #economy {
+ #third {
+  background-image: url('../images/carRentalMobile.jpg');
+}
+ /* #short-term, #long-term, #economy {
     height: 20px;
     border-radius: 25px;
     background-image:
@@ -465,10 +488,18 @@ background-color: white;
       rgba(255, 255, 255, .25),
       rgba(0, 0, 0, .25)),
     -webkit-linear-gradient(left, rgb(0, 153, 255), #f44);
-  }
+  }*/
 
 }
 @media only screen and (min-width: 768px) {
+  .scale {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+#third {
+background-image: url('../images/carRental_.jpg');
+}
   .inner-box {
     width:50%;
       margin-left:25%;
@@ -482,20 +513,21 @@ background-color: white;
     margin-top: 0;
     margin-bottom: 5px;
   }
-  #short-term, #long-term, #economy {
-    height: 20px;
-    border-radius: 25px;
-    /*background-color: rgb(0, 132, 194);*/
-    background-image:
-        -webkit-linear-gradient(-45deg,
-                                transparent 33%, rgba(0, 0, 0, .1) 33%,
-                                rgba(0,0, 0, .1) 66%, transparent 66%),
-        -webkit-linear-gradient(top,
-                                rgba(255, 255, 255, .25),
-                                rgba(0, 0, 0, .25)),
-        -webkit-linear-gradient(left, rgb(255, 255, 255), rgb(0, 153, 255));
-   }
+  
 }
+#short-term, #long-term, #economy {
+  height: 20px;
+  border-radius: 25px;
+  /*background-color: rgb(0, 132, 194);*/
+  background-image:
+      -webkit-linear-gradient(-45deg,
+                              transparent 33%, rgba(0, 0, 0, .1) 33%,
+                              rgba(0,0, 0, .1) 66%, transparent 66%),
+      -webkit-linear-gradient(top,
+                              rgba(255, 255, 255, .25),
+                              rgba(0, 0, 0, .25)),
+      -webkit-linear-gradient(left, rgb(255, 255, 255), rgb(0, 153, 255));
+ }
 .progressBar {
   background-color: black;
   border-radius: 13px;
