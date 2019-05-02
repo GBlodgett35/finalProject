@@ -44,6 +44,9 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               <li class="full-width">
                  <a class="nav-link" href="about.html">About Buffalo Wings</a>
                </li>
+               <li class="full-width">
+                <a class="nav-link" href="Customer Service.html">Customer Service</a>
+              </li>
             </ul>
           </div>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -78,6 +81,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                 <li><a href="airportGuide.html">Airport Guide</a></li>
                 <li><a href="parking.html">Parking and Trasportation </a></li>
                 <li><a href="about.html">About Buffalo Wings</a></li>
+                <li><a href="Customer Service.html">Customer Service</a></li>
             </ul> 
 
          </div>
@@ -85,50 +89,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   </nav>
   <main>
     
-    <div class="flightbookingsearch">
-
-        <audio controls src="sleepAway.mp3">
-          <p>Your browser does not support the audio element.</p>
-        </audio>
-   
-        <div class="float-box"><div class="payment" style="overflow-x:auto;">
-          <!---->
-          <form action="pay.php" method="POST" name = "payment" onsubmit = "return(validate());">
-            <h2>Payment</h2>
-            <table>
-              <tr>
-                <td><input type="text" id="fName" placeholder="First Name" /></td>
-        
-              <td>
-                  <input type="text" id="lName" placeholder="Last Name" />
-              </td>
-              <td>
-                  <input type="text" id="mName" placeholder="Middle Initial" />
-              </td>
-            </tr>
-              <tr>
-                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-        
-        
-                 <td><input type="text" id="email" placeholder="Email Address" /></td>
-        
-        
-                    <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
-              </tr>
-              <tr>
-                <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
-                <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
-        
-              </tr>
-        
-            </table>
-            
-            <input type="submit" value="Submit" />
-            </form>
-            </div>
-        
-        
-          </div>
+    
       <div class="booking">
           <!-- Begin ticket purchasing form -->
           <h2>Book Your Flight</h2>
@@ -197,6 +158,47 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
             <h1>Have a long Layover? </h1>
             <p> Visit our <a href="airportGuide.html">Airport Guide</a>page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
         </div>
+      </div>
+        <div class="flightbookingsearch">
+     
+          <div class="float-box"><div class="payment" style="overflow-x:auto;">
+            <!---->
+            <form action="pay.php" method="POST" name = "payment" onsubmit = "return(validate());">
+              <h2>Payment</h2>
+              <table>
+                <tr>
+                  <td><input type="text" id="fName" placeholder="First Name" /></td>
+          
+                <td>
+                    <input type="text" id="lName" placeholder="Last Name" />
+                </td>
+                <td>
+                    <input type="text" id="mName" placeholder="Middle Initial" />
+                </td>
+              </tr>
+                <tr>
+                    <td><input type="text" id="phone" placeholder="Phone Number" /></td>
+          
+          
+                   <td><input type="text" id="email" placeholder="Email Address" /></td>
+          
+          
+                      <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
+                  <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
+          
+                </tr>
+          
+              </table>
+              
+              <input type="submit" value="Submit" />
+              </form>
+              </div>
+          
+          
+            
   </main>
   <footer>
     &copy; Buffalo Wings Airport & Harding University
