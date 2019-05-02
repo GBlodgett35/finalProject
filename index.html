@@ -3,13 +3,21 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
 
 <!DOCTYPE html>
 <html lang="en">
+<!-- Begin header section of webpage -->
 <head>
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
   <link rel="stylesheet" type="text/css" href="css/animateHamburger.css">
+  <!-- favicon -->
   <link rel="icon" href="images/logo.png">
+  <!-- font-awesome icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>BWA</title>
+  <!-- Adding meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta name="author" content="Buffalo Wings Airport">
+  <meta name="description" content="Jacksonville's Premier International Airport">
+  <meta name="keywords" content="Airport, Airfare, Flights, Buffalo Wings, Buffalo Wings Airport, Jacksonville, Jacksonville Florida, Airport in Jacksonville Florida, International Flights">
 </head>
 <body id="body_main" class="bg-white">
   <header>
@@ -19,6 +27,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   </header>
   <nav class="bg-light" style="background-color: #DDDDDD;">
       <div class="mobile">
+        <!-- Start of hamburger menu -->
           <button class="navbar-toggler first-button" type="button" data-toggle="collapse" onclick=toggleNav()>
             <div class="animated-icon1">
               <span></span>
@@ -73,6 +82,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                 }
           </script>
          </div>
+         <!-- navigation menu for desktop -->
          <div class="desktop">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -80,10 +90,13 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                 <li><a href="airportGuide.html">Airport Guide</a></li>
                 <li><a href="parking.html">Parking and Trasportation </a></li>
                 <li><a href="about.html">About Buffalo Wings</a></li>
+                <li style="float: right"><button id="search_button" type="submit"><i class="fa fa-search"></i></button></li>
+                <li style="float: right"><input id="search_bar" type="text" name="search" placeholder="Search our site!"></li>
             </ul>
 
          </div>
   </nav>
+  <!-- Begin main section of webpage -->
   <main>
       <div class="main_image">
         <img src="images/buffalo_wings_logo.png" alt="Buffalo Wings Airport Logo" style="width: 100%" />
@@ -153,6 +166,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       </div>
       <div class="center">
         </div>
+        <!-- Why fly at Buffalo Wings Airport section -->
         <div class="why">
         <h2>Why Fly Buffalo Wings?</h2>
         <p>Here at Buffalo Wings Airport, we pride ourselves on being the best in several categories:</p>
@@ -164,6 +178,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         <p>When you're wanting to travel the world in style and comfort without breaking the bank, be sure to
           fly Buffalo Wings! We're you're portal to a whole new world!</p>
         </div>
+        <!-- Location our airport services -->
         <div class="locations">
           <h2>Locations We Fly To</h2>
           <div class="flip-card">
@@ -311,6 +326,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                               <br />
           </div>
       </main>
+      <!-- Begin footer section -->
       <footer>
         &copy; Buffalo Wings Airport & Harding University
       </footer>
