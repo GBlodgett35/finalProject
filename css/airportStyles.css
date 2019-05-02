@@ -53,6 +53,12 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   {
     width: 100%;
     height: 50px;
+    padding: 15px;
+    vertical-align: center;
+  }
+  .layover{
+    text-align: center;
+    background-color: white;
   }
   /* Styling for why fly buffalo wild wings */
 .why{
