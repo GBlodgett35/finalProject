@@ -11,12 +11,9 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <style>
-    .scroll-box {
-position:fixed;
-
-right:-50px;
-
-}
+    footer {
+      position: relative;
+    }
     main{
       padding:0;
     }
@@ -80,6 +77,9 @@ right:-50px;
             <li class="full-width">
               <a class="nav-link" href="about.html">About Buffalo Wings</a>
             </li>
+            <li class="full-width">
+              <a class="nav-link" href="Customer Service.html">Customer Service</a>
+            </li>
           </ul>
 
 
@@ -141,6 +141,7 @@ right:-50px;
         <li><a href="airportGuide.html">Airport Guide</a></li>
         <li><a href="parking.html">Parking and Trasportation </a></li>
         <li><a href="about.html">About Buffalo Wings</a></li>
+        <li><a href="Customer Service.html">Customer Service</a></li>
       </ul>
     </div>
   </nav>
@@ -314,7 +315,7 @@ right:-50px;
     </div>
     </div>
   </div>
-    <div class="parallax" style="background-image: url('images/taxi.jpg'); min-height: 1000px;">
+    <div class="parallax" style="background-image: url('images/taxi.jpg');">
       <div class="center" style="padding-top:1em;">
         <div class="scroll-box" style="opacity: .85; background-color: #f0f0f0; width:50%; margin-left:25%; margin-right: 25%;  padding-bottom: 15px;">
           <h2>Taxi wait time:</h2>
@@ -326,13 +327,6 @@ right:-50px;
       </div>
     </div>
     <script>
-      jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > 30) {
-            jQuery('.scroll-box').stop().animate({ right: '0px' });
-        } else {
-            jQuery('.scroll-box').stop().animate({ right: '-300px' });
-        }
-      });
 
       var waitTimes = "<h4>";
       for(var i = 1; i < 7; i++) {
