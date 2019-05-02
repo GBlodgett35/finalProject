@@ -266,7 +266,7 @@ html, body {
   margin: 0;
 }
 .float-box{
-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+box-shadow: 0 4px 8px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 padding:5px;
 background-color: white;
 }
@@ -426,11 +426,11 @@ background-color: white;
 }
     /* parking */
     .parallax {
-      /* The image used */
+ 
 
 
       /* Set a specific height */
-      height: 500px;
+      height: auto;
           width:100%;
       /* Create the parallax scrolling effect */
       background-attachment: fixed;
@@ -446,14 +446,6 @@ background-color: white;
  nav {
    background-color: #DDDDDD;
  }
-  .parallax {
-    height: auto;
-  }
-  /*header {
-    background: transparent;
-    position: relative;
-    text-align: center;
-  }*/
   #short-term, #long-term, #economy {
     height: 20px;
     border-radius: 25px;
