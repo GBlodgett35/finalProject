@@ -85,6 +85,50 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   </nav>
   <main>
     
+    <div class="flightbookingsearch">
+
+        <audio controls src="sleepAway.mp3">
+          <p>Your browser does not support the audio element.</p>
+        </audio>
+   
+        <div class="float-box"><div class="payment" style="overflow-x:auto;">
+          <!---->
+          <form action="pay.php" method="POST" name = "payment" onsubmit = "return(validate());">
+            <h2>Payment</h2>
+            <table>
+              <tr>
+                <td><input type="text" id="fName" placeholder="First Name" /></td>
+        
+              <td>
+                  <input type="text" id="lName" placeholder="Last Name" />
+              </td>
+              <td>
+                  <input type="text" id="mName" placeholder="Middle Initial" />
+              </td>
+            </tr>
+              <tr>
+                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
+        
+        
+                 <td><input type="text" id="email" placeholder="Email Address" /></td>
+        
+        
+                    <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
+                <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
+        
+              </tr>
+        
+            </table>
+            
+            <input type="submit" value="Submit" />
+            </form>
+            </div>
+        
+        
+          </div>
       <div class="booking">
           <!-- Begin ticket purchasing form -->
           <h2>Book Your Flight</h2>

@@ -10,7 +10,27 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   <title>BWA</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <style>
+    .scroll-box {
+position:fixed;
 
+right:-50px;
+
+}
+    main{
+      padding:0;
+    }
+    @media only screen and (min-width:767px) {
+  #third {
+    background-image: url('images/carRental_.jpg');
+  }
+}
+@media only screen and (max-width:767px) {
+#third {
+    background-image: url('images/carRentalMobile.jpg');
+  }
+}
+  </style>
 </head>
 
 <body>
@@ -126,7 +146,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   </nav>
   <main>
     <div class="parallax" style="background-image: url('images/parkingGarage.jpg');">
-      <div class="center" style="padding-top:1em; color:white;  padding-bottom: 15px;">
+      <div class="center" style="padding-top:1em; color:white;  padding-bottom: 20px;">
         <div>
           <h2>Parking Capacity:</h2>
           <h4>Short term parking:</h4>
@@ -268,7 +288,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         </div>
       </div>
     </div>
-    <div class="parallax" style="background-image: url('images/carRental.jpg');">
+    <div class="parallax" id="third">
       <div class="center" style="padding-top:1em; padding-bottom: 15px;">
         <div class="float-box" style="padding-bottom: 15px; opacity: .8; margin-right: 10px; margin-left: 10px;"><div class="container">
     <h2>Helpful info:</h2>
@@ -285,7 +305,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       are Enterprise and National. The rentals are a short walk from
       the baggage claim. For more info see:
     </p>
-    <ul style="list-style-position: inside; list-style: circle; padding: 20px; margin-bottom: 0;">
+    <ul style="list-style-position: inside; list-style: circle; padding: 20px; margin-bottom: 0; text-align: left;">
       <li><a href="https://www.enterprise.com/en/home.html">Enterprise</a></li>
       <li><a href="https://www.nationalcar.com/en/home.html">National</a></li>
     </ul>
@@ -294,21 +314,29 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
     </div>
     </div>
   </div>
-    <div class="parallax" style="background-image: url('images/taxi.jpg');">
+    <div class="parallax" style="background-image: url('images/taxi.jpg'); min-height: 1000px;">
       <div class="center" style="padding-top:1em;">
-        <div style="opacity: .85; background-color: #f0f0f0; width:50%; margin-left:25%; margin-right: 25%;  padding-bottom: 15px;">
+        <div class="scroll-box" style="opacity: .85; background-color: #f0f0f0; width:50%; margin-left:25%; margin-right: 25%;  padding-bottom: 15px;">
           <h2>Taxi wait time:</h2>
-          <p>At Buffalo Wild Wings, we strive to provide convient means of getting around our airport. We provide a taxi service to easily get around to where you need to be.</p>
-          <ul>
-            <div id="terminals"></div>
-          </ul>
+          <p>At Buffalo Wild Wings, we strive to provide convient means of getting around our airport. 
+            We provide a taxi service to easily get around to where you need to be.There is a pickup spot at each terminal.</p>
+          <div id="terminals"></div>
+          <p>To find out more please visit </p>
         </div>
       </div>
     </div>
     <script>
+      jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > 30) {
+            jQuery('.scroll-box').stop().animate({ right: '0px' });
+        } else {
+            jQuery('.scroll-box').stop().animate({ right: '-300px' });
+        }
+      });
+
       var waitTimes = "<h4>";
       for(var i = 1; i < 7; i++) {
-        waitTimes += "Terminal " + i + ": " + waitTime() + " minutes<br />";
+        waitTimes += "Terminal " + i + ":   " + waitTime() + " minutes<br />";
       }
       waitTimes += "</h4>"
       document.getElementById("terminals").innerHTML = waitTimes;
