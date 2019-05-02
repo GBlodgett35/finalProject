@@ -48,6 +48,13 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     color: #000000;
     font-size: 14px;
   }
+  /* Styling for flight booking page */
+  .AirelineLogo
+  {
+    width:42px;
+    height:42px;
+    border:0;
+  }
   /* Styling for why fly buffalo wild wings */
 .why{
     text-align: center;
