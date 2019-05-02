@@ -83,11 +83,11 @@ This form will thank them for their order and have a button to return to the mai
     </div>
   </nav>
 <main>
-
+<div class="center">
 <h4>Thank you <?php echo $_POST["fName"]; ?> for your order!</h4><br />
 An email has been sent to <?php echo $_POST["email"]; ?> confirming your order.<br />
-Your order number is <?php echo(rand(1000,10000000)); ?> <br />
+Your order number is <?php echo(rand(1000,10000000)); ?> <br /><br />
 <a href="index.html">Return to home</a>
-
+      </div>
     </main>
 </html>
