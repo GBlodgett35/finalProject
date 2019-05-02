@@ -129,48 +129,66 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         
         
           </div>
+      <div class="booking">
+          <!-- Begin ticket purchasing form -->
+          <h2>Book Your Flight</h2>
+          <form>
+          City :<br />
+          <select name="City">
+            <option value="LA">Los Angeles, CA</option>
+            <option value="DA">Dallas, TX</option>
+            <option value="London">London, England</option>
+            <option value="Paris">Paris, France</option>
+            <option value="Amsterdam">Amsterdam, Netherlands</option>
+            <option value="Barcelona">Barcelona, Spain</option>
+            <option value="Dublin">Dublin, Ireland</option>
+            <option value="Frankfurt">Frankfurt, Germany</option>
+            <option value="Edinburgh">Edinburgh, Scotland</option>
+            <option value="Atlanta">Atlanta, Georgia</option>
+          </select>
+          <br />
+          # of Passengers : <br />
+          <div class="center"><input type="text" id="indexFlightPassenger" placeholder="# of Passengers" /></div>
+          Departure Date : <br />
+          <div class="center"><input type="date" id="indexFlightDateDepart" /></div>
+          Return Date : <br />
+          <div class="center"><input type="date" id="indexFlightDateReturn" /></div>
+          <br />
+          Ticket(s) Class: <br />
+          <input type="radio" id="indexFlightEconomy" name="ticket" value="Economy" />Economy
+          <input type="radio" id="indexFlightBusiness" name="ticket" value="Business" />Business
+          <input type="radio" id="indexFlightFirstClass" name="ticket" value="First Class" />First Class
+          <br />
+          <br />
+          <button  type="button" Onclick="document.getElementById('ticket_cost').innerHTML = RndInteger(150,8000)">Calculate Price</button>
+          <input type="reset" id="indexFlightReset" value="Reset">
+          </form>
+          <br />
+          <h3>Ticket Price</h3>
+          <p>Your ticket price in USD($) is:</p>
+          <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
+          <p id="ticket_cost"></p>
+          <button type="button" id="payment">Pay with us using PayPal!</button>
+          <!-- Script to take user to paypal to collect payment -->
           <script>
-              function validate() {
-                if( document.payment.fName.value == "" ) {
-                    alert( "Please provide your first name!" );
-                    document.payment.fName.focus() ;
-                    return false;
-                 }
-                 if( document.payment.lName.value == "" ) {
-                    alert( "Please provide your last name!" );
-                    document.paynment.fName.focus() ;
-                    return false;
-                 }
-                 if( document.payment.mName.value == "" ) {
-                    alert( "Please provide your middle initial!" );
-                    document.payment.fName.focus() ;
-                    return false;
-                 }
-                 if( document.payment.email.value == "" ) {
-                    alert( "Please provide your Email!" );
-                    document.payment.EMail.focus() ;
-                    return false;
-                 }
-                 //if( !document.payment.phone.value.match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im")) {"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
-                 var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
-                   if(!re.test(document.payment.phone.value))  {
-                    alert( "Please provide your phone number in the format # ### ### ####." );
-                    document.payment.phone.focus() ;
-                    return false;
-                 }
-                 var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
-                 if( document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value) ) {
-                    alert( "Please provide your DOB!" );
-                    return false;
-                 }
-                 return( true );
-              }
-              
-                  
+          document.getElementById("payment").onclick = function () {
+          location.href = "https://www.paypal.com/us/home";
+          };
           </script>
-        
-     
-    </div>
+          <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+          <!-- Script created to generate random number -->
+          <script>
+          function RndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+          }
+          </script>
+          <br />
+          <br />
+          <br />
+        <div class="booking">
+            <h1>Have a long Layover? </h1>
+            <p> Visit our <a href="airportGuide.html">Airport Guide</a>page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
+        </div>
   </main>
   <footer>
     &copy; Buffalo Wings Airport & Harding University
