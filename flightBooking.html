@@ -129,21 +129,14 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         <br />
         <br />
         <button type="button" Onclick="document.getElementById('ticket_cost').innerHTML = calPrice(); document.getElementById('payment_').style = 'block;'">Calculate Price</button>
-        <input type="reset" id="indexFlightReset" value="Reset">
+        <input type="reset" id="indexFlightReset" value="Reset" Onclick="document.getElementById('payment_').style = 'none;'">
       </form>
       <br />
       <h3>Ticket Price</h3>
       <p>Your ticket price in USD($) is:</p>
       <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
-      <p id="ticket_cost"></p>
-      <button type="button" id="payment">Pay with us using PayPal!</button>
-      <!-- Script to take user to paypal to collect payment -->
-      <script>
-        document.getElementById("payment").onclick = function () {
-          location.href = "https://www.paypal.com/us/home";
-        };
-      </script>
-      <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+      <p id="ticket_cost">$0.00</p>
+      
       <!-- Script created to generate random number -->
       <script>
         var map = new Map();
@@ -162,10 +155,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
           var passengers = document.getElementById("indexFlightPassenger").value;
           for (var i = 0, length = ticketType.length; i < length; i++) {
             if (ticketType[i].checked) {
-              // do whatever you want with the checked radio
               index = i;
-
-              // only one radio can be logically checked, don't check the rest
               break;
             }
           }
@@ -211,7 +201,12 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                   <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
   
                 </tr>
-  
+                <tr>
+                  <td>
+                    
+                     <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+                      <button type="button" id="$payment">Pay with us using PayPal!</button></td>
+                </tr>
               </table>
   
               <input type="submit" value="Submit" />
@@ -252,7 +247,11 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               }
               return (true);
             }
-  
+            // Script to take user to paypal to collect payment 
+      
+        document.getElementById("$payment").onclick = function () {
+          location.href = "https://www.paypal.com/us/home";
+        };
   
           </script>
       <br />
