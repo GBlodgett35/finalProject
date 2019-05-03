@@ -7,13 +7,18 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
 <head>
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css" />
   <link rel="stylesheet" type="text/css" href="css/animateHamburger.css" />
-  <link href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather|Nunito|Quattrocento|Quicksand:400,700|Roboto+Slab" rel="stylesheet">  <script src='scripts.js'></script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather|Nunito|Quattrocento|Quicksand:400,700|Roboto+Slab"
+    rel="stylesheet">
+  <script src='scripts.js'></script>
   <title>BWA</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <style>
-    main{
-      padding:0;
+    
+
+    main {
+      padding: 0;
     }
   </style>
 </head>
@@ -288,8 +293,10 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               <li>Buffalo Wild Wings Airport parking is handicap accessible</li>
               <li>We offer free parking for any members of the military</li>
               <li>All parking is covered and safe from inclimate weather</li>
-              <li>We accept all major credit cards and US dollars, European Euro, British Pound, and Canadian dollar</li>
-
+              <li>We accept all major credit cards and US dollars, European Euro, British Pound, and Canadian dollar
+              </li>
+              <li>We have security measures in place to ensure your car and belongings inside your car are safe from
+                crime</li>
             </ul>
 
             <h2>Car Rentals</h2>
@@ -298,7 +305,8 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               are Enterprise and National. The rentals are a short walk from
               the baggage claim. For more info see:
             </p>
-            <ul style="list-style-position: inside; list-style: circle; padding: 20px; margin-bottom: 0; text-align: left;">
+            <ul
+              style="list-style-position: inside; list-style: circle; padding: 20px; margin-bottom: 0; text-align: left;">
               <li><a href="https://www.enterprise.com/en/home.html">Enterprise</a></li>
               <li><a href="https://www.nationalcar.com/en/home.html">National</a></li>
             </ul>
@@ -309,7 +317,8 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
     </div>
     <div class="parallax" style="background-image: url('images/taxi.jpg');">
       <div class="center" style="padding-top:1em;">
-        <div class="scroll-box" style="opacity: .85; background-color: #f0f0f0; width:50%; margin-left:25%; margin-right: 25%;  padding-bottom: 15px;">
+        <div class="scroll-box"
+          style="opacity: .85; background-color: #f0f0f0;  padding-bottom: 15px;">
           <h2>Taxi wait time:</h2>
           <p>At Buffalo Wild Wings, we strive to provide convient means of getting around our airport.
             We provide a taxi service to easily get around to where you need to be.There is a pickup spot at each
@@ -322,11 +331,11 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
 
     <script>
 
-      var waitTimes = "<h4>";
+      var waitTimes = "<ul id='waitTimes'>";
       for (var i = 1; i < 7; i++) {
-        waitTimes += "Terminal " + i + ":   " + waitTime() + " minutes<br />";
+        waitTimes += "<li><div class='imgContain'><div class='numberCircle'>"+i+"</div><br /><br /><b>Terminal " + i + ":   </b>" + waitTime() + " minutes</div></li>";
       }
-      waitTimes += "</h4>"
+      waitTimes += "</ul>"
       document.getElementById("terminals").innerHTML = waitTimes;
       function waitTime() {
         return Math.floor(Math.random() * (20 - 5)) + 5;
