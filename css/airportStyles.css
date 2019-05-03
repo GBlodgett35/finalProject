@@ -441,6 +441,9 @@ background-color: white;
     width: 90%;
     text-align: justify;
   }
+  .restdesc {
+    text-align: justify;
+  }
 }
 @media only screen and (min-width: 768px) {
   .guideParallax {
@@ -461,6 +464,24 @@ background-color: white;
   .guideDesc {
     width: 80%;
     text-align: center;
+  }
+  .parta {
+    float: left;
+    width: 50%;
+  }
+  .partb {
+    float: right;
+    width: 50%;
+  }
+  .restdesc {
+    font-size: 1.2em;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: block;
+  }
+  .restContainer {
+    height: 18em;
   }
 }
 .guideMobileImg {
@@ -496,7 +517,6 @@ background-color: white;
   margin: 0 auto;
 }
 .restdesc {
-  text-align: justify;
   font-family: 'Alegreya', serif;
 }
 .hrhalf {
