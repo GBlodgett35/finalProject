@@ -17,7 +17,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
      <a href="index.html"><h1>Buffalo Wings Airport</h1></a>
     </div>
   </header>
-  <nav class="bg-light">  
+  <nav class="bg-light">
       <div class="mobile">
           <button class="navbar-toggler first-button" type="button" data-toggle="collapse" onclick=toggleNav()>
             <div class="animated-icon1">
@@ -27,7 +27,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
             </div>
           </button>
           <div id="collapse" style="display:none;">
-            
+
             <ul>
               <li class="full-width">
                 <a class="nav-link" href="index.html">Home</a>
@@ -64,7 +64,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
 
                   $('.animated-icon3').toggleClass('open');
                 });
-                });        
+                });
                 function toggleNav() {
                   if(document.getElementById("collapse").style.display === "none") {
                     document.getElementById("collapse").style.display = "block";
@@ -82,7 +82,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                 <li><a href="parking.html">Parking and Trasportation </a></li>
                 <li><a href="about.html">About Buffalo Wings</a></li>
                 <li><a href="Customer Service.html">Customer Service</a></li>
-            </ul> 
+            </ul>
 
          </div>
       <div class="bar"></div>
@@ -149,7 +149,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
             map.set("Barcelona", [900, 700, 500]);
             map.set("Dublin", [900, 700, 500]);
             function calPrice() {
-              return parseint(document.book.city.value) 
+              return parseint(document.book.city.value)
             }
           function RndInteger(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
@@ -160,7 +160,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
           <br />
       </div>
         <div class="flightbookingsearch">
-     
+
           <div class="float-box"><div class="payment" style="overflow-x:auto;">
             <!---->
             <form action="pay.php" method="POST" name = "payment" onsubmit = "return(validate());">
@@ -168,7 +168,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               <table>
                 <tr>
                   <td><input type="text" id="fName" placeholder="First Name" /></td>
-          
+
                 <td>
                     <input type="text" id="lName" placeholder="Last Name" />
                 </td>
@@ -178,21 +178,21 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               </tr>
                 <tr>
                     <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-          
-          
+
+
                    <td><input type="text" id="email" placeholder="Email Address" /></td>
-          
-          
+
+
                       <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
                 </tr>
                 <tr>
                   <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
                   <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
-          
+
                 </tr>
-          
+
               </table>
-              
+
               <input type="submit" value="Submit" />
               </form>
               </div>
@@ -232,37 +232,37 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
                      }
                      return( true );
                   }
-                  
-                      
+
+
               </script>
           <hr>
       <h1 style="text-align: center">Airlines We Support</h1>
-      <div class="AirlineLogo"> 
-        <a href="https://www.aa.com/homePage.do">
+      <div class="American Airlines Logo">
+        <a href="https://www.aa.com/homePage.do" target="_blank">
         <img src="images/american.png" alt="American Airline Link">
         </a>
       </div>
       <hr>
-      <div class="AirlineLogo"> 
-        <a href="https://www.airfrance.us/">
+      <div class="AirFrance Logo">
+        <a href="https://www.airfrance.us/" target="_blank">
         <img src="images/airfrance.svg" alt="Air France Airline Link">
         </a>
       </div>
       <hr>
-      <div class="AirlineLogo"> 
-          <a href="https://www.cathaypacific.com/cx/en_US.html">
+      <div class="Cathay Pacific Airlines Logo">
+          <a href="https://www.cathaypacific.com/cx/en_US.html" target="_blank">
           <img src="images/cathy.svg" alt="Cathy Airline Link">
           </a>
       </div>
       <hr>
-      <div class="AirlineLogo"> 
-          <a href="https://www.delta.com/">
+      <div class="Delta Airlines Logo">
+          <a href="https://www.delta.com/" target="_blank">
           <img src="images/delta.svg" alt="Delta Airline Link">
           </a>
       </div>
       <hr>
-      <div class="AirlineLogo"> 
-        <a href="https://www.swiss.com/us/en#">
+      <div class="Swiss Airlines Logo">
+        <a href="https://www.swiss.com/us/en#" target="_blank">
         <img src="images/airswiss.png" alt="Swiss Airline Link">
         </a>
       </div>
