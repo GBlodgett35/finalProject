@@ -437,7 +437,10 @@ background-color: white;
 
     /* guide */
 @media only screen and (max-width:767px) {
-
+  .guideDesc {
+    width: 90%;
+    text-align: justify;
+  }
 }
 @media only screen and (min-width: 768px) {
   .guideParallax {
@@ -454,6 +457,10 @@ background-color: white;
     top: 2em;
     font-size: 3em;
     z-index: inherit;
+  }
+  .guideDesc {
+    width: 80%;
+    text-align: center;
   }
 }
 .guideMobileImg {
@@ -472,11 +479,7 @@ background-color: white;
 }
 .guideDesc {
   font-family: 'Merriweather', serif;
-  width: 90%;
   margin: auto;
-}
-.guideDesc p {
-  text-align: justify;
 }
 .guideContainer {
   width: 95%;
