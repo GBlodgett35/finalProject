@@ -89,10 +89,13 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       <div class="bar"></div>
   </nav>
   <main>
+      <div class="main_image2">
+          <img src="images/bookingmain.jpg" alt="Airplane Sitting on Ramp Loading Passengers" style="width: 100%" />
+        </div>
       <div class="booking">
           <!-- Begin ticket purchasing form -->
           <h2>Book Your Flight</h2>
-          <form>
+          <form id="book">
           City :<br />
           <select name="City">
             <option value="LA">Los Angeles, CA</option>
@@ -138,6 +141,17 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
           <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
           <!-- Script created to generate random number -->
           <script>
+            var map = new Map();
+            map.set("LA", [900, 700, 500]);
+            map.set("DA", [900, 700, 500]);
+            map.set("London", [900, 700, 500]);
+            map.set("Paris", [900, 700, 500]);
+            map.set("Amsterdam", [900, 700, 500]);
+            map.set("Barcelona", [900, 700, 500]);
+            map.set("Dublin", [900, 700, 500]);
+            function calPrice() {
+              return parseint(document.book.city.value) 
+            }
           function RndInteger(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
           }
@@ -183,7 +197,47 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               <input type="submit" value="Submit" />
               </form>
               </div>
-
+              <script>
+                  function validate() {
+                    if( document.payment.fName.value == "" ) {
+                        alert( "Please provide your first name!" );
+                        document.payment.fName.focus() ;
+                        return false;
+                     }
+                     if( document.payment.lName.value == "" ) {
+                        alert( "Please provide your last name!" );
+                        document.paynment.fName.focus() ;
+                        return false;
+                     }
+                     if( document.payment.mName.value == "" ) {
+                        alert( "Please provide your middle initial!" );
+                        document.payment.fName.focus() ;
+                        return false;
+                     }
+                     if( document.payment.email.value == "" ) {
+                        alert( "Please provide your Email!" );
+                        document.payment.EMail.focus() ;
+                        return false;
+                     }
+                     //if( !document.payment.phone.value.match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im")) {"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+                     var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+                       if(!re.test(document.payment.phone.value))  {
+                        alert( "Please provide your phone number in the format # ### ### ####." );
+                        document.payment.phone.focus() ;
+                        return false;
+                     }
+                     var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
+                     if( document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value) ) {
+                        alert( "Please provide your DOB!" );
+                        return false;
+                     }
+                     return( true );
+                  }
+                  
+                      
+              </script>
+          <hr>
+      <h1 style="text-align: center">Airlines We Support</h1>
       <div class="AirlineLogo"> 
         <a href="https://www.aa.com/homePage.do">
         <img src="images/american.png" alt="American Airline Link">
@@ -209,6 +263,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         <img src="images/airswiss.png" alt="Swiss Airline Link">
         </a>
       </div>
+      <hr>
       <div class="layover">
         <h1>Have a long Layover? </h1>
         <p> Visit our <a href="airportGuide.html">Airport Guide</a>page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
