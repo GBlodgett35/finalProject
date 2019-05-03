@@ -165,11 +165,12 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   }
   /* Making search bar expand to become larger */
   #search_bar:focus{
-    width: 50%;
+    width: 500px;
   }
   /* Adding pointer cursor for search bar button */
   #search_button{
     cursor: pointer;
+    margin-top: 11px;
   }
   nav li a:hover {
     background-color: #555;
@@ -330,6 +331,7 @@ background-color: white;
   width: 100%;
   height: 99%;
 }
+
 
     /* about */
 @media only screen and (max-width:767px){
@@ -533,7 +535,7 @@ background-color: white;
 }
     /* parking */
     .parallax {
- 
+
 
 
       /* Set a specific height */
@@ -593,7 +595,7 @@ background-image: url('../images/carRental_.jpg');
     margin-top: 0;
     margin-bottom: 5px;
   }
-  
+
 }
 #short-term, #long-term, #economy {
   height: 20px;
