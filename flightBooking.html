@@ -2,278 +2,304 @@
 Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
   <link rel="stylesheet" href="css/animateHamburger.css">
   <link rel="icon" href="images/logo.png">
-  <link href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather|Nunito|Quattrocento|Quicksand:400,700|Roboto+Slab" rel="stylesheet">  <script src='scripts.js'></script>
+  <link href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather|Nunito|Quattrocento|Quicksand:400,700|Roboto+Slab"
+    rel="stylesheet">
+  <script src='scripts.js'></script>
   <title>BWA</title>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
 </head>
+
 <body class="bg-white">
   <header>
     <div class="center">
-     <a href="index.html"><h1>Buffalo Wings Airport</h1></a>
+      <a href="index.html">
+        <h1>Buffalo Wings Airport</h1>
+      </a>
     </div>
   </header>
   <nav class="bg-light">
-      <div class="mobile">
-          <button class="navbar-toggler first-button" type="button" data-toggle="collapse" onclick=toggleNav()>
-            <div class="animated-icon1">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
-          <div id="collapse" style="display:none;">
+    <div class="mobile">
+      <button class="navbar-toggler first-button" type="button" data-toggle="collapse" onclick=toggleNav()>
+        <div class="animated-icon1">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div id="collapse" style="display:none;">
 
-            <ul>
-              <li class="full-width">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="full-width">
-                <a class="nav-link" href="flightBooking.html">Flight and Booking</a>
-              </li>
-              <li class="full-width">
-                <a class="nav-link" href="airportGuide.html">Airport Guide</a>
-              </li>
-              <li class="full-width">
-                  <a class="nav-link" href="parking.html">Parking and Trasportation</a>
-              </li>
-              <li class="full-width">
-                 <a class="nav-link" href="about.html">About Buffalo Wings</a>
-               </li>
-               <li class="full-width">
-                <a class="nav-link" href="Customer_Service.html">Customer Service</a>
-              </li>
-            </ul>
-          </div>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-          <script>
-            $(document).ready(function () {
+        <ul>
+          <li class="full-width">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="full-width">
+            <a class="nav-link" href="flightBooking.html">Flight and Booking</a>
+          </li>
+          <li class="full-width">
+            <a class="nav-link" href="airportGuide.html">Airport Guide</a>
+          </li>
+          <li class="full-width">
+            <a class="nav-link" href="parking.html">Parking and Trasportation</a>
+          </li>
+          <li class="full-width">
+            <a class="nav-link" href="about.html">About Buffalo Wings</a>
+          </li>
+          <li class="full-width">
+            <a class="nav-link" href="Customer_Service.html">Customer Service</a>
+          </li>
+        </ul>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script>
+        $(document).ready(function () {
 
-                $('.first-button').on('click', function () {
-                    $('.animated-icon1').toggleClass('open');
-                });
-                $('.second-button').on('click', function () {
+          $('.first-button').on('click', function () {
+            $('.animated-icon1').toggleClass('open');
+          });
+          $('.second-button').on('click', function () {
 
-                  $('.animated-icon2').toggleClass('open');
-                });
-                $('.third-button').on('click', function () {
+            $('.animated-icon2').toggleClass('open');
+          });
+          $('.third-button').on('click', function () {
 
-                  $('.animated-icon3').toggleClass('open');
-                });
-                });
-                function toggleNav() {
-                  if(document.getElementById("collapse").style.display === "none") {
-                    document.getElementById("collapse").style.display = "block";
-                  } else {
-                    document.getElementById("collapse").style.display = "none";
-                  }
-                }
-          </script>
-         </div>
-         <div class="desktop">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="flightBooking.html">Flight and Booking</a></li>
-                <li><a href="airportGuide.html">Airport Guide</a></li>
-                <li><a href="parking.html">Parking and Trasportation </a></li>
-                <li><a href="about.html">About Buffalo Wings</a></li>
-                <li><a href="Customer_Service.html">Customer Service</a></li>
-            </ul>
+            $('.animated-icon3').toggleClass('open');
+          });
+        });
+        function toggleNav() {
+          if (document.getElementById("collapse").style.display === "none") {
+            document.getElementById("collapse").style.display = "block";
+          } else {
+            document.getElementById("collapse").style.display = "none";
+          }
+        }
+      </script>
+    </div>
+    <div class="desktop">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="flightBooking.html">Flight and Booking</a></li>
+        <li><a href="airportGuide.html">Airport Guide</a></li>
+        <li><a href="parking.html">Parking and Trasportation </a></li>
+        <li><a href="about.html">About Buffalo Wings</a></li>
+        <li><a href="Customer_Service.html">Customer Service</a></li>
+      </ul>
 
-         </div>
-      <div class="bar"></div>
+    </div>
+    <div class="bar"></div>
   </nav>
   <main>
-      <div class="main_image2">
-          <img src="images/bookingmain.jpg" alt="Airplane Sitting on Ramp Loading Passengers" style="width: 100%" />
-        </div>
-      <div class="booking">
-          <!-- Begin ticket purchasing form -->
-          <h2>Book Your Flight</h2>
-          <form id="book">
-          City :<br />
-          <select name="City">
-            <option value="LA">Los Angeles, CA</option>
-            <option value="DA">Dallas, TX</option>
-            <option value="London">London, England</option>
-            <option value="Paris">Paris, France</option>
-            <option value="Amsterdam">Amsterdam, Netherlands</option>
-            <option value="Barcelona">Barcelona, Spain</option>
-            <option value="Dublin">Dublin, Ireland</option>
-            <option value="Frankfurt">Frankfurt, Germany</option>
-            <option value="Edinburgh">Edinburgh, Scotland</option>
-            <option value="Atlanta">Atlanta, Georgia</option>
-          </select>
-          <br />
-          # of Passengers : <br />
-          <div class="center"><input type="text" id="indexFlightPassenger" placeholder="# of Passengers" /></div>
-          Departure Date : <br />
-          <div class="center"><input type="date" id="indexFlightDateDepart" /></div>
-          Return Date : <br />
-          <div class="center"><input type="date" id="indexFlightDateReturn" /></div>
-          <br />
-          Ticket(s) Class: <br />
-          <input type="radio" id="indexFlightEconomy" name="ticket" value="Economy" />Economy
-          <input type="radio" id="indexFlightBusiness" name="ticket" value="Business" />Business
-          <input type="radio" id="indexFlightFirstClass" name="ticket" value="First Class" />First Class
-          <br />
-          <br />
-          <button  type="button" Onclick="document.getElementById('ticket_cost').innerHTML = RndInteger(150,8000)">Calculate Price</button>
-          <input type="reset" id="indexFlightReset" value="Reset">
-          </form>
-          <br />
-          <h3>Ticket Price</h3>
-          <p>Your ticket price in USD($) is:</p>
-          <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
-          <p id="ticket_cost"></p>
-          <button type="button" id="payment">Pay with us using PayPal!</button>
-          <!-- Script to take user to paypal to collect payment -->
-          <script>
-          document.getElementById("payment").onclick = function () {
-          location.href = "https://www.paypal.com/us/home";
-          };
-          </script>
-          <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
-          <!-- Script created to generate random number -->
-          <script>
-            var map = new Map();
-            map.set("LA", [900, 700, 500]);
-            map.set("DA", [900, 700, 500]);
-            map.set("London", [900, 700, 500]);
-            map.set("Paris", [900, 700, 500]);
-            map.set("Amsterdam", [900, 700, 500]);
-            map.set("Barcelona", [900, 700, 500]);
-            map.set("Dublin", [900, 700, 500]);
-            function calPrice() {
-              return parseint(document.book.city.value)
+    <div class="main_image2">
+      <img src="images/bookingmain.jpg" alt="Airplane Sitting on Ramp Loading Passengers" style="width: 100%" />
+    </div>
+    <div class="booking">
+      <!-- Begin ticket purchasing form -->
+      <h2>Book Your Flight</h2>
+      <form id="book">
+        City :<br />
+        <select name="City" id="city">
+          <option value="LA">Los Angeles, CA</option>
+          <option value="DA">Dallas, TX</option>
+          <option value="London">London, England</option>
+          <option value="Paris">Paris, France</option>
+          <option value="Amsterdam">Amsterdam, Netherlands</option>
+          <option value="Barcelona">Barcelona, Spain</option>
+          <option value="Dublin">Dublin, Ireland</option>
+          <option value="Frankfurt">Frankfurt, Germany</option>
+          <option value="Edinburgh">Edinburgh, Scotland</option>
+          <option value="Atlanta">Atlanta, Georgia</option>
+        </select>
+        <br />
+        # of Passengers : <br />
+        <div class="center"><input type="text" id="indexFlightPassenger" placeholder="# of Passengers" /></div>
+        Departure Date : <br />
+        <div class="center"><input type="date" id="indexFlightDateDepart" /></div>
+        Return Date : <br />
+        <div class="center"><input type="date" id="indexFlightDateReturn" /></div>
+        <br />
+        Ticket(s) Class: <br />
+        <input type="radio" id="indexFlightEconomy" name="ticket" value="Economy" />Economy
+        <input type="radio" id="indexFlightBusiness" name="ticket" value="Business" />Business
+        <input type="radio" id="indexFlightFirstClass" name="ticket" value="First Class" />First Class
+        <br />
+        <br />
+        <button type="button" Onclick="document.getElementById('ticket_cost').innerHTML = calPrice(); document.getElementById('payment_').style = 'block;'">Calculate Price</button>
+        <input type="reset" id="indexFlightReset" value="Reset" Onclick="document.getElementById('payment_').style = 'none;'">
+      </form>
+      <br />
+      <h3>Ticket Price</h3>
+      <p>Your ticket price in USD($) is:</p>
+      <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
+      <p id="ticket_cost">$0.00</p>
+      
+      <!-- Script created to generate random number -->
+      <script>
+        var map = new Map();
+        map.set("LA", [75, 125, 189]);
+        map.set("DA", [900, 700, 500]);
+        map.set("London", [900, 700, 500]);
+        map.set("Paris", [900, 700, 500]);
+        map.set("Amsterdam", [150, 210, 280]);
+        map.set("Barcelona", [140, 200, 250]);
+        map.set("Dublin", [130, 190, 240]);
+        function calPrice() {
+          var element = document.getElementById("city");
+          var cityName = element.options[element.selectedIndex].value;
+          var ticketType = document.getElementsByName('ticket');
+          var index = -1;
+          var passengers = document.getElementById("indexFlightPassenger").value;
+          for (var i = 0, length = ticketType.length; i < length; i++) {
+            if (ticketType[i].checked) {
+              index = i;
+              break;
             }
-          function RndInteger(min, max) {
-            return Math.floor(Math.random() * (max - min)) + min;
           }
-          </script>
-          <br />
-          <br />
-          <br />
-      </div>
-        <div class="flightbookingsearch">
+          var cost = (map.get(cityName)[i]*passengers);
+          if(cost === NaN) {
+            document.alert("Please enter all the fields!");
+          }
+          return "$" + cost + ".00";
+        }
+        function RndInteger(min, max) {
+          return Math.floor(Math.random() * (max - min)) + min;
+        }
+      </script>
+     <!-- <div class="flightbookingsearch">-->
 
-          <div class="float-box"><div class="payment" style="overflow-x:auto;">
+        <div class="float-box" style="display: none;" id="payment_">
+          <div class="payment" style="overflow-x:auto;">
             <!---->
-            <form action="pay.php" method="POST" name = "payment" onsubmit = "return(validate());">
+            <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
               <h2>Payment</h2>
               <table>
                 <tr>
                   <td><input type="text" id="fName" placeholder="First Name" /></td>
-
-                <td>
+  
+                  <td>
                     <input type="text" id="lName" placeholder="Last Name" />
-                </td>
-                <td>
+                  </td>
+                  <td>
                     <input type="text" id="mName" placeholder="Middle Initial" />
-                </td>
-              </tr>
+                  </td>
+                </tr>
                 <tr>
-                    <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-
-
-                   <td><input type="text" id="email" placeholder="Email Address" /></td>
-
-
-                      <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
+  
+  
+                  <td><input type="text" id="email" placeholder="Email Address" /></td>
+  
+  
+                  <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
                 </tr>
                 <tr>
                   <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
                   <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
-
+  
                 </tr>
-
+                <tr>
+                  <td>
+                    
+                     <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+                      <button type="button" id="$payment">Pay with us using PayPal!</button></td>
+                </tr>
               </table>
-
+  
               <input type="submit" value="Submit" />
-              </form>
-              </div>
-              <script>
-                  function validate() {
-                    if( document.payment.fName.value == "" ) {
-                        alert( "Please provide your first name!" );
-                        document.payment.fName.focus() ;
-                        return false;
-                     }
-                     if( document.payment.lName.value == "" ) {
-                        alert( "Please provide your last name!" );
-                        document.paynment.fName.focus() ;
-                        return false;
-                     }
-                     if( document.payment.mName.value == "" ) {
-                        alert( "Please provide your middle initial!" );
-                        document.payment.fName.focus() ;
-                        return false;
-                     }
-                     if( document.payment.email.value == "" ) {
-                        alert( "Please provide your Email!" );
-                        document.payment.EMail.focus() ;
-                        return false;
-                     }
-                     //if( !document.payment.phone.value.match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im")) {"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
-                     var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
-                       if(!re.test(document.payment.phone.value))  {
-                        alert( "Please provide your phone number in the format # ### ### ####." );
-                        document.payment.phone.focus() ;
-                        return false;
-                     }
-                     var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
-                     if( document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value) ) {
-                        alert( "Please provide your DOB!" );
-                        return false;
-                     }
-                     return( true );
-                  }
-
-
-              </script>
-          <hr>
-      <h1 style="text-align: center">Airlines We Support</h1>
-      <div class="American Airlines Logo">
-        <a href="https://www.aa.com/homePage.do" target="_blank">
-        <img src="images/american.png" alt="American Airline Link">
-        </a>
-      </div>
-      <hr>
-      <div class="AirFrance Logo">
-        <a href="https://www.airfrance.us/" target="_blank">
-        <img src="images/airfrance.svg" alt="Air France Airline Link">
-        </a>
-      </div>
-      <hr>
-      <div class="Cathay Pacific Airlines Logo">
+            </form>
+          </div>
+          <script>
+            function validate() {
+              if (document.payment.fName.value == "") {
+                alert("Please provide your first name!");
+                document.payment.fName.focus();
+                return false;
+              }
+              if (document.payment.lName.value == "") {
+                alert("Please provide your last name!");
+                document.paynment.fName.focus();
+                return false;
+              }
+              if (document.payment.mName.value == "") {
+                alert("Please provide your middle initial!");
+                document.payment.fName.focus();
+                return false;
+              }
+              if (document.payment.email.value == "") {
+                alert("Please provide your Email!");
+                document.payment.EMail.focus();
+                return false;
+              }
+              var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+              if (!re.test(document.payment.phone.value)) {
+                alert("Please provide your phone number in the format # ### ### ####.");
+                document.payment.phone.focus();
+                return false;
+              }
+              var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
+              if (document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value)) {
+                alert("Please provide your DOB!");
+                return false;
+              }
+              return (true);
+            }
+            // Script to take user to paypal to collect payment 
+      
+        document.getElementById("$payment").onclick = function () {
+          location.href = "https://www.paypal.com/us/home";
+        };
+  
+          </script>
+      <br />
+      <br />
+      <br />
+    </div>
+    
+        <hr>
+        <h1 style="text-align: center">Airlines We Support</h1>
+        <div class="American Airlines Logo">
+          <a href="https://www.aa.com/homePage.do" target="_blank">
+            <img src="images/american.png" alt="American Airline Link" style="width:100%;" />
+          </a>
+        </div>
+        <hr>
+        <div class="AirFrance Logo">
+          <a href="https://www.airfrance.us/" target="_blank">
+            <img src="images/airfrance.svg" alt="Air France Airline Link" style="width:100%;" />
+          </a>
+        </div>
+        <hr>
+        <div class="Cathay Pacific Airlines Logo">
           <a href="https://www.cathaypacific.com/cx/en_US.html" target="_blank">
-          <img src="images/cathy.svg" alt="Cathy Airline Link">
+            <img src="images/cathy.svg" alt="Cathy Airline Link" style="width:100%;" />
           </a>
-      </div>
-      <hr>
-      <div class="Delta Airlines Logo">
+        </div>
+        <hr>
+        <div class="Delta Airlines Logo">
           <a href="https://www.delta.com/" target="_blank">
-          <img src="images/delta.svg" alt="Delta Airline Link">
+            <img src="images/delta.svg" alt="Delta Airline Link" style="width:100%;" />
           </a>
-      </div>
-      <hr>
-      <div class="Swiss Airlines Logo">
-        <a href="https://www.swiss.com/us/en#" target="_blank">
-        <img src="images/airswiss.png" alt="Swiss Airline Link">
-        </a>
-      </div>
-      <div class="layover">
-        <h1>Have a long Layover? </h1>
-        <p style="font-size: 2em;"> Visit our <a href="airportGuide.html" style="font-size:1em;">Airport Guide</a> page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
-      </div>
+        </div>
+        <hr>
+        <div class="Swiss Airlines Logo">
+          <a href="https://www.swiss.com/us/en#" target="_blank">
+            <img src="images/airswiss.png" alt="Swiss Airline Link" />
+          </a>
+        </div>
+        <div class="layover">
+          <h1>Have a long Layover? </h1>
+          <p style="font-size: 2em;"> Visit our <a href="airportGuide.html" style="font-size:1em;">Airport Guide</a>
+            page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
+        </div>
   </main>
   <footer>
     &copy; Buffalo Wings Airport & Harding University
   </footer>
   <script src="jquery.min.js"></script>
 </body>
+
 </html>
