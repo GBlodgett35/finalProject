@@ -41,7 +41,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   }
   /* Styling for body_main */
   #body_main{
-    background-color: #ffffff;
+    background-image: url('../images/neutralBackground.jfif');
   }
   /* Styling for anchor tags */
   a{
@@ -115,6 +115,9 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     background-color: #ffffff;
     font-size: 28px;
   }
+  #body_main{
+    background-image: url('../images/neutralBackground.jfif');
+  }
   /* Styling for text that displays ticket price */
   #ticket_cost{
     color: #000000;
@@ -151,22 +154,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     box-shadow: 7px 7px grey;
     background-color: #ffffff;
     font-size: 24px;
-  }
-  /* Search bar in navigation menu */
-  #search_bar{
-    width: 130px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    margin-top: 11px;
-  }
-  /* Making search bar expand to become larger */
-  #search_bar:focus{
-    width: 500px;
-  }
-  /* Adding pointer cursor for search bar button */
-  #search_button{
-    cursor: pointer;
-    margin-top: 11px;
   }
   nav li a:hover {
     background-color: #555;
