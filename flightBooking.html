@@ -24,22 +24,30 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 90%;
+  table-layout:fixed;
     }
     .HERE {
       width:90%;
     }
 
 td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+.HERE table tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.HERE table td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
-.HERE tr:nth-child(even) {
+tr:nth-child(even) {
   background-color: #dddddd;
 }
-
-
  
 
 /* The popup form - hidden by default */
@@ -491,7 +499,8 @@ function closeForm() {
                   var td = tr_.insertCell();
                   td.appendChild(document.createTextNode(schedules[0][j]));
               }
-            //tbl.style.border = '1px solid black';
+            tbl.style.width = '100px';
+            tbl.style.tablelayout ="fixed";
             var i = 1;
             while(i < schedules.length) {
               if(cityName == schedules[i][0]) {
