@@ -41,7 +41,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   }
   /* Styling for body_main */
   #body_main{
-    background-color: #ffffff;
+    background-image: url('../images/neutralBackground.jfif');
   }
   /* Styling for anchor tags */
   a{
@@ -100,40 +100,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
 @media only screen and (min-width:768px) {
   .mobile {
     display: none;
-  }
-  /* Flight Status Table Format */
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-  }
-  th, td {
-    text-align: left;
-    padding: 16px;
-  }
-  tr:nth-child(even) {
-    background-color: #f2f2f2
-  }
-  /* Desktop Table */
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-  }
-  th, td {
-    text-align: left;
-    padding: 16px;
-  }
-  tr:nth-child(even) {
-    background-color: #f2f2f2
   }
   /* Styling for area where you can book a flight ticket */
   .booking{
@@ -360,6 +326,10 @@ background-color: white;
 #plane {
   width: 100%;
   height: 99%;
+}
+/* Styling for body_main id */
+#body_main{
+  background-image: url('../images/neutralBackground.jfif');
 }
 
 
