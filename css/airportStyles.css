@@ -9,7 +9,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   /* Styling for area where you can book a flight ticket */
   .booking{
     text-align: center;
-    background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
     max-width: 100%;
     padding: 0;
     border: 0;
@@ -41,7 +40,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   }
   /* Styling for anchor tags */
   a{
-    color: #000000;
+    color: #fff;
     font-size: 14px;
   }
   /* Styling for flight booking page */
@@ -100,7 +99,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   /* Styling for area where you can book a flight ticket */
   .booking{
     text-align: center;
-    background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
     max-width: 100%;
     padding: 0;
     border: 0;
@@ -127,7 +125,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   }
   /* Styling for anchor tags */
   a{
-    color: #000000;
+    color: #fff;
     font-size: 14px;
   }
   /* Styling for why fly buffalo wild wings */
@@ -221,7 +219,7 @@ h1 {
   font-size: 2.5em;
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
-  background-color: #eeeeee;
+  background-color: #0b294b;
 }
 html {
   width: 100%;
@@ -275,7 +273,7 @@ footer {
 }
 .center a {
   text-decoration: none;
-  color: black;
+  color: #ffffff;
 }
 .bg-light {
   background-color: #f8f9fa !important;
@@ -600,7 +598,6 @@ background-image: url('../images/carRental_.jpg');
 #short-term, #long-term, #economy {
   height: 20px;
   border-radius: 25px;
-  /*background-color: rgb(0, 132, 194);*/
   background-image:
       -webkit-linear-gradient(-45deg,
                               transparent 33%, rgba(0, 0, 0, .1) 33%,
@@ -662,15 +659,6 @@ color:#f8f9fa;
   position: absolute;
   z-index:500;
 }
-
-/*#collapse {
-  position: absolute;
-  z-index:2;
-  background-color: black;
-
-}
-#collapse li a{
-  color: white;
 }*/
 .float-box {
   box-shadow: 0 14px 16px 0 rgba(0,0,0,0.2);
