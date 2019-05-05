@@ -39,10 +39,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     background: #ffffff;
     font-family: Verdana, Geneva, sans-serif;
   }
-  /* Styling for body_main */
-  #body_main{
-    background-image: url('../images/neutralBackground.jfif');
-  }
   /* Styling for anchor tags */
   a{
     color: #000000;
@@ -327,12 +323,6 @@ background-color: white;
   width: 100%;
   height: 99%;
 }
-/* Styling for body_main id */
-#body_main{
-  background-image: url('../images/neutralBackground.jfif');
-}
-
-
     /* about */
 @media only screen and (max-width:767px){
   .about {
@@ -465,6 +455,12 @@ background-color: white;
   .plxGuide {
     background-image: url(../images/terminal.jpg);
   }
+  .plxIndex {
+    background-image: url(../images/airplane_on_ramp.jpg);
+  }
+  .plxAbout {
+    background-image: url(../images/airplane.jpg);
+  }
   .guideDesc {
     width: 80%;
     text-align: center;
@@ -491,7 +487,7 @@ background-color: white;
 #apple {
   width: 25%;
 }
-.guideMobileImg {
+.mobileImg {
   width: 100%;
 }
 .guideHeader {
