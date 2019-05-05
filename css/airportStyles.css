@@ -274,7 +274,6 @@ nav button {
 .full-width {
   width:100%;
 }
-/* Styling for html and body tags */
 html, body {
   margin: 0;
 }
@@ -282,21 +281,6 @@ html, body {
 box-shadow: 0 4px 8px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 padding:5px;
 background-color: white;
-}
-/* Hiding other images on main page */
-.main_image, .main_image img{
-  display: none;
-}
-/* Styling for airplane image on home page */
-.main_image2{
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  bottom: 0;
-  background-size: cover;
-  width: 100%;
 }
 #plane {
   width: 100%;
