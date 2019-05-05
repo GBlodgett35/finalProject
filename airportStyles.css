@@ -41,7 +41,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   }
   /* Styling for body_main */
   #body_main{
-    background-image: url('../images/neutralBackground.jfif');
+    background-color: #ffffff;
   }
   /* Styling for anchor tags */
   a{
@@ -116,7 +116,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     font-size: 28px;
   }
   #body_main{
-    background-image: url('../images/neutralBackground.jfif');
+    background-color: #ffffff;
   }
   /* Styling for text that displays ticket price */
   #ticket_cost{
