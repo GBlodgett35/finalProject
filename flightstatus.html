@@ -99,207 +99,71 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
     <div class="bar"></div>
   </nav>
   <main>
-    <div class="main_image2">
-      <img src="images/bookingmain.jpg" alt="Airplane Sitting on Ramp Loading Passengers" style="width: 100%" />
-    </div>
-    <div class="booking">
-      <!-- Begin ticket purchasing form -->
-      <h2>Book Your Flight</h2>
-      <form id="book">
-        City :<br />
-        <select name="City" id="city">
-          <option value="LA">Los Angeles, CA</option>
-          <option value="DA">Dallas, TX</option>
-          <option value="London">London, England</option>
-          <option value="Paris">Paris, France</option>
-          <option value="Amsterdam">Amsterdam, Netherlands</option>
-          <option value="Barcelona">Barcelona, Spain</option>
-          <option value="Dublin">Dublin, Ireland</option>
-          <option value="Frankfurt">Frankfurt, Germany</option>
-          <option value="Edinburgh">Edinburgh, Scotland</option>
-          <option value="Atlanta">Atlanta, Georgia</option>
-        </select>
-        <br />
-        # of Passengers : <br />
-        <div class="center"><input type="text" id="indexFlightPassenger" placeholder="# of Passengers" /></div>
-        Departure Date : <br />
-        <div class="center"><input type="date" id="indexFlightDateDepart" /></div>
-        Return Date : <br />
-        <div class="center"><input type="date" id="indexFlightDateReturn" /></div>
-        <br />
-        Ticket(s) Class: <br />
-        <input type="radio" id="indexFlightEconomy" name="ticket" value="Economy" />Economy
-        <input type="radio" id="indexFlightBusiness" name="ticket" value="Business" />Business
-        <input type="radio" id="indexFlightFirstClass" name="ticket" value="First Class" />First Class
-        <br />
-        <br />
-        <button type="button" Onclick="document.getElementById('ticket_cost').innerHTML = calPrice(); document.getElementById('payment_').style = 'block;'">Calculate Price</button>
-        <input type="reset" id="indexFlightReset" value="Reset" Onclick="document.getElementById('payment_').style = 'none;'">
-      </form>
-      <br />
-      <h3>Ticket Price</h3>
-      <p>Your ticket price in USD($) is:</p>
-      <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
-      <p id="ticket_cost">$0.00</p>
-
-      <!-- Script created to generate random number -->
-      <script>
-        var map = new Map();
-        map.set("LA", [75, 125, 189]);
-        map.set("DA", [900, 700, 500]);
-        map.set("London", [900, 700, 500]);
-        map.set("Paris", [900, 700, 500]);
-        map.set("Amsterdam", [150, 210, 280]);
-        map.set("Barcelona", [140, 200, 250]);
-        map.set("Dublin", [130, 190, 240]);
-        function calPrice() {
-          var element = document.getElementById("city");
-          var cityName = element.options[element.selectedIndex].value;
-          var ticketType = document.getElementsByName('ticket');
-          var index = -1;
-          var passengers = document.getElementById("indexFlightPassenger").value;
-          for (var i = 0, length = ticketType.length; i < length; i++) {
-            if (ticketType[i].checked) {
-              index = i;
-              break;
-            }
-          }
-          var cost = (map.get(cityName)[i]*passengers);
-          if(cost === NaN) {
-            document.alert("Please enter all the fields!");
-          }
-          return "$" + cost + ".00";
-        }
-        function RndInteger(min, max) {
-          return Math.floor(Math.random() * (max - min)) + min;
-        }
-      </script>
-     <!-- <div class="flightbookingsearch">-->
-
-        <div class="float-box" style="display: none;" id="payment_">
-          <div class="payment" style="overflow-x:auto;">
-            <!---->
-            <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
-              <h2>Payment</h2>
-              <table>
-                <tr>
-                  <td><input type="text" id="fName" placeholder="First Name" /></td>
-
-                  <td>
-                    <input type="text" id="lName" placeholder="Last Name" />
-                  </td>
-                  <td>
-                    <input type="text" id="mName" placeholder="Middle Initial" />
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-
-
-                  <td><input type="text" id="email" placeholder="Email Address" /></td>
-
-
-                  <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
-                  <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
-
-                </tr>
-                <tr>
-                  <td>
-
-                     <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
-                      <button type="button" id="$payment">Pay with us using PayPal!</button></td>
-                </tr>
-              </table>
-
-              <input type="submit" value="Submit" />
-            </form>
-          </div>
-          <script>
-            function validate() {
-              if (document.payment.fName.value == "") {
-                alert("Please provide your first name!");
-                document.payment.fName.focus();
-                return false;
-              }
-              if (document.payment.lName.value == "") {
-                alert("Please provide your last name!");
-                document.paynment.fName.focus();
-                return false;
-              }
-              if (document.payment.mName.value == "") {
-                alert("Please provide your middle initial!");
-                document.payment.fName.focus();
-                return false;
-              }
-              if (document.payment.email.value == "") {
-                alert("Please provide your Email!");
-                document.payment.EMail.focus();
-                return false;
-              }
-              var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
-              if (!re.test(document.payment.phone.value)) {
-                alert("Please provide your phone number in the format # ### ### ####.");
-                document.payment.phone.focus();
-                return false;
-              }
-              var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
-              if (document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value)) {
-                alert("Please provide your DOB!");
-                return false;
-              }
-              return (true);
-            }
-            // Script to take user to paypal to collect payment
-
-        document.getElementById("$payment").onclick = function () {
-          location.href = "https://www.paypal.com/us/home";
-        };
-
-          </script>
-      <br />
-      <br />
-      <br />
-    </div>
-
-        <hr>
-        <h1 style="text-align: center">Airlines We Support</h1>
-        <div class="American Airlines Logo">
-          <a href="https://www.aa.com/homePage.do" target="_blank">
-            <img src="images/american.png" alt="American Airline Link" style="width:100%;" />
-          </a>
-        </div>
-        <hr>
-        <div class="AirFrance Logo">
-          <a href="https://www.airfrance.us/" target="_blank">
-            <img src="images/airfrance.svg" alt="Air France Airline Link" style="width:100%;" />
-          </a>
-        </div>
-        <hr>
-        <div class="Cathay Pacific Airlines Logo">
-          <a href="https://www.cathaypacific.com/cx/en_US.html" target="_blank">
-            <img src="images/cathy.svg" alt="Cathy Airline Link" style="width:100%;" />
-          </a>
-        </div>
-        <hr>
-        <div class="Delta Airlines Logo">
-          <a href="https://www.delta.com/" target="_blank">
-            <img src="images/delta.svg" alt="Delta Airline Link" style="width:100%;" />
-          </a>
-        </div>
-        <hr>
-        <div class="Swiss Airlines Logo">
-          <a href="https://www.swiss.com/us/en#" target="_blank">
-            <img src="images/airswiss.png" alt="Swiss Airline Link" />
-          </a>
-        </div>
-        <div class="layover">
-          <h1>Have a long Layover? </h1>
-          <p style="font-size: 2em;"> Visit our <a href="airportGuide.html" style="font-size:1em;">Airport Guide</a>
-            page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
-        </div>
+        <table class = "flightstatus">
+                <tr><th>Airline</th><th>Flight </th><th>Departing To </th><th>Schedule </th><th>Gate </th><th>Status </th></tr>
+                 <tr><td>Delta </td><td>1</td><td>Atlanta</td><td>1:30:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Delta </td><td>2</td><td>Atlanta</td><td>5:00:00 AM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Delta </td><td>3</td><td>Dallas </td><td>3:00:00 PM</td><td>A</td><td>Late</td></tr>
+                 <tr><td>Delta </td><td>4</td><td>Punta Cana </td><td>5:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Delta </td><td>5</td><td>San Jose </td><td>4:00:00 PM</td><td>B</td><td>On Time </td></tr>
+                 <tr><td>Delta </td><td>6</td><td>San Jose </td><td>4:00:00 PM</td><td>B</td><td>On Time </td></tr>
+                 <tr><td>Delta </td><td>7</td><td>Cancun </td><td>5:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Delta </td><td>8</td><td>Nassau </td><td>5:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Delta </td><td>9</td><td>Miami </td><td>2:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Delta </td><td>10</td><td>Chicago </td><td>6:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>11</td><td>Atlanta</td><td>12:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>12</td><td>Atlanta</td><td>4:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>13</td><td>Dallas </td><td>8:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>14</td><td>Dallas </td><td>10:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>14</td><td>Dallas </td><td>3:00:00 AM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>15</td><td>Punta Cana </td><td>2:00:00 AM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>15</td><td>Punta Cana </td><td>6:00:00 AM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>16</td><td>San Jose </td><td>10:00:00 PM</td><td>B</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>17</td><td>San Jose </td><td>12:00:00 PM</td><td>B</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>18</td><td>Cancun </td><td>8:00:00 AM</td><td>C</td><td>Cancelled</td></tr>
+                 <tr><td>Southwest </td><td>19</td><td>Nassau </td><td>10:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>20</td><td>Miami </td><td>4:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>21</td><td>Chicago </td><td>3:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>22</td><td>Chicago </td><td>10:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Southwest </td><td>23</td><td>Chicago </td><td>1:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>24</td><td>Atlanta</td><td>1:30:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>25</td><td>Atlanta</td><td>5:00:00 AM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>26</td><td>Atlanta</td><td>3:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>27</td><td>Dallas </td><td>5:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>28</td><td>San Jose </td><td>4:00:00 PM</td><td>B</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>29</td><td>San Jose </td><td>4:00:00 PM</td><td>B</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>30</td><td>Cancun </td><td>5:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>31</td><td>Nassau </td><td>5:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>32</td><td>Miami </td><td>2:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>American </td><td>33</td><td>Chicago </td><td>6:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>34</td><td>Atlanta</td><td>12:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>35</td><td>Atlanta</td><td>4:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>36</td><td>Dallas </td><td>8:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>37</td><td>Punta Cana </td><td>10:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>38</td><td>San Jose </td><td>3:00:00 AM</td><td>B</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>39</td><td>Cancun </td><td>3:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>40</td><td>Nassau </td><td>10:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>41</td><td>Miami </td><td>1:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>42</td><td>Miami </td><td>5:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>43</td><td>Chicago</td><td>4:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>44</td><td>Chicago </td><td>10:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>United</td><td>45</td><td>Chicago </td><td>1:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>46</td><td>Atlanta</td><td>3:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>47</td><td>Atlanta</td><td>1:00:00 AM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>48</td><td>Dallas </td><td>3:00:00 PM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>49</td><td>Dallas </td><td>6:00:00 AM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>50</td><td>Punta Cana </td><td>10:00:00 AM</td><td>A</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>51</td><td>San Jose </td><td>11:00:00 PM</td><td>B</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>52</td><td>Cancun </td><td>2:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>53</td><td>Cancun </td><td>1:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>54</td><td>Nassau </td><td>3:00:00 AM</td><td>C</td><td>Cancelled</td></tr>
+                 <tr><td>Spirit</td><td>55</td><td>Miami </td><td>3:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>56</td><td>Miami </td><td>7:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>57</td><td>Chicago</td><td>10:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>58</td><td>Chicago </td><td>3:00:00 AM</td><td>C</td><td>On Time </td></tr>
+                 <tr><td>Spirit</td><td>59</td><td>Chicago </td><td>5:00:00 PM</td><td>C</td><td>On Time </td></tr>
+                </table>
+    
   </main>
   <footer>
     &copy; Buffalo Wings Airport & Harding University
