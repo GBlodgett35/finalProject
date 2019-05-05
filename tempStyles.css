@@ -1,0 +1,54 @@
+/* general */
+    html, body, main, nav, div, img, header, footer, h1, h2, h3 {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        color: #000000;
+        font-family: 'Cormorant Garamond', serif;
+        display: block;
+    }
+
+/* index */
+
+/* booking */
+
+/* guide */
+
+/* parking */
+
+/* about */
+
+@media only screen and (max-width:767px) {
+/* general */
+    .desktop {
+        display: none;
+    }
+/* index */
+
+/* booking */
+
+/* guide */
+
+/* parking */
+
+/* about */
+}
+
+@media only screen and (min-width: 768px) {
+/* general */
+    .mobile {
+        display: none;
+    }
+/* index */
+
+/* booking */
+
+/* guide */
+
+/* parking */
+
+/* about */
+}
