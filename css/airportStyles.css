@@ -582,13 +582,13 @@ background-image: url('../images/carRental_.jpg');
   .float-box {
     margin-top: 0;
     margin-bottom: 5px;
-    
+
   }
   .scroll-box {
-    width:70%; margin-left:15%; margin-right: 15%; 
+    width:70%; margin-left:15%; margin-right: 15%;
   }
   .imgContain {
-  
+
     vertical-align: -webkit-baseline-middle;
     padding-top: 4%;
     padding-bottom: 3%;
@@ -701,7 +701,7 @@ main ul {
   padding-right: 10px;
 }
 .imgContain {
-  
+
   vertical-align: -webkit-baseline-middle;
   padding-top: 7%;
   padding-bottom: 5%;
