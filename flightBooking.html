@@ -7,7 +7,8 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
   <link rel="stylesheet" href="css/animateHamburger.css">
   <link rel="icon" href="images/logo.png">
-  <link href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather|Nunito|Quattrocento|Quicksand:400,700|Roboto+Slab"
+  <link
+    href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather|Nunito|Quattrocento|Quicksand:400,700|Roboto+Slab"
     rel="stylesheet">
   <script src='scripts.js'></script>
   <title>BWA</title>
@@ -18,6 +19,87 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   <meta name="description" content="Jacksonville's Premier International Airport">
   <meta name="keywords" content="Airport, Airfare, Flights, Buffalo Wings, Buffalo Wings Airport, Jacksonville, Jacksonville Florida, Airport in Jacksonville Florida, International Flights, Ticket Purchase, Airlines, Flight Arrival,
   Flight Departure, Ticket Class, Economy, Business, First Class">
+  <style>
+    .HERE table {
+      font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+    }
+    .HERE {
+      width:90%;
+    }
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.HERE tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+ 
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 25%;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  background: white;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 1;
+}
+
+
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+  
+  </style>
 </head>
 
 <body class="bg-white">
@@ -134,17 +216,86 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         <input type="radio" id="indexFlightFirstClass" name="ticket" value="First Class" />First Class
         <br />
         <br />
-        <button type="button" Onclick="document.getElementById('ticket_cost').innerHTML = calPrice(); document.getElementById('payment_').style = 'block;'">Calculate Price</button>
-        <input type="reset" id="indexFlightReset" value="Reset" Onclick="document.getElementById('payment_').style = 'none;'">
+        <button type="button"
+          Onclick="document.getElementById('ticket_cost').innerHTML = calPrice(); tableCreate(); ">Generate Schedules</button>
+        
       </form>
+      <div id="HERE"></div>
       <br />
+      
       <h3>Ticket Price</h3>
       <p>Your ticket price in USD($) is:</p>
       <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
       <p id="ticket_cost">$0.00</p>
 
+
+
+      <div class="form-popup" id="myForm">
+          <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
+              <h2>Payment</h2>
+              <table>
+                <tr>
+                  <td><input type="text" id="fName" placeholder="First Name" /></td>
+  
+                  <td>
+                    <input type="text" id="lName" placeholder="Last Name" />
+                  </td>
+                  <td>
+                    <input type="text" id="mName" placeholder="Middle Initial" />
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
+  
+  
+                  <td><input type="text" id="email" placeholder="Email Address" /></td>
+  
+  
+                  <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
+                  <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
+  
+                </tr>
+                <tr>
+                  <td>
+  
+                    <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+                    <button type="button" id="$payment">Pay with us using PayPal!</button></td>
+                </tr>
+              </table>
+  
+              <input type="submit" value="Submit" />
+            </form>
+        </div>
+
+        
+
+
       <!-- Script created to generate random number -->
       <script>
+
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+        function genSchedule() {
+          var element = document.getElementById("city");
+          var cityName = element.options[element.selectedIndex].value;
+          var table = $('.table');
+          table.find('tr').each(function (i, el) {
+            var $tds = $(this).find('td').eq(0).text();
+            if(cityName === $tds) {
+              el.style.display = 'block';
+            }
+        // do something with productId, product, Quantity
+    });
+        }
         var map = new Map();
         map.set("LA", [75, 125, 189]);
         map.set("DA", [900, 700, 500]);
@@ -165,8 +316,8 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               break;
             }
           }
-          var cost = (map.get(cityName)[i]*passengers);
-          if(cost === NaN) {
+          var cost = (map.get(cityName)[i] * passengers);
+          if (cost === NaN) {
             document.alert("Please enter all the fields!");
           }
           return "$" + cost + ".00";
@@ -175,132 +326,242 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
           return Math.floor(Math.random() * (max - min)) + min;
         }
       </script>
-     <!-- <div class="flightbookingsearch">-->
+      <!-- <div class="flightbookingsearch">-->
 
-        <div class="float-box" style="display: none;" id="payment_">
-          <div class="payment" style="overflow-x:auto;">
-            <!---->
-            <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
-              <h2>Payment</h2>
-              <table>
-                <tr>
-                  <td><input type="text" id="fName" placeholder="First Name" /></td>
+      <div class="float-box" style="display: none;" id="payment_">
+        <div class="payment" style="overflow-x:auto;">
+          <!---->
+          <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
+            <h2>Payment</h2>
+            <table>
+              <tr>
+                <td><input type="text" id="fName" placeholder="First Name" /></td>
 
-                  <td>
-                    <input type="text" id="lName" placeholder="Last Name" />
-                  </td>
-                  <td>
-                    <input type="text" id="mName" placeholder="Middle Initial" />
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-
-
-                  <td><input type="text" id="email" placeholder="Email Address" /></td>
+                <td>
+                  <input type="text" id="lName" placeholder="Last Name" />
+                </td>
+                <td>
+                  <input type="text" id="mName" placeholder="Middle Initial" />
+                </td>
+              </tr>
+              <tr>
+                <td><input type="text" id="phone" placeholder="Phone Number" /></td>
 
 
-                  <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
-                  <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
+                <td><input type="text" id="email" placeholder="Email Address" /></td>
 
-                </tr>
-                <tr>
-                  <td>
 
-                     <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
-                      <button type="button" id="$payment">Pay with us using PayPal!</button></td>
-                </tr>
-              </table>
+                <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+              </tr>
+              <tr>
+                <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
+                <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
 
-              <input type="submit" value="Submit" />
-            </form>
-          </div>
-          <script>
-            function validate() {
-              if (document.payment.fName.value == "") {
-                alert("Please provide your first name!");
-                document.payment.fName.focus();
-                return false;
-              }
-              if (document.payment.lName.value == "") {
-                alert("Please provide your last name!");
-                document.paynment.fName.focus();
-                return false;
-              }
-              if (document.payment.mName.value == "") {
-                alert("Please provide your middle initial!");
-                document.payment.fName.focus();
-                return false;
-              }
-              if (document.payment.email.value == "") {
-                alert("Please provide your Email!");
-                document.payment.EMail.focus();
-                return false;
-              }
-              var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
-              if (!re.test(document.payment.phone.value)) {
-                alert("Please provide your phone number in the format # ### ### ####.");
-                document.payment.phone.focus();
-                return false;
-              }
-              var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
-              if (document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value)) {
-                alert("Please provide your DOB!");
-                return false;
-              }
-              return (true);
+              </tr>
+              <tr>
+                <td>
+
+                  <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+                  <button type="button" id="$payment">Pay with us using PayPal!</button></td>
+              </tr>
+            </table>
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <script>
+          function validate() {
+            if (document.payment.fName.value == "") {
+              alert("Please provide your first name!");
+              document.payment.fName.focus();
+              return false;
             }
-            // Script to take user to paypal to collect payment
+            if (document.payment.lName.value == "") {
+              alert("Please provide your last name!");
+              document.paynment.fName.focus();
+              return false;
+            }
+            if (document.payment.mName.value == "") {
+              alert("Please provide your middle initial!");
+              document.payment.fName.focus();
+              return false;
+            }
+            if (document.payment.email.value == "") {
+              alert("Please provide your Email!");
+              document.payment.EMail.focus();
+              return false;
+            }
+            var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+            if (!re.test(document.payment.phone.value)) {
+              alert("Please provide your phone number in the format # ### ### ####.");
+              document.payment.phone.focus();
+              return false;
+            }
+            var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
+            if (document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value)) {
+              alert("Please provide your DOB!");
+              return false;
+            }
+            return (true);
+          }
+          // Script to take user to paypal to collect payment
 
-        document.getElementById("$payment").onclick = function () {
-          location.href = "https://www.paypal.com/us/home";
-        };
+          document.getElementById("$payment").onclick = function () {
+            location.href = "https://www.paypal.com/us/home";
+          };
+          //Creates the table of schedules
+          var schedules_ = [
+            ["Airline", "Departing", "Arriving", "Schedule", "Gate", "Status"],
+            ["DA", "American Airlines", "Jacksonville", "Dallas", "1:30:00 PM", "A", "On Time"],
+            ["LA", "American Airlines","Jacksonville","Los Angeles","5:00:00 AM","A","On Time" ],
+            ["<tr><td>American Airlines </td><td>Jacksonville</td><td>London</td><td>5:00:00 PM</td><td>A</td><td>On Time </td></tr>", "London"],
 
-          </script>
-      <br />
-      <br />
-      <br />
-    </div>
+          ];
+          var schedules = [
+            ["Airline", "Departing", "Arriving", "Schedule", "Gate", "Status"],
+            ["DA", "American Airlines","Jacksonville","Dallas","1:30:00 PM","A","On Time "],
+            ["LA", "American Airlines","Jacksonville","Los Angeles","5:00:00 AM","A","On Time "],
+            ["London", "American Airlines","Jacksonville","London","5:00:00 PM","A","On Time "],
+            ["Paris", "American Airlines","Jacksonville","Paris","4:00:00 PM","B","On Time "],
+            ["Amsterdam", "American Airlines","Jacksonville","Amsterdam","4:00:00 PM","B","On Time "],
+            ["Barcelona", "American Airlines","Jacksonville","Barcelona","5:00:00 PM","C","On Time "],
+            ["Dublin", "American Airlines","Jacksonville","Dublin ","5:00:00 AM","C","On Time "],
+            ["Frankfurt", "American Airlines","Jacksonville","Frankfurt ","2:00:00 AM","C","On Time "],
+            ["Edinburgh", "American Airlines","Jacksonville","Edinburgh ","6:00:00 PM","C","On Time "],
+            ["DA", "Air France","Jacksonville","Dallas ","8:00:00 PM","A","On Time "],
+            ["DA", "Air France","Jacksonville","Dallas ","10:00:00 PM","A","On Time "],
+            ["DA", "Air France","Jacksonville","Dallas ","3:00:00 AM","A","On Time "],
+            ["Atlanta", "Air France","Jacksonville","Atlanta Georgia","2:00:00 AM","A","On Time "],
+            ["Dublin", "Air France","Jacksonville","Dublin, Ireland","6:00:00 AM","A","On Time "],
+            ["LA", "Air France","Jacksonville","Los Angeles","10:00:00 PM","B","On Time "],
+            ["Air France","Jacksonville","San Jose ","12:00:00 PM","B","On Time "],
+            ["Air France","Jacksonville","Cancun ","8:00:00 AM","C","Cancelled"],
+            ["Air France","Jacksonville","Nassau ","10:00:00 AM","C","On Time "],
+            ["Air France","Jacksonville","Atlanta Georgia ","4:00:00 PM","C","On Time "],
+            ["Air France","Jacksonville","Jacksonville ","3:00:00 PM","C","On Time "],
+            ["Air France","Jacksonville","Jacksonville ","10:00:00 PM","C","On Time "],
+            ["Air France","Jacksonville","Jacksonville ","1:00:00 AM","C","On Time "],
+            ["Cathy Pacific","Jacksonville","Jacksonville","1:30:00 PM","A","On Time "],
+            ["Cathy Pacific","Jacksonville","Jacksonville","5:00:00 AM","A","On Time"],
+            ["Cathy Pacific","Jacksonville","Jacksonville","3:00:00 PM","A","On Time "],
+            ["Cathy Pacific","Jacksonville","Dallas ","5:00:00 PM","A","On Time "],
+            ["Cathy Pacific","Jacksonville","San Jose ","4:00:00 PM","B","On Time "],
+            ["Cathy Pacific","Jacksonville","San Jose ","4:00:00 PM","B","On Time "],
+            ["Cathy Pacific","Jacksonville","Cancun ","5:00:00 PM","C","On Time "],
+            ["Cathy Pacific","Jacksonville","Nassau ","5:00:00 AM","C","On Time "],
+            ["Cathy Pacific","Jacksonville","Jacksonville ","2:00:00 AM","C","On Time "],
+            ["Cathy Pacific","Jacksonville","Jacksonville ","6:00:00 PM","C","On Time "],
+            ["Delta Airlines","Jacksonville","Jacksonville","12:00:00 PM","A","On Time "],
+            ["Delta Airlines","Jacksonville","Jacksonville","4:00:00 PM","A","On Time "],
+            ["DA", "Delta Airlines","Jacksonville","Dallas ","8:00:00 PM","A","On Time "],
+            ["Delta Airlines","Jacksonville","Punta Cana ","10:00:00 PM","A","On Time "],
+            ["Delta Airlines","Jacksonville","San Jose ","3:00:00 AM","B","On Time "],
+            ["Delta Airlines","Jacksonville","Cancun ","3:00:00 PM","C","On Time "],
+            ["Delta Airlines","Jacksonville","Nassau ","10:00:00 PM","C","On Time "],
+            ["Barcelona", "American Airlines","Jacksonville","Barcelona","1:00:00 AM","C","OnTime "],
+            ["Delta Airlines","Jacksonville","Jacksonville ","5:00:00 PM","C","On Time "],
+            ["Delta Airlines","Jacksonville","Jacksonville","4:00:00 AM","C","On Time "],
+            ["Delta Airlines","Jacksonville","Jacksonville ","10:00:00 PM","C","On Time "],
+            ["Delta Airlines","Jacksonville","Jacksonville ","1:00:00 PM","C","On Time "],
+            ["Swiss International","Jacksonville","Jacksonville","3:00:00 PM","A","On Time "],
+            ["Swiss International","Jacksonville","Jacksonville","1:00:00 AM","A","On Time "],
+            ["Swiss International","Jacksonville","Dallas ","3:00:00 PM","A","On Time "],
+            ["Swiss International","Jacksonville","Dallas ","6:00:00 AM","A","On Time "],
+            ["Barcelona", "Swiss International","Jacksonville","Barcelona","10:00:00 AM","A","On Time "],
+            ["DA", "Swiss International","Jacksonville","Dallas","11:00:00 PM","B","On Time "],
+            ["Edinburgh", "Swiss International","Jacksonville","Edinburgh ","2:00:00 PM","C","On Time "],
+            ["Swiss International","Jacksonville","Cancun ","1:00:00 AM","C","On Time "],
+            ["Swiss International","Jacksonville","Nassau ","3:00:00 AM","C","Cancelled"],
+            ["Swiss International","Jacksonville","Jacksonville ","3:00:00 PM","C","On Time "],
+            ["Swiss International","Jacksonville","Jacksonville ","7:00:00 AM","C","On Time "],
+            ["Swiss International","Jacksonville","Jacksonville","10:00:00 PM","C","On Time "],
+            ["Swiss International","Jacksonville","Jacksonville ","3:00:00 AM","C","On Time "],
+            ["Swiss International","Jacksonville","Jacksonville ","5:00:00 PM","C","On Time "]
+          ];
+         
+          function tableCreate() {
+            var element = document.getElementById("city");
+          var cityName = element.options[element.selectedIndex].value;
+            var body = document.body,
+              tbl = document.createElement('table');
+              var tr_ = tbl.insertRow();
+              for(var j = 0; j < 6; j++) {
+                  var td = tr_.insertCell();
+                  td.appendChild(document.createTextNode(schedules[0][j]));
+              }
+            //tbl.style.border = '1px solid black';
+            var i = 1;
+            while(i < schedules.length) {
+              if(cityName == schedules[i][0]) {
+                var tr = tbl.insertRow();
+                for(var j = 1; j < schedules[i].length; j++) {
+                  var td = tr.insertCell();
+                  td.appendChild(document.createTextNode(schedules[i][j]));
+                }
+                var td = tr.insertCell();
+                td.innerHTML = "<a onclick='openForm()' style='color:black'>Purchase</a>";
+                //td.appendChild(document.createTextNode());
+              }
+              
+              /*for (var j = 0; j < 2; j++) {
+                if (i == 2 && j == 1) {
+                  break;
+                } else {
+                  var td = tr.insertCell();
+                  td.appendChild(document.createTextNode());
+                  td.style.border = '1px solid black';
+                  
+                }
+              }*/
+              i++;
+            }
+              document.getElementById('HERE').innerHTML="";
+              document.getElementById('HERE').appendChild(tbl);
+            
+          }
+        </script>
+        <br />
+        <br />
+        <br />
+      </div>
 
-        <hr>
-        <h1 style="text-align: center">Airlines We Support</h1>
-        <div class="American Airlines Logo">
-          <a href="https://www.aa.com/homePage.do" target="_blank">
-            <img src="images/american.png" alt="American Airline Link" style="width:100%;" />
-          </a>
-        </div>
-        <hr>
-        <div class="AirFrance Logo">
-          <a href="https://www.airfrance.us/" target="_blank">
-            <img src="images/airfrance.svg" alt="Air France Airline Link" style="width:100%;" />
-          </a>
-        </div>
-        <hr>
-        <div class="Cathay Pacific Airlines Logo">
-          <a href="https://www.cathaypacific.com/cx/en_US.html" target="_blank">
-            <img src="images/cathy.svg" alt="Cathy Airline Link" style="width:100%;" />
-          </a>
-        </div>
-        <hr>
-        <div class="Delta Airlines Logo">
-          <a href="https://www.delta.com/" target="_blank">
-            <img src="images/delta.svg" alt="Delta Airline Link" style="width:100%;" />
-          </a>
-        </div>
-        <hr>
-        <div class="Swiss Airlines Logo">
-          <a href="https://www.swiss.com/us/en#" target="_blank">
-            <img src="images/airswiss.png" alt="Swiss Airline Link" />
-          </a>
-        </div>
-        <div class="layover">
-          <h1>Have a long Layover? </h1>
-          <p style="font-size: 2em;"> Visit our <a href="airportGuide.html" style="font-size:1em;">Airport Guide</a>
-            page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
-        </div>
+      <hr>
+      <h1 style="text-align: center">Airlines We Support</h1>
+      <div class="American Airlines Logo">
+        <a href="https://www.aa.com/homePage.do" target="_blank">
+          <img src="images/american.png" alt="American Airline Link" style="width:100%;" />
+        </a>
+      </div>
+      <hr>
+      <div class="AirFrance Logo">
+        <a href="https://www.airfrance.us/" target="_blank">
+          <img src="images/airfrance.svg" alt="Air France Airline Link" style="width:100%;" />
+        </a>
+      </div>
+      <hr>
+      <div class="Cathay Pacific Airlines Logo">
+        <a href="https://www.cathaypacific.com/cx/en_US.html" target="_blank">
+          <img src="images/cathy.svg" alt="Cathy Airline Link" style="width:100%;" />
+        </a>
+      </div>
+      <hr>
+      <div class="Delta Airlines Logo">
+        <a href="https://www.delta.com/" target="_blank">
+          <img src="images/delta.svg" alt="Delta Airline Link" style="width:100%;" />
+        </a>
+      </div>
+      <hr>
+      <div class="Swiss Airlines Logo">
+        <a href="https://www.swiss.com/us/en#" target="_blank">
+          <img src="images/airswiss.png" alt="Swiss Airline Link" />
+        </a>
+      </div>
+      <div class="layover">
+        <h1>Have a long Layover? </h1>
+        <p style="font-size: 2em;"> Visit our <a href="airportGuide.html" style="font-size:1em; color:black;">Airport
+            Guide</a>
+          page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
+      </div>
   </main>
   <footer>
     &copy; Buffalo Wings Airport & Harding University
