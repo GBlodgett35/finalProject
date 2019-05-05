@@ -1,0 +1,725 @@
+/* IS 270 Final Project
+Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
+
+    /* index */
+@media only screen and (max-width:767px) {
+  .desktop {
+    display: none;
+  }
+  /* Styling for area where you can book a flight ticket */
+  .booking{
+    text-align: center;
+    background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    overflow-x: auto;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+  }
+  /* Styling for text that displays ticket price */
+  #ticket_cost{
+    color: #000000;
+  }
+  /* Styling for PayPal image */
+  #PP{
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    height: 30px;
+    width: 50px;
+    opacity: inherit;
+  }
+  /* Styling for body tag */
+  body{
+    max-width: 100%;
+    background: #ffffff;
+    font-family: Verdana, Geneva, sans-serif;
+  }
+  /* Styling for body_main */
+  #body_main{
+    background-color: #ffffff;
+  }
+  /* Styling for anchor tags */
+  a{
+    color: #000000;
+    font-size: 14px;
+  }
+  /* Styling for flight booking page */
+  .AirlineLogo img
+  {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    vertical-align: center;
+  }
+  .layover{
+    text-align: center;
+    background-color: white;
+  }
+  /* Styling for why fly buffalo wild wings */
+.why{
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+    font-size: 24px;
+  }
+  /* Styling for Locations tag */
+.locations {
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+  }
+  /* Styling for main_image class */
+.main_image{
+  min-width: 100%;
+  height: 10%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: auto;
+  background-size: contain;
+}
+/* Styling for main_image class images */
+.main_image img{
+  max-width: 100%;
+  min-width: 300px;
+  height: auto;
+}
+}
+@media only screen and (min-width:768px) {
+  .mobile {
+    display: none;
+  }
+  /* Styling for area where you can book a flight ticket */
+  .booking{
+    text-align: center;
+    background-image: linear-gradient(to right,rgb(178, 220, 255,0.8), rgb(232, 251, 255));
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    overflow-x: auto;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+    font-size: 28px;
+  }
+  /* Styling for text that displays ticket price */
+  #ticket_cost{
+    color: #000000;
+  }
+  /* Styling for PayPal image */
+  #PP{
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    height: 30px;
+    width: 50px;
+    opacity: inherit;
+  }
+  /* Styling for anchor tags */
+  a{
+    color: #000000;
+    font-size: 14px;
+  }
+  /* Styling for why fly buffalo wild wings */
+.why{
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+    font-size: 24px;
+  }
+  /* Styling for Locations tag */
+.locations {
+    text-align: center;
+    margin: 3%;
+    border-style: outset;
+    box-shadow: 7px 7px grey;
+    background-color: #ffffff;
+    font-size: 24px;
+  }
+  /* Search bar in navigation menu */
+  #search_bar{
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-top: 11px;
+  }
+  /* Making search bar expand to become larger */
+  #search_bar:focus{
+    width: 500px;
+  }
+  /* Adding pointer cursor for search bar button */
+  #search_button{
+    cursor: pointer;
+    margin-top: 11px;
+  }
+  nav li a:hover {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+  }
+  /* Styling for h3 tags */
+  h3{
+    font-size: 28px;
+  }
+  /* Begin styling section for flip cards */
+  .flip-card {
+    background-color: transparent;
+    width: 55%;
+    height: 500px;
+    perspective: 1000px;    /* Remove this if you don't want the 3D effect */
+    margin: 3%;
+    margin-left: 23%;
+    box-shadow: 7px 7px grey;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  /* Styling on-hover effect for flip-cards */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  /* Styling both the front and the back of the flip-card */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  /* Styling the front of the flip-cards */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  /* Styling the back of the flip-cards */
+  .flip-card-back {
+    background-color: #42a1f4;
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 28px;
+    overflow-y: scroll;
+  }
+}
+h1 {
+  padding: 0.5em 0 0.5em 0;
+  font-size: 2.5em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  background-color: #eeeeee;
+}
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+nav li {
+  float: left;
+}
+nav li a {
+  display: block;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Styling for main tag */
+main {
+  padding: 5px;
+}
+/* Styling for header tag */
+header{
+  background-color: #dddddd;
+  margin-bottom: 0em;
+  top: 0;
+  font-family: Verdana, Geneva, sans-serif;
+  margin: 0;
+  padding-left: 0%;
+  padding-right:0%;
+  margin-left: 0%;
+}
+footer {
+  background-color: #eeeeee;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  font-family: 'Alegreya', serif;
+}
+.center{
+  text-align: center;
+}
+.center a {
+  text-decoration: none;
+  color: black;
+}
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+body, h1 {
+  margin-top:0;
+  margin-bottom: 0;
+}
+header h1 {
+  font-weight: normal;
+}
+nav button {
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+.full-width {
+  width:100%;
+}
+/* Styling for html and body tags */
+html, body {
+  margin: 0;
+}
+.float-box{
+box-shadow: 0 4px 8px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+padding:5px;
+background-color: white;
+}
+/* Hiding other images on main page */
+.main_image, .main_image img{
+  display: none;
+}
+/* Styling for airplane image on home page */
+.main_image2{
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  width: 100%;
+}
+#plane {
+  width: 100%;
+  height: 99%;
+}
+
+
+    /* about */
+@media only screen and (max-width:767px){
+  .about {
+    width:100%;
+  }
+  .about img{
+    width:95%;
+    height:10%;
+  }
+  .text{
+    position:absolute;
+    top:25%;
+    left:10%;
+    color:#FFFFFF;
+  }
+  .text h2{
+    font-size:2em;
+  }
+  .text p{
+    font-size: 1.5em;
+  }
+  .main{
+    width:100%;
+    height:10%;
+  }
+  .main h2{
+    font-size:2.5em;
+  }
+  .main p{
+    font-size:1em;
+  }
+  .vision, .mission{
+    width:90%;
+    height:95%;
+    background-color:#e6f2ff;
+    padding:3%;
+    margin:2%;
+  }
+  .vision img, .mission img{
+    width:90%;
+    height:70%;
+    text-align:center;
+    padding:1em;
+  }
+}
+@media only screen and (min-width:768px){
+  .about {
+    width:100%;
+    height:10%;
+  }
+  .about img {
+    width: 100%;
+  }
+  .text{
+    position:absolute;
+    top:30%;
+    left:10%;
+    color:#FFFFFF;
+  }
+  .main{
+    width: 100%;
+  }
+  .text h2{
+    font-size:3em;
+
+  }
+  .text p{
+    font-size: 2em;
+
+  }
+  .boxes{
+    width:90%;
+    height:auto;
+    text-align:center;
+    background-color:#FFFFFF;
+    padding:5%;
+    bottom:50%;
+  }
+  .vision, .mission{
+    width:40%;
+    float:left;
+    height:18em;
+    background-color:#e6f2ff;
+    padding:2.5%;
+    margin:1em;
+  }
+  .vision img, .mission img{
+    width:50%;
+    height:40%;
+  }
+  .mission{
+    width:40%;
+    float:right;
+    height:18em;
+    background-color:#e6f2ff;
+    padding:2.5%;
+    margin:1em;
+  }
+  .mission img{
+    width:50%;
+    height:40%;
+  }
+}
+
+    /* guide */
+@media only screen and (max-width:767px) {
+  .guideDesc {
+    width: 90%;
+    text-align: justify;
+  }
+  .restdesc {
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .guideParallax {
+    background-image: url(../images/terminal.jpg);
+    height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .guideParallax p {
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    font-size: 3em;
+    z-index: inherit;
+  }
+  .guideDesc {
+    width: 80%;
+    text-align: center;
+  }
+  .parta {
+    float: left;
+    width: 50%;
+  }
+  .partb {
+    float: right;
+    width: 50%;
+  }
+  .restdesc {
+    font-size: 1.2em;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    display: block;
+  }
+  .restContainer {
+    height: 18em;
+  }
+}
+#apple {
+  width: 25%;
+}
+.guideMobileImg {
+  width: 100%;
+}
+.guideHeader {
+  font-size: 3em;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+}
+.guideTitle {
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.guideDesc {
+  font-family: 'Merriweather', serif;
+  margin: auto;
+}
+.guideContainer {
+  width: 95%;
+  margin: 0 auto;
+}
+.guidePanel {
+  width: 90%;
+  margin: 0 auto;
+}
+.restlogo {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.restdesc {
+  font-family: 'Alegreya', serif;
+}
+.hrhalf {
+  width: 80%;
+}
+.hrfull {
+  border: 2px solid;
+}
+
+    /* booking */
+.payment {
+  margin: 0 auto;
+  padding: 2px 16px;
+}
+    /* parking */
+    .parallax {
+
+      min-height: 500px;
+      height: auto;
+          width:100%;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .inner-box{
+      opacity: .8;
+      background-color: #f0f0f0;
+    }
+@media only screen and (max-width: 767px) {
+ nav {
+   background-color: #DDDDDD;
+ }
+ #third {
+  background-image: url('../images/carRentalMobile.jpg');
+}
+.scroll-box {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+}
+@media only screen and (min-width: 768px) {
+  .scale {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+#third {
+background-image: url('../images/carRental_.jpg');
+}
+  .inner-box {
+    width:50%;
+      margin-left:25%;
+      margin-right: 25%;
+  }
+  .box-list {
+    columns: 3;
+    display: list-item;
+  }
+  .float-box {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+  }
+  .scroll-box {
+    width:70%; margin-left:15%; margin-right: 15%;
+  }
+  .imgContain {
+
+    vertical-align: -webkit-baseline-middle;
+    padding-top: 4%;
+    padding-bottom: 3%;
+  }
+
+}
+#short-term, #long-term, #economy {
+  height: 20px;
+  border-radius: 25px;
+  /*background-color: rgb(0, 132, 194);*/
+  background-image:
+      -webkit-linear-gradient(-45deg,
+                              transparent 33%, rgba(0, 0, 0, .1) 33%,
+                              rgba(0,0, 0, .1) 66%, transparent 66%),
+      -webkit-linear-gradient(top,
+                              rgba(255, 255, 255, .25),
+                              rgba(0, 0, 0, .25)),
+      -webkit-linear-gradient(left, rgb(255, 255, 255), rgb(0, 153, 255));
+ }
+.progressBar {
+  background-color: black;
+  border-radius: 13px;
+  padding: 3px;
+}
+.progressBar div {
+  background-color: rgb(0, 153, 255);
+  width: 40%;
+  height: 20px;
+  border-radius: 10px;
+}
+.progress {
+  text-align: center;
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 25px;
+  position: relative;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0.658);
+}
+#percent1, #percent2, #percent3 {
+position: absolute;
+left: 50%;
+color:#f8f9fa;
+}
+
+.animated-icon1 span {
+  background: #ffffff;
+}
+#text {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  top: 10px;
+  font-weight: normal;
+}
+#parking {
+  z-index:0;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.animated-icon1 {
+  z-index:500;
+}
+.animated-icon1.open {
+  position: absolute;
+  z-index:500;
+}
+
+/*#collapse {
+  position: absolute;
+  z-index:2;
+  background-color: black;
+
+}
+#collapse li a{
+  color: white;
+}*/
+.float-box {
+  box-shadow: 0 14px 16px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding:5px;
+  margin-top: 15px;
+  margin-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #ffffff;
+}
+.float-box:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.foo {
+  text-align: left;
+  list-style: square;
+  columns: 1;
+  list-style-position: inside;
+}
+.container {
+  padding: 2px 16px;
+}
+main ul {
+  list-style: none;
+  padding-left: 5px;
+}
+#waitTimes {
+  text-align: left;
+  padding-right: 10px;
+}
+.imgContain {
+
+  vertical-align: -webkit-baseline-middle;
+  padding-top: 7%;
+  padding-bottom: 5%;
+}
+.imgContain>.numberCircle {
+  float: left;
+  padding:15px;
+  margin-right: 20px;
+}
+.numberCircle {
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  background: #fff;
+  border: 2px solid #666;
+  color: #666;
+  text-align: center;
+  font: 32px Arial, sans-serif;
+}
