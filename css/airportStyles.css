@@ -101,6 +101,40 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
   .mobile {
     display: none;
   }
+  /* Flight Status Table Format */
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+  /* Desktop Table */
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
   /* Styling for area where you can book a flight ticket */
   .booking{
     text-align: center;
