@@ -2,7 +2,6 @@
 Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <link rel="stylesheet" type="text/css" href="css/airportStyles.css">
   <link rel="stylesheet" href="css/animateHamburger.css">
@@ -27,12 +26,10 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       table-layout: fixed;
       overflow-x: auto;
     }
-
     .HERE {
       width: 90%;
       overflow-x: auto;
     }
-
     .HERE a:link,
     .HERE a:visited {
       background-color: #0b294b;
@@ -42,34 +39,27 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       text-decoration: none;
       display: inline-block;
     }
-
     .HERE a:hover,
     .HERE a:active {
       background-color: #0b294b;
     }
-
     td,
     th {
       text-align: left;
       padding: 8px;
     }
-
     .HERE tr:nth-child(even) {
       background-color: #dddddd;
     }
-
     .HERE td,
     .HERE th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
     }
-
     #flySchedule tr:nth-child(even) {
       background-color: #dddddd;
     }
-
-
     /* The popup form - hidden by default */
     .form-popup {
       display: none;
@@ -83,14 +73,12 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       margin-right: 5%;
       margin-left: 5%;
     }
-
     /* Add styles to the form container */
     .form-container {
       max-width: 300px;
       padding: 10px;
       background-color: white;
     }
-
     /* Full-width input fields */
     .form-container input[type=text],
     .form-container input[type=password] {
@@ -100,14 +88,12 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       border: none;
       background: #f1f1f1;
     }
-
     /* When the inputs get focus, do something */
     .form-container input[type=text]:focus,
     .form-container input[type=password]:focus {
       background-color: #ddd;
       outline: none;
     }
-
     /* Set a style for the submit/login button */
     .form-container .btn {
       background-color: #4CAF50;
@@ -119,17 +105,12 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       margin-bottom: 10px;
       opacity: 1;
     }
-
-
-
     /* Add some hover effects to buttons */
     .form-container .btn:hover,
     .open-button:hover {
       opacity: 1;
     }
-
     @media only screen and (max-width: 760px) {
-
       /* Force table to not be like tables anymore */
       table,
       thead,
@@ -139,18 +120,15 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
       tr {
         display: block;
       }
-
       /* Hide table headers (but not display: none;, for accessibility) */
       #flySchedule thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
       }
-
       #flySchedule tr {
         border: 1px solid #ccc;
       }
-
       #flySchedule td {
         /* Behave  like a "row" */
         border: none;
@@ -158,7 +136,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         position: relative;
         padding-left: 50%;
       }
-
       #flySchedule td:before {
         /* Now like a table header */
         position: absolute;
@@ -169,45 +146,34 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         padding-right: 10px;
         white-space: nowrap;
       }
-
-      /*
-	Label the data
-	*/
+      /*Label the data*/
       #flySchedule td:nth-of-type(1):before {
         content: "Airline";
       }
-
       #flySchedule td:nth-of-type(2):before {
         content: "Departing";
       }
-
       #flySchedule td:nth-of-type(3):before {
         content: "Arriving";
       }
-
       #flySchedule td:nth-of-type(4):before {
         content: "Schedule";
       }
-
       #flySchedule td:nth-of-type(5):before {
         content: "Gate";
       }
-
       #flySchedule td:nth-of-type(6):before {
         content: "Status";
       }
-
       #flySchedule td:nth-of-type(7):before {
         content: "";
       }
-
       .payForm input[type=text] {
         text-align: center;
       }
     }
   </style>
 </head>
-
 <body class="bg-white">
   <header>
     <div class="center">
@@ -226,7 +192,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         </div>
       </button>
       <div id="collapse" style="display:none;">
-
         <ul>
           <li class="full-width">
             <a class="nav-link" href="index.html">Home</a>
@@ -282,7 +247,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         <li><a href="about.html">About Buffalo Wings</a></li>
         <li><a href="Customer_Service.html">Customer Service</a></li>
       </ul>
-
     </div>
     <div class="bar"></div>
   </nav>
@@ -324,18 +288,13 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         <button type="button"
           Onclick="document.getElementById('ticket_cost').innerHTML = calPrice(); tableCreate(); ">Generate
           Schedules</button>
-
       </form>
       <div id="HERE"></div>
       <br />
-
       <h3>Ticket Price</h3>
       <p>Your ticket price in USD($) is:</p>
       <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
       <p id="ticket_cost">$0.00</p>
-
-
-
       <div class="form-popup" id="myForm">
         <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
           <h2>Payment</h2>
@@ -357,11 +316,9 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
             <tr>
               <td><input type="password" id="CreditNum" placeholder="Credit Card Number" /></td>
               <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
-
             </tr>
             <tr>
               <td>
-
                 <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
                 <button type="button" id="$payment">Pay with us using PayPal!</button></td>
             </tr>
@@ -371,12 +328,8 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
           <button type="button" onclick="closeForm()">close</button>
         </form>
       </div>
-
-
       <!-- Script created to generate random number -->
       <script>
-
-
         function openForm() {
           var price = calPrice();
           if (isNaN(price.substring(1))) {
@@ -390,7 +343,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
           document.getElementById('priceOnForm').innerHTML = "Total: " + calPrice();
           document.getElementById("myForm").style.display = "block";
         }
-
         function closeForm() {
           document.getElementById("myForm").style.display = "none";
         }
@@ -472,11 +424,9 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
             alert("Please provide your DOB!");
             return false;
           }
-          
           return (true);
         }
         // Script to take user to paypal to collect payment
-
         document.getElementById("$payment").onclick = function () {
           location.href = "https://www.paypal.com/us/home";
         };
@@ -542,8 +492,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
           ["Frankfurt", "Swiss International", "Jacksonville", "Frankfurt, Germany", "3:00:00 AM", "C", "On Time "],
           ["Dublin", "Swiss International", "Jacksonville", "Dublin, Ireland ", "5:00:00 PM", "C", "On Time "]
         ];
-
-
         function tableCreate() {
           var element = document.getElementById("city");
           var cityName = element.options[element.selectedIndex].value;
@@ -575,21 +523,17 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
               }
               var td = tr.insertCell();
               td.innerHTML = "<a onclick='openForm()' style='color:black; text-decoration: underline; font-size: 1em;'>Purchase</a>";
-
             }
             i++;
           }
           document.getElementById('HERE').innerHTML = "";
           document.getElementById('HERE').appendChild(tbl);
-
-
         }
       </script>
       <br />
       <br />
       <br />
     </div>
-
     <hr>
     <h1 style="text-align: center; color: white;">Airlines We Support</h1>
     <div class="American Airlines Logo">
@@ -633,5 +577,4 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   </footer>
   <script src="jquery.min.js"></script>
 </body>
-
 </html>
