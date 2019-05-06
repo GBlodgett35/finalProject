@@ -309,8 +309,8 @@ background-color: white;
     font-size: 1.5em;
   }
   .main{
-    width:100%;
-    height:10%;
+    width:80%;
+	padding:10%;
   }
   .main h2{
     font-size:2.5em;
@@ -318,19 +318,14 @@ background-color: white;
   .main p{
     font-size:1em;
   }
-  .vision, .mission{
+  .goal{
     width:90%;
     height:95%;
     background-color:#e6f2ff;
     padding:3%;
     margin:2%;
   }
-  .vision img, .mission img{
-    width:90%;
-    height:70%;
-    text-align:center;
-    padding:1em;
-  }
+
 }
 @media only screen and (min-width:768px){
   .about {
@@ -347,7 +342,8 @@ background-color: white;
     color:#FFFFFF;
   }
   .main{
-    width: 100%;
+    width: 80%;
+	padding:10%;
   }
   .text h2{
     font-size:3em;
@@ -357,38 +353,21 @@ background-color: white;
     font-size: 2em;
 
   }
-  .boxes{
-    width:90%;
-    height:auto;
-    text-align:center;
-    background-color:#FFFFFF;
-    padding:5%;
-    bottom:50%;
+
+  .goal{
+    width:80%;
+	padding:7.5%;
+    height:60%;
+    background-color:#e6e6ff;
+    margin:2.5%;
+	text-align:center;
   }
-  .vision, .mission{
-    width:40%;
-    float:left;
-    height:18em;
-    background-color:#e6f2ff;
-    padding:2.5%;
-    margin:1em;
-  }
-  .vision img, .mission img{
-    width:50%;
-    height:40%;
-  }
-  .mission{
-    width:40%;
-    float:right;
-    height:18em;
-    background-color:#e6f2ff;
-    padding:2.5%;
-    margin:1em;
-  }
-  .mission img{
-    width:50%;
-    height:40%;
-  }
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+
 }
 
     /* guide */
