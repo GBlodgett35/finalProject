@@ -48,6 +48,9 @@ This form will thank them for their order and have a button to return to the mai
           <li class='full-width'>
             <a class='nav-link' href='about.html'>About Buffalo Wings</a>
           </li>
+          <li class="full-width">
+            <a class="nav-link" href="Customer_Service.html">Customer Service</a>
+          </li>
         </ul>
       </div>
       <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
@@ -79,6 +82,7 @@ This form will thank them for their order and have a button to return to the mai
           <li><a href='airportGuide.html'>Airport Guide</a></li>
           <li><a href='parking.html'>Parking and Trasportation </a></li>
           <li><a href='about.html'>About Buffalo Wings</a></li>
+          <li><a href="Customer_Service.html">Customer Service</a></li>
       </ul>
     </div>
   </nav>
