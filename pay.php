@@ -90,4 +90,7 @@ Your order number is <?php echo(rand(1000,10000000)); ?> <br /><br />
 <a href="index.html">Return to home</a>
       </div>
     </main>
+    <footer>
+    &copy; Buffalo Wings Airport & Harding University
+  </footer>
 </html>
