@@ -88,6 +88,10 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor */
     background-color: #ffffff;
     font-size: 28px;
   }
+  .airlinelogo {
+    width:50%;
+    height: auto;
+  }
   /* Styling for text that displays ticket price */
   #ticket_cost{
     color: #000000;
