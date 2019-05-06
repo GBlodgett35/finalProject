@@ -22,91 +22,188 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
   <style>
     .HERE table {
       font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 90%;
-  table-layout:fixed;
+      border-collapse: collapse;
+      width: 90%;
+      table-layout: fixed;
+      overflow-x: auto;
     }
+
     .HERE {
-      width:90%;
+      width: 90%;
+      overflow-x: auto;
     }
 
-td, th {
-  text-align: left;
-  padding: 8px;
-}
+    .HERE a:link,
+    .HERE a:visited {
+      background-color: #0b294b;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
 
-.HERE table tr:nth-child(even) {
-  background-color: #dddddd;
-}
+    .HERE a:hover,
+    .HERE a:active {
+      background-color: #0b294b;
+    }
 
-.HERE table td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+    td,
+    th {
+      text-align: left;
+      padding: 8px;
+    }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
- 
+    .HERE tr:nth-child(even) {
+      background-color: #dddddd;
+    }
 
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 25%;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-  background: white;
-  width: 90%;
-  margin-right: 5%;
-  margin-left: 5%;
-}
+    .HERE td,
+    .HERE th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
 
-/* Add styles to the form container */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 1;
-}
+    #flySchedule tr:nth-child(even) {
+      background-color: #dddddd;
+    }
 
 
+    /* The popup form - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 25%;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+      background: white;
+      width: 90%;
+      margin-right: 5%;
+      margin-left: 5%;
+    }
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    /* Full-width input fields */
+    .form-container input[type=text],
+    .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus,
+    .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 1;
+    }
 
 
-  
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+
+    @media only screen and (max-width: 760px) {
+
+      /* Force table to not be like tables anymore */
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      /* Hide table headers (but not display: none;, for accessibility) */
+      #flySchedule thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      #flySchedule tr {
+        border: 1px solid #ccc;
+      }
+
+      #flySchedule td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      #flySchedule td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+      }
+      /*
+	Label the data
+	*/
+      #flySchedule td:nth-of-type(1):before {
+        content: "Airline";
+      }
+
+      #flySchedule td:nth-of-type(2):before {
+        content: "Departing";
+      }
+
+      #flySchedule td:nth-of-type(3):before {
+        content: "Arriving";
+      }
+
+      #flySchedule td:nth-of-type(4):before {
+        content: "Schedule";
+      }
+
+      #flySchedule td:nth-of-type(5):before {
+        content: "Gate";
+      }
+
+      #flySchedule td:nth-of-type(6):before {
+        content: "Status";
+      }
+
+      #flySchedule td:nth-of-type(7):before {
+        content: "";
+      }
+
+      .payForm input[type=text] {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -227,12 +324,13 @@ tr:nth-child(even) {
         <br />
         <br />
         <button type="button"
-          Onclick="document.getElementById('ticket_cost').innerHTML = calPrice(); tableCreate(); ">Generate Schedules</button>
-        
+          Onclick="document.getElementById('ticket_cost').innerHTML = calPrice(); tableCreate(); ">Generate
+          Schedules</button>
+
       </form>
       <div id="HERE"></div>
       <br />
-      
+
       <h3>Ticket Price</h3>
       <p>Your ticket price in USD($) is:</p>
       <!-- paragraph tag created to show ticket cost once the submit button is clicked  -->
@@ -241,79 +339,77 @@ tr:nth-child(even) {
 
 
       <div class="form-popup" id="myForm">
-          <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
-              <h2>Payment</h2>
-              <table>
-                <tr>
-                  <td><input type="text" id="fName" placeholder="First Name" /></td>
-  
-                  <td>
-                    <input type="text" id="lName" placeholder="Last Name" />
-                  </td>
-                  <td>
-                    <input type="text" id="mName" placeholder="Middle Initial" />
-                  </td>
-                </tr>
-                <tr>
-                  <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-  
-  
-                  <td><input type="text" id="email" placeholder="Email Address" /></td>
-  
-  
-                  <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
-                </tr>
-                <tr>
-                  <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
-                  <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
-  
-                </tr>
-                <tr>
-                  <td>
-  
-                    <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
-                    <button type="button" id="$payment">Pay with us using PayPal!</button></td>
-                </tr>
-              </table>
-  
-              <input type="submit" value="Submit" />
-            </form>
-        </div>
+        <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
+          <h2>Payment</h2>
+          <table id="payForm">
+            <tr>
+              <td><input type="text" id="fName" placeholder="First Name" /></td>
+              <td>
+                <input type="text" id="lName" placeholder="Last Name" />
+              </td>
+              <td>
+                <input type="text" id="mName" placeholder="Middle Initial" />
+              </td>
+            </tr>
+            <tr>
+              <td><input type="text" id="phone" placeholder="Phone Number" /></td>
+              <td><input type="text" id="email" placeholder="Email Address" /></td>
+              <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
+              <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
 
-        
+            </tr>
+            <tr>
+              <td>
+
+                <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
+                <button type="button" id="$payment">Pay with us using PayPal!</button></td>
+            </tr>
+          </table>
+          <p id="priceOnForm"></p>
+          <input type="submit" value="Submit" />
+          <button type="button" onclick="closeForm()">close</button>
+        </form>
+      </div>
 
 
       <!-- Script created to generate random number -->
       <script>
 
 
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+        function openForm() {
+          document.getElementById('priceOnForm').innerHTML = "Total: " + calPrice();
+          document.getElementById("myForm").style.display = "block";
+        }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
         function genSchedule() {
           var element = document.getElementById("city");
           var cityName = element.options[element.selectedIndex].value;
           var table = $('.table');
           table.find('tr').each(function (i, el) {
             var $tds = $(this).find('td').eq(0).text();
-            if(cityName === $tds) {
+            if (cityName === $tds) {
               el.style.display = 'block';
             }
-        // do something with productId, product, Quantity
-    });
+            // do something with productId, product, Quantity
+          });
         }
         var map = new Map();
-        map.set("LA", [75, 125, 189]);
-        map.set("DA", [900, 700, 500]);
-        map.set("London", [900, 700, 500]);
-        map.set("Paris", [900, 700, 500]);
+        map.set("LA", [75, 125, 150]);
+        map.set("DA", [40, 75, 120]);
+        map.set("London", [90, 110, 160]);
+        map.set("Paris", [100, 120, 170]);
         map.set("Amsterdam", [150, 210, 280]);
         map.set("Barcelona", [140, 200, 250]);
         map.set("Dublin", [130, 190, 240]);
+        map.set("Frankfurt", [135, 160, 190]);
+        map.set("Edinburgh", [135, 160, 190]);
+        map.set("Atlanta", [135, 160, 190]);
         function calPrice() {
           var element = document.getElementById("city");
           var cityName = element.options[element.selectedIndex].value;
@@ -327,8 +423,8 @@ function closeForm() {
             }
           }
           var cost = (map.get(cityName)[i] * passengers);
-          if (cost === NaN) {
-            document.alert("Please enter all the fields!");
+          if (isNaN(cost)) {
+            return "Please enter ticket type and number of passengers"
           }
           return "$" + cost + ".00";
         }
@@ -356,11 +452,7 @@ function closeForm() {
               </tr>
               <tr>
                 <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-
-
                 <td><input type="text" id="email" placeholder="Email Address" /></td>
-
-
                 <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
               </tr>
               <tr>
@@ -376,7 +468,7 @@ function closeForm() {
               </tr>
             </table>
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" onclick="validate()" />
           </form>
         </div>
         <script>
@@ -420,115 +512,108 @@ function closeForm() {
             location.href = "https://www.paypal.com/us/home";
           };
           //Creates the table of schedules
-          var schedules_ = [
-            ["Airline", "Departing", "Arriving", "Schedule", "Gate", "Status"],
-            ["DA", "American Airlines", "Jacksonville", "Dallas", "1:30:00 PM", "A", "On Time"],
-            ["LA", "American Airlines","Jacksonville","Los Angeles","5:00:00 AM","A","On Time" ],
-            ["<tr><td>American Airlines </td><td>Jacksonville</td><td>London</td><td>5:00:00 PM</td><td>A</td><td>On Time </td></tr>", "London"],
-
-          ];
           var schedules = [
             ["Airline", "Departing", "Arriving", "Schedule", "Gate", "Status"],
-            ["DA", "American Airlines","Jacksonville","Dallas","1:30:00 PM","A","On Time "],
-            ["LA", "American Airlines","Jacksonville","Los Angeles","5:00:00 AM","A","On Time "],
-            ["London", "American Airlines","Jacksonville","London","5:00:00 PM","A","On Time "],
-            ["Paris", "American Airlines","Jacksonville","Paris","4:00:00 PM","B","On Time "],
-            ["Amsterdam", "American Airlines","Jacksonville","Amsterdam","4:00:00 PM","B","On Time "],
-            ["Barcelona", "American Airlines","Jacksonville","Barcelona","5:00:00 PM","C","On Time "],
-            ["Dublin", "American Airlines","Jacksonville","Dublin ","5:00:00 AM","C","On Time "],
-            ["Frankfurt", "American Airlines","Jacksonville","Frankfurt ","2:00:00 AM","C","On Time "],
-            ["Edinburgh", "American Airlines","Jacksonville","Edinburgh ","6:00:00 PM","C","On Time "],
-            ["DA", "Air France","Jacksonville","Dallas ","8:00:00 PM","A","On Time "],
-            ["DA", "Air France","Jacksonville","Dallas ","10:00:00 PM","A","On Time "],
-            ["DA", "Air France","Jacksonville","Dallas ","3:00:00 AM","A","On Time "],
-            ["Atlanta", "Air France","Jacksonville","Atlanta Georgia","2:00:00 AM","A","On Time "],
-            ["Dublin", "Air France","Jacksonville","Dublin, Ireland","6:00:00 AM","A","On Time "],
-            ["LA", "Air France","Jacksonville","Los Angeles","10:00:00 PM","B","On Time "],
-            ["Air France","Jacksonville","San Jose ","12:00:00 PM","B","On Time "],
-            ["Air France","Jacksonville","Cancun ","8:00:00 AM","C","Cancelled"],
-            ["Air France","Jacksonville","Nassau ","10:00:00 AM","C","On Time "],
-            ["Air France","Jacksonville","Atlanta Georgia ","4:00:00 PM","C","On Time "],
-            ["Air France","Jacksonville","Jacksonville ","3:00:00 PM","C","On Time "],
-            ["Air France","Jacksonville","Jacksonville ","10:00:00 PM","C","On Time "],
-            ["Air France","Jacksonville","Jacksonville ","1:00:00 AM","C","On Time "],
-            ["Cathy Pacific","Jacksonville","Jacksonville","1:30:00 PM","A","On Time "],
-            ["Cathy Pacific","Jacksonville","Jacksonville","5:00:00 AM","A","On Time"],
-            ["Cathy Pacific","Jacksonville","Jacksonville","3:00:00 PM","A","On Time "],
-            ["Cathy Pacific","Jacksonville","Dallas ","5:00:00 PM","A","On Time "],
-            ["Cathy Pacific","Jacksonville","San Jose ","4:00:00 PM","B","On Time "],
-            ["Cathy Pacific","Jacksonville","San Jose ","4:00:00 PM","B","On Time "],
-            ["Cathy Pacific","Jacksonville","Cancun ","5:00:00 PM","C","On Time "],
-            ["Cathy Pacific","Jacksonville","Nassau ","5:00:00 AM","C","On Time "],
-            ["Cathy Pacific","Jacksonville","Jacksonville ","2:00:00 AM","C","On Time "],
-            ["Cathy Pacific","Jacksonville","Jacksonville ","6:00:00 PM","C","On Time "],
-            ["Delta Airlines","Jacksonville","Jacksonville","12:00:00 PM","A","On Time "],
-            ["Delta Airlines","Jacksonville","Jacksonville","4:00:00 PM","A","On Time "],
-            ["DA", "Delta Airlines","Jacksonville","Dallas ","8:00:00 PM","A","On Time "],
-            ["Delta Airlines","Jacksonville","Punta Cana ","10:00:00 PM","A","On Time "],
-            ["Delta Airlines","Jacksonville","San Jose ","3:00:00 AM","B","On Time "],
-            ["Delta Airlines","Jacksonville","Cancun ","3:00:00 PM","C","On Time "],
-            ["Delta Airlines","Jacksonville","Nassau ","10:00:00 PM","C","On Time "],
-            ["Barcelona", "American Airlines","Jacksonville","Barcelona","1:00:00 AM","C","OnTime "],
-            ["Delta Airlines","Jacksonville","Jacksonville ","5:00:00 PM","C","On Time "],
-            ["Delta Airlines","Jacksonville","Jacksonville","4:00:00 AM","C","On Time "],
-            ["Delta Airlines","Jacksonville","Jacksonville ","10:00:00 PM","C","On Time "],
-            ["Delta Airlines","Jacksonville","Jacksonville ","1:00:00 PM","C","On Time "],
-            ["Swiss International","Jacksonville","Jacksonville","3:00:00 PM","A","On Time "],
-            ["Swiss International","Jacksonville","Jacksonville","1:00:00 AM","A","On Time "],
-            ["Swiss International","Jacksonville","Dallas ","3:00:00 PM","A","On Time "],
-            ["Swiss International","Jacksonville","Dallas ","6:00:00 AM","A","On Time "],
-            ["Barcelona", "Swiss International","Jacksonville","Barcelona","10:00:00 AM","A","On Time "],
-            ["DA", "Swiss International","Jacksonville","Dallas","11:00:00 PM","B","On Time "],
-            ["Edinburgh", "Swiss International","Jacksonville","Edinburgh ","2:00:00 PM","C","On Time "],
-            ["Swiss International","Jacksonville","Cancun ","1:00:00 AM","C","On Time "],
-            ["Swiss International","Jacksonville","Nassau ","3:00:00 AM","C","Cancelled"],
-            ["Swiss International","Jacksonville","Jacksonville ","3:00:00 PM","C","On Time "],
-            ["Swiss International","Jacksonville","Jacksonville ","7:00:00 AM","C","On Time "],
-            ["Swiss International","Jacksonville","Jacksonville","10:00:00 PM","C","On Time "],
-            ["Swiss International","Jacksonville","Jacksonville ","3:00:00 AM","C","On Time "],
-            ["Swiss International","Jacksonville","Jacksonville ","5:00:00 PM","C","On Time "]
+            ["DA", "American Airlines", "Jacksonville", "Dallas", "1:30:00 PM", "A", "On Time "],
+            ["LA", "American Airlines", "Jacksonville", "Los Angeles", "5:00:00 AM", "A", "On Time "],
+            ["London", "American Airlines", "Jacksonville", "London", "5:00:00 PM", "A", "On Time "],
+            ["Paris", "American Airlines", "Jacksonville", "Paris", "4:00:00 PM", "B", "On Time "],
+            ["Amsterdam", "American Airlines", "Jacksonville", "Amsterdam", "4:00:00 PM", "B", "On Time "],
+            ["Barcelona", "American Airlines", "Jacksonville", "Barcelona", "5:00:00 PM", "C", "On Time "],
+            ["Dublin", "American Airlines", "Jacksonville", "Dublin ", "5:00:00 AM", "C", "On Time "],
+            ["Frankfurt", "American Airlines", "Jacksonville", "Frankfurt ", "2:00:00 AM", "C", "On Time "],
+            ["Edinburgh", "American Airlines", "Jacksonville", "Edinburgh ", "6:00:00 PM", "C", "On Time "],
+            ["DA", "Air France", "Jacksonville", "Dallas ", "8:00:00 PM", "A", "On Time "],
+            ["DA", "Air France", "Jacksonville", "Dallas ", "10:00:00 PM", "A", "On Time "],
+            ["DA", "Air France", "Jacksonville", "Dallas ", "3:00:00 AM", "A", "On Time "],
+            ["Atlanta", "Air France", "Jacksonville", "Atlanta Georgia", "2:00:00 AM", "A", "On Time "],
+            ["Dublin", "Air France", "Jacksonville", "Dublin, Ireland", "6:00:00 AM", "A", "On Time "],
+            ["LA", "Air France", "Jacksonville", "Los Angeles", "10:00:00 PM", "B", "On Time "],
+            ["Air France", "Jacksonville", "San Jose ", "12:00:00 PM", "B", "On Time "],
+            ["Air France", "Jacksonville", "Cancun ", "8:00:00 AM", "C", "Cancelled"],
+            ["Air France", "Jacksonville", "Nassau ", "10:00:00 AM", "C", "On Time "],
+            ["Air France", "Jacksonville", "Atlanta Georgia ", "4:00:00 PM", "C", "On Time "],
+            ["Air France", "Jacksonville", "Jacksonville ", "3:00:00 PM", "C", "On Time "],
+            ["Air France", "Jacksonville", "Jacksonville ", "10:00:00 PM", "C", "On Time "],
+            ["Air France", "Jacksonville", "Jacksonville ", "1:00:00 AM", "C", "On Time "],
+            ["Atlanta", "Cathy Pacific", "Jacksonville", "Atlanta, Georgia", "1:30:00 PM", "A", "On Time "],
+            ["Cathy Pacific", "Jacksonville", "Jacksonville", "5:00:00 AM", "A", "On Time"],
+            ["Amsterdam", "Cathy Pacific", "Jacksonville", "Amsterdam", "3:00:00 PM", "A", "On Time "],
+            ["DA", "Cathy Pacific", "Jacksonville", "Dallas ", "5:00:00 PM", "A", "On Time "],
+            ["Cathy Pacific", "Jacksonville", "San Jose ", "4:00:00 PM", "B", "On Time "],
+            ["Cathy Pacific", "Jacksonville", "San Jose ", "4:00:00 PM", "B", "On Time "],
+            ["Cathy Pacific", "Jacksonville", "Cancun ", "5:00:00 PM", "C", "On Time "],
+            ["Cathy Pacific", "Jacksonville", "Nassau ", "5:00:00 AM", "C", "On Time "],
+            ["Cathy Pacific", "Jacksonville", "Jacksonville ", "2:00:00 AM", "C", "On Time "],
+            ["Barcelona", "Cathy Pacific", "Jacksonville", "Barcelona, Spain", "6:00:00 PM", "C", "15 Minutes Late"],
+            ["Delta Airlines", "Jacksonville", "Jacksonville", "12:00:00 PM", "A", "On Time "],
+            ["Delta Airlines", "Jacksonville", "Jacksonville", "4:00:00 PM", "A", "On Time "],
+            ["DA", "Delta Airlines", "Jacksonville", "Dallas ", "8:00:00 PM", "A", "On Time "],
+            ["Barcelona", "Delta Airlines", "Jacksonville", "Barcelona, Spain", "10:00:00 PM", "A", "On Time "],
+            ["Delta Airlines", "Jacksonville", "San Jose ", "3:00:00 AM", "B", "On Time "],
+            ["Delta Airlines", "Jacksonville", "Cancun ", "3:00:00 PM", "C", "On Time "],
+            ["Delta Airlines", "Jacksonville", "Nassau ", "10:00:00 PM", "C", "On Time "],
+            ["Barcelona", "American Airlines", "Jacksonville", "Barcelona", "1:00:00 AM", "C", "OnTime "],
+            ["Delta Airlines", "Jacksonville", "Jacksonville ", "5:00:00 PM", "C", "On Time "],
+            ["Delta Airlines", "Jacksonville", "Jacksonville", "4:00:00 AM", "C", "On Time "],
+            ["Delta Airlines", "Jacksonville", "Jacksonville ", "10:00:00 PM", "C", "On Time "],
+            ["Delta Airlines", "Jacksonville", "Jacksonville ", "1:00:00 PM", "C", "On Time "],
+            ["Swiss International", "Jacksonville", "Jacksonville", "3:00:00 PM", "A", "On Time "],
+            ["Swiss International", "Jacksonville", "Jacksonville", "1:00:00 AM", "A", "On Time "],
+            ["Swiss International", "Jacksonville", "Dallas ", "3:00:00 PM", "A", "On Time "],
+            ["Swiss International", "Jacksonville", "Dallas ", "6:00:00 AM", "A", "On Time "],
+            ["Barcelona", "Swiss International", "Jacksonville", "Barcelona", "10:00:00 AM", "A", "On Time "],
+            ["DA", "Swiss International", "Jacksonville", "Dallas", "11:00:00 PM", "B", "10 Minutes Ahead of Schedule"],
+            ["Edinburgh", "Swiss International", "Jacksonville", "Edinburgh ", "2:00:00 PM", "C", "On Time "],
+            ["Swiss International", "Jacksonville", "Cancun ", "1:00:00 AM", "C", "On Time "],
+            ["Swiss International", "Jacksonville", "Nassau ", "3:00:00 AM", "C", "Cancelled"],
+            ["Swiss International", "Jacksonville", "Jacksonville ", "3:00:00 PM", "C", "On Time "],
+            ["Swiss International", "Jacksonville", "Jacksonville ", "7:00:00 AM", "C", "On Time "],
+            ["Swiss International", "Jacksonville", "Jacksonville", "10:00:00 PM", "C", "On Time "],
+            ["Swiss International", "Jacksonville", "Jacksonville ", "3:00:00 AM", "C", "On Time "],
+            ["Swiss International", "Jacksonville", "Jacksonville ", "5:00:00 PM", "C", "On Time "]
           ];
-         
+
+
           function tableCreate() {
             var element = document.getElementById("city");
-          var cityName = element.options[element.selectedIndex].value;
+            var cityName = element.options[element.selectedIndex].value;
             var body = document.body,
               tbl = document.createElement('table');
+            var x = window.matchMedia("(max-width: 700px)");
+            if (!x.matches) { // If media query matches
+              var header = tbl.createTHead();
+              var row = header.insertRow(0);
               var tr_ = tbl.insertRow();
-              for(var j = 0; j < 6; j++) {
-                  var td = tr_.insertCell();
-                  td.appendChild(document.createTextNode(schedules[0][j]));
+              for (var j = 0; j < 6; j++) {
+                var tr = tbl.tHead.children[0],
+                  th = document.createElement('th');
+                th.innerHTML = schedules[0][j];
+                tr.appendChild(th);
               }
-            tbl.style.width = '100px';
-            tbl.style.tablelayout ="fixed";
+            }
+            tbl.style.width = '90%';
+            tbl.style.tableLayout = "fixed";
+            tbl.style.overflowX = "auto";
+            tbl.setAttribute('id', "flySchedule");
             var i = 1;
-            while(i < schedules.length) {
-              if(cityName == schedules[i][0]) {
+            while (i < schedules.length) {
+              if (cityName == schedules[i][0]) {
                 var tr = tbl.insertRow();
-                for(var j = 1; j < schedules[i].length; j++) {
+                for (var j = 1; j < schedules[i].length; j++) {
                   var td = tr.insertCell();
                   td.appendChild(document.createTextNode(schedules[i][j]));
                 }
                 var td = tr.insertCell();
-                td.innerHTML = "<a onclick='openForm()' style='color:black'>Purchase</a>";
-                //td.appendChild(document.createTextNode());
+                td.innerHTML = "<a onclick='openForm()' style='color:black; text-decoration: underline; font-size: 1em;'>Purchase</a>";
+
               }
-              
-              /*for (var j = 0; j < 2; j++) {
-                if (i == 2 && j == 1) {
-                  break;
-                } else {
-                  var td = tr.insertCell();
-                  td.appendChild(document.createTextNode());
-                  td.style.border = '1px solid black';
-                  
-                }
-              }*/
               i++;
             }
-              document.getElementById('HERE').innerHTML="";
-              document.getElementById('HERE').appendChild(tbl);
-            
+            document.getElementById('HERE').innerHTML = "";
+            document.getElementById('HERE').appendChild(tbl);
+
+
           }
         </script>
         <br />
@@ -537,7 +622,7 @@ function closeForm() {
       </div>
 
       <hr>
-      <h1 style="text-align: center">Airlines We Support</h1>
+      <h1 style="text-align: center; color: white;">Airlines We Support</h1>
       <div class="American Airlines Logo">
         <a href="https://www.aa.com/homePage.do" target="_blank">
           <img src="images/american.png" alt="American Airline Link" style="width:100%;" />
@@ -568,7 +653,7 @@ function closeForm() {
         </a>
       </div>
       <div class="layover">
-        <h1>Have a long Layover? </h1>
+        <h1 style="color:white;">Have a long Layover? </h1>
         <p style="font-size: 2em;"> Visit our <a href="airportGuide.html" style="font-size:1em; color:black;">Airport
             Guide</a>
           page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
