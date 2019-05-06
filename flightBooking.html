@@ -430,44 +430,6 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         }
       </script>
       <!-- <div class="flightbookingsearch">-->
-
-      <div class="float-box" style="display: none;" id="payment_">
-        <div class="payment" style="overflow-x:auto;">
-          <!---->
-          <form action="pay.php" method="POST" name="payment" onsubmit="return(validate());">
-            <h2>Payment</h2>
-            <table>
-              <tr>
-                <td><input type="text" id="fName" placeholder="First Name" /></td>
-
-                <td>
-                  <input type="text" id="lName" placeholder="Last Name" />
-                </td>
-                <td>
-                  <input type="text" id="mName" placeholder="Middle Initial" />
-                </td>
-              </tr>
-              <tr>
-                <td><input type="text" id="phone" placeholder="Phone Number" /></td>
-                <td><input type="text" id="email" placeholder="Email Address" /></td>
-                <td><input type="text" id="DOB" placeholder="Date of Birth (mm/dd/yyyy)" /></td>
-              </tr>
-              <tr>
-                <td><input type="text" id="CreditNum" placeholder="Credit Card Number" /></td>
-                <td><input type="text" id="ExpirationDate" placeholder="Experation Date" /></td>
-
-              </tr>
-              <tr>
-                <td>
-
-                  <img id="PP" src="images/paypal.png" alt="PayPal Company Logo" />
-                  <button type="button" id="$payment">Pay with us using PayPal!</button></td>
-              </tr>
-            </table>
-
-            <input type="submit" value="Submit" onclick="validate()" />
-          </form>
-        </div>
         <script>
           function validate() {
             if (document.payment.fName.value == "") {
