@@ -169,6 +169,7 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
         padding-right: 10px;
         white-space: nowrap;
       }
+
       /*
 	Label the data
 	*/
@@ -429,194 +430,197 @@ Greg Blodgett, Ethan Bond, Joe Faith, HyeJin Moon, & David Taylor -->
           return Math.floor(Math.random() * (max - min)) + min;
         }
       </script>
-      <!-- <div class="flightbookingsearch">-->
-        <script>
-          function validate() {
-            if (document.payment.fName.value == "") {
-              alert("Please provide your first name!");
-              document.payment.fName.focus();
-              return false;
-            }
-            if (document.payment.lName.value == "") {
-              alert("Please provide your last name!");
-              document.paynment.fName.focus();
-              return false;
-            }
-            if (document.payment.mName.value == "") {
-              alert("Please provide your middle initial!");
-              document.payment.fName.focus();
-              return false;
-            }
-            if (document.payment.email.value == "") {
-              alert("Please provide your Email!");
-              document.payment.EMail.focus();
-              return false;
-            }
-            var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
-            if (!re.test(document.payment.phone.value)) {
-              alert("Please provide your phone number in the format # ### ### ####.");
-              document.payment.phone.focus();
-              return false;
-            }
-            var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
-            if (document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value)) {
-              alert("Please provide your DOB!");
-              return false;
-            }
-            return (true);
+      <script>
+        function validate() {
+          if (document.payment.fName.value == "") {
+            alert("Please provide your first name!");
+            document.payment.fName.focus();
+            return false;
           }
-          // Script to take user to paypal to collect payment
+          if (document.payment.lName.value == "") {
+            alert("Please provide your last name!");
+            document.paynment.fName.focus();
+            return false;
+          }
+          if (document.payment.mName.value == "") {
+            alert("Please provide your middle initial!");
+            document.payment.fName.focus();
+            return false;
+          }
+          if (document.payment.email.value == "") {
+            alert("Please provide your Email!");
+            document.payment.EMail.focus();
+            return false;
+          }
+          var re = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+          if (!re.test(document.payment.phone.value)) {
+            alert("Please provide your phone number in the format # ### ### ####.");
+            document.payment.phone.focus();
+            return false;
+          }
+          var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
+          if (document.payment.DOB.value == "" || !reg.test(document.payment.DOB.value)) {
+            alert("Please provide your DOB!");
+            return false;
+          }
+          if (isNaN(calPrice())) {
+            alert("You have not selected what type of ticket you want!");
+            return false;
+          }
+          return (true);
+        }
+        // Script to take user to paypal to collect payment
 
-          document.getElementById("$payment").onclick = function () {
-            location.href = "https://www.paypal.com/us/home";
-          };
-          //Creates the table of schedules
-          var schedules = [
-            ["Airline", "Departing", "Arriving", "Schedule", "Gate", "Status"],
-            ["DA", "American Airlines", "Jacksonville", "Dallas", "1:30:00 PM", "A", "On Time "],
-            ["LA", "American Airlines", "Jacksonville", "Los Angeles", "5:00:00 AM", "A", "On Time "],
-            ["London", "American Airlines", "Jacksonville", "London", "5:00:00 PM", "A", "On Time "],
-            ["Paris", "American Airlines", "Jacksonville", "Paris", "4:00:00 PM", "B", "On Time "],
-            ["Amsterdam", "American Airlines", "Jacksonville", "Amsterdam", "4:00:00 PM", "B", "On Time "],
-            ["Barcelona", "American Airlines", "Jacksonville", "Barcelona", "5:00:00 PM", "C", "On Time "],
-            ["Dublin", "American Airlines", "Jacksonville", "Dublin ", "5:00:00 AM", "C", "On Time "],
-            ["Frankfurt", "American Airlines", "Jacksonville", "Frankfurt ", "2:00:00 AM", "C", "On Time "],
-            ["Edinburgh", "American Airlines", "Jacksonville", "Edinburgh ", "6:00:00 PM", "C", "On Time "],
-            ["DA", "Air France", "Jacksonville", "Dallas ", "8:00:00 PM", "A", "On Time "],
-            ["DA", "Air France", "Jacksonville", "Dallas ", "10:00:00 PM", "A", "On Time "],
-            ["DA", "Air France", "Jacksonville", "Dallas ", "3:00:00 AM", "A", "On Time "],
-            ["Atlanta", "Air France", "Jacksonville", "Atlanta Georgia", "2:00:00 AM", "A", "On Time "],
-            ["Dublin", "Air France", "Jacksonville", "Dublin, Ireland", "6:00:00 AM", "A", "On Time "],
-            ["LA", "Air France", "Jacksonville", "Los Angeles", "10:00:00 PM", "B", "On Time "],
-            ["Air France", "Jacksonville", "San Jose ", "12:00:00 PM", "B", "On Time "],
-            ["Air France", "Jacksonville", "Cancun ", "8:00:00 AM", "C", "Cancelled"],
-            ["Air France", "Jacksonville", "Nassau ", "10:00:00 AM", "C", "On Time "],
-            ["Air France", "Jacksonville", "Atlanta Georgia ", "4:00:00 PM", "C", "On Time "],
-            ["Air France", "Jacksonville", "Jacksonville ", "3:00:00 PM", "C", "On Time "],
-            ["Air France", "Jacksonville", "Jacksonville ", "10:00:00 PM", "C", "On Time "],
-            ["Air France", "Jacksonville", "Jacksonville ", "1:00:00 AM", "C", "On Time "],
-            ["Atlanta", "Cathy Pacific", "Jacksonville", "Atlanta, Georgia", "1:30:00 PM", "A", "On Time "],
-            ["Cathy Pacific", "Jacksonville", "Jacksonville", "5:00:00 AM", "A", "On Time"],
-            ["Amsterdam", "Cathy Pacific", "Jacksonville", "Amsterdam", "3:00:00 PM", "A", "On Time "],
-            ["DA", "Cathy Pacific", "Jacksonville", "Dallas ", "5:00:00 PM", "A", "On Time "],
-            ["Cathy Pacific", "Jacksonville", "San Jose ", "4:00:00 PM", "B", "On Time "],
-            ["Cathy Pacific", "Jacksonville", "San Jose ", "4:00:00 PM", "B", "On Time "],
-            ["Cathy Pacific", "Jacksonville", "Cancun ", "5:00:00 PM", "C", "On Time "],
-            ["Cathy Pacific", "Jacksonville", "Nassau ", "5:00:00 AM", "C", "On Time "],
-            ["Cathy Pacific", "Jacksonville", "Jacksonville ", "2:00:00 AM", "C", "On Time "],
-            ["Barcelona", "Cathy Pacific", "Jacksonville", "Barcelona, Spain", "6:00:00 PM", "C", "15 Minutes Late"],
-            ["Delta Airlines", "Jacksonville", "Jacksonville", "12:00:00 PM", "A", "On Time "],
-            ["Delta Airlines", "Jacksonville", "Jacksonville", "4:00:00 PM", "A", "On Time "],
-            ["DA", "Delta Airlines", "Jacksonville", "Dallas ", "8:00:00 PM", "A", "On Time "],
-            ["Barcelona", "Delta Airlines", "Jacksonville", "Barcelona, Spain", "10:00:00 PM", "A", "On Time "],
-            ["Delta Airlines", "Jacksonville", "San Jose ", "3:00:00 AM", "B", "On Time "],
-            ["Delta Airlines", "Jacksonville", "Cancun ", "3:00:00 PM", "C", "On Time "],
-            ["Delta Airlines", "Jacksonville", "Nassau ", "10:00:00 PM", "C", "On Time "],
-            ["Barcelona", "American Airlines", "Jacksonville", "Barcelona", "1:00:00 AM", "C", "OnTime "],
-            ["Delta Airlines", "Jacksonville", "Jacksonville ", "5:00:00 PM", "C", "On Time "],
-            ["Delta Airlines", "Jacksonville", "Jacksonville", "4:00:00 AM", "C", "On Time "],
-            ["Delta Airlines", "Jacksonville", "Jacksonville ", "10:00:00 PM", "C", "On Time "],
-            ["Delta Airlines", "Jacksonville", "Jacksonville ", "1:00:00 PM", "C", "On Time "],
-            ["Swiss International", "Jacksonville", "Jacksonville", "3:00:00 PM", "A", "On Time "],
-            ["Swiss International", "Jacksonville", "Jacksonville", "1:00:00 AM", "A", "On Time "],
-            ["Swiss International", "Jacksonville", "Dallas ", "3:00:00 PM", "A", "On Time "],
-            ["Swiss International", "Jacksonville", "Dallas ", "6:00:00 AM", "A", "On Time "],
-            ["Barcelona", "Swiss International", "Jacksonville", "Barcelona", "10:00:00 AM", "A", "On Time "],
-            ["DA", "Swiss International", "Jacksonville", "Dallas", "11:00:00 PM", "B", "10 Minutes Ahead of Schedule"],
-            ["Edinburgh", "Swiss International", "Jacksonville", "Edinburgh ", "2:00:00 PM", "C", "On Time "],
-            ["Swiss International", "Jacksonville", "Cancun ", "1:00:00 AM", "C", "On Time "],
-            ["Swiss International", "Jacksonville", "Nassau ", "3:00:00 AM", "C", "Cancelled"],
-            ["Swiss International", "Jacksonville", "Jacksonville ", "3:00:00 PM", "C", "On Time "],
-            ["Swiss International", "Jacksonville", "Jacksonville ", "7:00:00 AM", "C", "On Time "],
-            ["Swiss International", "Jacksonville", "Jacksonville", "10:00:00 PM", "C", "On Time "],
-            ["Swiss International", "Jacksonville", "Jacksonville ", "3:00:00 AM", "C", "On Time "],
-            ["Swiss International", "Jacksonville", "Jacksonville ", "5:00:00 PM", "C", "On Time "]
-          ];
+        document.getElementById("$payment").onclick = function () {
+          location.href = "https://www.paypal.com/us/home";
+        };
+        //Creates the table of schedules
+        var schedules = [
+          ["Airline", "Departing", "Arriving", "Schedule", "Gate", "Status"],
+          ["DA", "American Airlines", "Jacksonville", "Dallas", "1:30:00 PM", "A", "On Time "],
+          ["LA", "American Airlines", "Jacksonville", "Los Angeles", "5:00:00 AM", "A", "On Time "],
+          ["London", "American Airlines", "Jacksonville", "London", "5:00:00 PM", "A", "On Time "],
+          ["Paris", "American Airlines", "Jacksonville", "Paris", "4:00:00 PM", "B", "On Time "],
+          ["Amsterdam", "American Airlines", "Jacksonville", "Amsterdam, Netherlands", "4:00:00 PM", "B", "On Time "],
+          ["Barcelona", "American Airlines", "Jacksonville", "Barcelona", "5:00:00 PM", "C", "On Time "],
+          ["Dublin", "American Airlines", "Jacksonville", "Dublin ", "5:00:00 AM", "C", "On Time "],
+          ["Frankfurt", "American Airlines", "Jacksonville", "Frankfurt, Germany ", "2:00:00 AM", "C", "2 Hour delay "],
+          ["Edinburgh", "American Airlines", "Jacksonville", "Edinburgh ", "6:00:00 PM", "C", "On Time "],
+          ["DA", "Air France", "Jacksonville", "Dallas ", "8:00:00 PM", "A", "On Time "],
+          ["DA", "Air France", "Jacksonville", "Dallas ", "10:00:00 PM", "A", "On Time "],
+          ["DA", "Air France", "Jacksonville", "Dallas ", "3:00:00 AM", "A", "On Time "],
+          ["Atlanta", "Air France", "Jacksonville", "Atlanta Georgia", "2:00:00 AM", "A", "On Time "],
+          ["Dublin", "Air France", "Jacksonville", "Dublin, Ireland", "6:00:00 AM", "A", "On Time "],
+          ["LA", "Air France", "Jacksonville", "Los Angeles", "10:00:00 PM", "B", "On Time "],
+          ["Air France", "Jacksonville", "San Jose ", "12:00:00 PM", "B", "On Time "],
+          ["Air France", "Jacksonville", "Cancun ", "8:00:00 AM", "C", "Cancelled"],
+          ["LA", "Air France", "Jacksonville", "Los Angeles ", "10:00:00 AM", "C", "On Time "],
+          ["Atlanta", "Air France", "Jacksonville", "Atlanta Georgia ", "4:00:00 PM", "C", "On Time "],
+          ["Dublin", "Air France", "Jacksonville", "Dublin, Ireland", "3:00:00 PM", "C", "On Time "],
+          ["London", "Air France", "Jacksonville", "London ", "10:00:00 PM", "C", "On Time "],
+          ["Edinburgh", "Air France", "Jacksonville", "Edinburgh, Scotland ", "1:00:00 AM", "C", "On Time "],
+          ["Atlanta", "Cathy Pacific", "Jacksonville", "Atlanta, Georgia", "1:30:00 PM", "A", "On Time "],
+          ["Paris", "Cathy Pacific", "Jacksonville", "Paris", "5:00:00 AM", "A", "On Time"],
+          ["Amsterdam", "Cathy Pacific", "Jacksonville", "Amsterdam, Netherlands", "3:00:00 PM", "A", "On Time "],
+          ["DA", "Cathy Pacific", "Jacksonville", "Dallas ", "5:00:00 PM", "A", "On Time "],
+          ["Frankfurt", "Cathy Pacific", "Jacksonville", "Frankfurt, Germany", "4:00:00 PM", "B", "On Time "],
+          ["Cathy Pacific", "Jacksonville", "San Jose ", "4:00:00 PM", "B", "On Time "],
+          ["Cathy Pacific", "Jacksonville", "Cancun ", "5:00:00 PM", "C", "On Time "],
+          ["Cathy Pacific", "Jacksonville", "Nassau ", "5:00:00 AM", "C", "On Time "],
+          ["Cathy Pacific", "Jacksonville", "Jacksonville ", "2:00:00 AM", "C", "On Time "],
+          ["Barcelona", "Cathy Pacific", "Jacksonville", "Barcelona, Spain", "6:00:00 PM", "C", "15 Minutes Late"],
+          ["London", "Delta Airlines", "Jacksonville", "London", "12:00:00 PM", "A", "On Time"],
+          ["Delta Airlines", "Jacksonville", "Jacksonville", "4:00:00 PM", "A", "On Time "],
+          ["DA", "Delta Airlines", "Jacksonville", "Dallas ", "8:00:00 PM", "A", "On Time "],
+          ["Barcelona", "Delta Airlines", "Jacksonville", "Barcelona, Spain", "10:00:00 PM", "A", "On Time "],
+          ["Frankfurt", "Delta Airlines", "Jacksonville", "Frankfurt, Germany", "3:00:00 AM", "B", "On Time "],
+          ["Delta Airlines", "Jacksonville", "Cancun ", "3:00:00 PM", "C", "On Time "],
+          ["Delta Airlines", "Jacksonville", "Nassau ", "10:00:00 PM", "C", "On Time "],
+          ["Barcelona", "American Airlines", "Jacksonville", "Barcelona", "1:00:00 AM", "C", "OnTime "],
+          ["Edinburgh", "Delta Airlines", "Jacksonville", "Edinburgh Scotland ", "5:00:00 PM", "C", "On Time "],
+          ["London", "Delta Airlines", "Jacksonville", "London", "4:00:00 AM", "C", "On Time "],
+          ["Delta Airlines", "Jacksonville", "Jacksonville ", "10:00:00 PM", "C", "On Time "],
+          ["Atlanta", "Delta Airlines", "Jacksonville", "Atlanta, Georgia", "1:00:00 PM", "C", "On Time "],
+          ["Amsterdam", "Swiss International", "Jacksonville", "Amsterdam, Netherlands", "3:00:00 PM", "A", "On Time "],
+          ["Dublin", "Swiss International", "Jacksonville", "Dublin, Ireland", "1:00:00 AM", "A", "On Time "],
+          ["Swiss International", "Jacksonville", "Dallas ", "3:00:00 PM", "A", "On Time "],
+          ["Swiss International", "Jacksonville", "Dallas ", "6:00:00 AM", "A", "On Time "],
+          ["Barcelona", "Swiss International", "Jacksonville", "Barcelona", "10:00:00 AM", "A", "On Time "],
+          ["DA", "Swiss International", "Jacksonville", "Dallas", "11:00:00 PM", "B", "10 Minutes Ahead of Schedule"],
+          ["Edinburgh", "Swiss International", "Jacksonville", "Edinburgh ", "2:00:00 PM", "C", "On Time "],
+          ["Amsterdam", "Swiss International", "Jacksonville", "Amsterdam, Netherlands ", "1:00:00 AM", "C", "On Time "],
+          ["LA", "Swiss International", "Jacksonville", "Los Angeles ", "3:00:00 AM", "C", "Cancelled"],
+          ["Atlanta", "Swiss International", "Jacksonville", "Atlanta, Georgia ", "3:00:00 PM", "C", "On Time "],
+          ["Paris", "Swiss International", "Jacksonville", "Paris ", "7:00:00 AM", "C", "On Time "],
+          ["Paris", "Swiss International", "Jacksonville", "Paris", "10:00:00 PM", "C", "On Time "],
+          ["Frankfurt", "Swiss International", "Jacksonville", "Frankfurt, Germany", "3:00:00 AM", "C", "On Time "],
+          ["Swiss International", "Jacksonville", "Jacksonville ", "5:00:00 PM", "C", "On Time "]
+        ];
 
 
-          function tableCreate() {
-            var element = document.getElementById("city");
-            var cityName = element.options[element.selectedIndex].value;
-            var body = document.body,
-              tbl = document.createElement('table');
-            var x = window.matchMedia("(max-width: 700px)");
-            if (!x.matches) { // If media query matches
-              var header = tbl.createTHead();
-              var row = header.insertRow(0);
-              var tr_ = tbl.insertRow();
-              for (var j = 0; j < 6; j++) {
-                var tr = tbl.tHead.children[0],
-                  th = document.createElement('th');
-                th.innerHTML = schedules[0][j];
-                tr.appendChild(th);
-              }
+        function tableCreate() {
+          var element = document.getElementById("city");
+          var cityName = element.options[element.selectedIndex].value;
+          var body = document.body,
+            tbl = document.createElement('table');
+          var x = window.matchMedia("(max-width: 700px)");
+          if (!x.matches) { // If media query matches
+            var header = tbl.createTHead();
+            var row = header.insertRow(0);
+            var tr_ = tbl.insertRow();
+            for (var j = 0; j < 6; j++) {
+              var tr = tbl.tHead.children[0],
+                th = document.createElement('th');
+              th.innerHTML = schedules[0][j];
+              tr.appendChild(th);
             }
-            tbl.style.width = '90%';
-            tbl.style.tableLayout = "fixed";
-            tbl.style.overflowX = "auto";
-            tbl.setAttribute('id', "flySchedule");
-            var i = 1;
-            while (i < schedules.length) {
-              if (cityName == schedules[i][0]) {
-                var tr = tbl.insertRow();
-                for (var j = 1; j < schedules[i].length; j++) {
-                  var td = tr.insertCell();
-                  td.appendChild(document.createTextNode(schedules[i][j]));
-                }
+          }
+          tbl.style.width = '90%';
+          tbl.style.tableLayout = "fixed";
+          tbl.style.overflowX = "auto";
+          tbl.setAttribute('id', "flySchedule");
+          var i = 1;
+          while (i < schedules.length) {
+            if (cityName == schedules[i][0]) {
+              var tr = tbl.insertRow();
+              for (var j = 1; j < schedules[i].length; j++) {
                 var td = tr.insertCell();
-                td.innerHTML = "<a onclick='openForm()' style='color:black; text-decoration: underline; font-size: 1em;'>Purchase</a>";
-
+                td.appendChild(document.createTextNode(schedules[i][j]));
               }
-              i++;
+              var td = tr.insertCell();
+              td.innerHTML = "<a onclick='openForm()' style='color:black; text-decoration: underline; font-size: 1em;'>Purchase</a>";
+
             }
-            document.getElementById('HERE').innerHTML = "";
-            document.getElementById('HERE').appendChild(tbl);
-
-
+            i++;
           }
-        </script>
-        <br />
-        <br />
-        <br />
-      </div>
+          document.getElementById('HERE').innerHTML = "";
+          document.getElementById('HERE').appendChild(tbl);
 
-      <hr>
-      <h1 style="text-align: center; color: white;">Airlines We Support</h1>
-      <div class="American Airlines Logo">
-        <a href="https://www.aa.com/homePage.do" target="_blank">
-          <img src="images/american.png" alt="American Airline Link" style="width:100%;" />
-        </a>
-      </div>
-      <hr>
-      <div class="AirFrance Logo">
-        <a href="https://www.airfrance.us/" target="_blank">
-          <img src="images/airfrance.svg" alt="Air France Airline Link" style="width:100%;" />
-        </a>
-      </div>
-      <hr>
-      <div class="Cathay Pacific Airlines Logo">
-        <a href="https://www.cathaypacific.com/cx/en_US.html" target="_blank">
-          <img src="images/cathy.svg" alt="Cathy Airline Link" style="width:100%;" />
-        </a>
-      </div>
-      <hr>
-      <div class="Delta Airlines Logo">
-        <a href="https://www.delta.com/" target="_blank">
-          <img src="images/delta.svg" alt="Delta Airline Link" style="width:100%;" />
-        </a>
-      </div>
-      <hr>
-      <div class="Swiss Airlines Logo">
-        <a href="https://www.swiss.com/us/en#" target="_blank">
-          <img src="images/airswiss.png" alt="Swiss Airline Link" />
-        </a>
-      </div>
-      <div class="layover">
-        <h1 style="color:white;">Have a long Layover? </h1>
-        <p style="font-size: 2em;"> Visit our <a href="airportGuide.html" style="font-size:1em; color:black;">Airport
-            Guide</a>
-          page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
-      </div>
+
+        }
+      </script>
+      <br />
+      <br />
+      <br />
+    </div>
+
+    <hr>
+    <h1 style="text-align: center; color: white;">Airlines We Support</h1>
+    <div class="American Airlines Logo">
+      <a href="https://www.aa.com/homePage.do" target="_blank">
+        <img src="images/american.png" alt="American Airline Link" style="width:100%;" />
+      </a>
+    </div>
+    <hr>
+    <div class="AirFrance Logo">
+      <a href="https://www.airfrance.us/" target="_blank">
+        <img src="images/airfrance.svg" alt="Air France Airline Link" style="width:100%;" />
+      </a>
+    </div>
+    <hr>
+    <div class="Cathay Pacific Airlines Logo">
+      <a href="https://www.cathaypacific.com/cx/en_US.html" target="_blank">
+        <img src="images/cathy.svg" alt="Cathy Airline Link" style="width:100%;" />
+      </a>
+    </div>
+    <hr>
+    <div class="Delta Airlines Logo">
+      <a href="https://www.delta.com/" target="_blank">
+        <img src="images/delta.svg" alt="Delta Airline Link" style="width:100%;" />
+      </a>
+    </div>
+    <hr>
+    <div class="Swiss Airlines Logo">
+      <a href="https://www.swiss.com/us/en#" target="_blank">
+        <img src="images/airswiss.png" alt="Swiss Airline Link" />
+      </a>
+    </div>
+    <div class="layover">
+      <h1 style="color:white;">Have a long Layover? </h1>
+      <p style="font-size: 2em;"> Visit our <a href="airportGuide.html" style="font-size:1em; color:black;">Airport
+          Guide</a>
+        page to see all the wonderful resturants, entertainment, shopping, and lodging we offer!</p>
+    </div>
   </main>
   <footer>
     &copy; Buffalo Wings Airport & Harding University
